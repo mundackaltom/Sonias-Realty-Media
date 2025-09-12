@@ -1,0 +1,23 @@
+{
+  "pages": {
+    "/projects/[id]/page": [
+      "static/chunks/681ac_next_dist_86e55e41._.js",
+      "static/chunks/Desktop_SRM_src_app_favicon_ico_mjs_8ac95e5c._.js",
+      "static/chunks/[root-of-the-server]__9ea96276._.css",
+      "static/chunks/Desktop_SRM_src_app_layout_tsx_eaaf4e60._.js",
+      "static/chunks/681ac_next_dist_client_components_builtin_global-error_e6620eaa.js",
+      "static/chunks/Desktop_SRM_src_b6ec1409._.js",
+      "static/chunks/681ac_next_7379627b._.js",
+      "static/chunks/Desktop_SRM_src_app_projects_[id]_page_tsx_e6620eaa._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_0d5c85bf._.js",
+      "static/chunks/681ac_next_dist_compiled_react-dom_5d8d6f02._.js",
+      "static/chunks/681ac_next_dist_compiled_next-devtools_index_5eee83c5.js",
+      "static/chunks/681ac_next_dist_compiled_43f0b933._.js",
+      "static/chunks/681ac_next_dist_client_9fee0e13._.js",
+      "static/chunks/681ac_next_dist_8271d205._.js",
+      "static/chunks/681ac_@swc_helpers_cjs_09f0208b._.js",
+      "static/chunks/Desktop_SRM_a0ff3932._.js",
+      "static/chunks/turbopack-Desktop_SRM_d4a15d56._.js"
+    ]
+  }
+}

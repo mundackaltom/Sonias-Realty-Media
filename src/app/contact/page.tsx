@@ -71,18 +71,18 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-[#F4F0EC] px-4 py-6">
+      <header className="bg-[#F4F0EC] px-4 py-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             {/* Logo and Brand Name */}
             <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible">
                 <Image
                   src="/images/logo.png"
                   alt="Sonia's Realty Media Logo"
-                  width={80}
-                  height={80}
-                  className="object-cover rounded-full w-full h-full"
+                  width={180}
+                  height={180}
+                  className="object-cover rounded-full"
                 />
               </div>
               <h1 className="font-dm-serif text-2xl lg:text-3xl text-[#292F36] font-bold whitespace-nowrap">
@@ -106,11 +106,18 @@ export default function Contact() {
                 onMouseLeave={handleServicesMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 >
                   Services
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#C76904]`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {servicesDropdownOpen && isClient && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
@@ -128,11 +135,18 @@ export default function Contact() {
                 onMouseLeave={handleProjectsMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
                   onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
                 >
                   Projects
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${projectsDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#C76904]`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {projectsDropdownOpen && isClient && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
@@ -150,7 +164,7 @@ export default function Contact() {
               </div>
 
               <Link href="/contact" className="font-jost text-lg text-[#C76904] font-medium hover:text-[#292F36] transition">
-                Contact
+                Contact us
               </Link>
             </nav>
 
@@ -184,7 +198,7 @@ export default function Contact() {
               <Link href="/about" className="font-jost text-lg text-[#292F36]">About us</Link>
               <Link href="/services" className="font-jost text-lg text-[#292F36]">Services</Link>
               <Link href="/projects" className="font-jost text-lg text-[#292F36]">Projects</Link>
-              <Link href="/contact" className="font-jost text-lg text-[#C76904] font-medium">Contact</Link>
+              <Link href="/contact" className="font-jost text-lg text-[#C76904] font-medium">Contact us</Link>
             </div>
           </div>
         )}
@@ -313,6 +327,18 @@ export default function Contact() {
                       123 Real Estate Avenue,<br />
                       Business District, City 560001
                     </p>
+                    <Link 
+                      href="https://maps.app.goo.gl/DBv4EdFhmXWRxT1R7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-3 font-jost text-lg text-[#CDA274] hover:text-[#B8956A] transition duration-300"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      View on Google Maps
+                    </Link>
                   </div>
                 </div>
 
@@ -376,6 +402,20 @@ export default function Contact() {
             <p className="font-jost text-xl text-[#4D5053] max-w-3xl mx-auto leading-relaxed">
               Visit us at our conveniently located office for personalized consultation and assistance.
             </p>
+            <div className="mt-6">
+              <Link 
+                href="https://maps.app.goo.gl/DBv4EdFhmXWRxT1R7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Get Directions
+              </Link>
+            </div>
           </div>
           
           {/* Interactive Map Component */}

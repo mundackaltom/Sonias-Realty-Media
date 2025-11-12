@@ -50,19 +50,19 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-[#F4F0EC] px-4 py-6">
+      <header className="bg-[#F4F0EC] px-4 py-4">
         <div className="max-w-7xl mx-auto">
           {/* Single row with logo, brand name, navigation, and search */}
           <div className="flex items-center justify-between">
             {/* Logo and Brand Name */}
             <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible">
                 <Image
                   src="/images/logo.png"
                   alt="Sonia's Realty Media Logo"
-                  width={80}
-                  height={80}
-                  className="object-cover rounded-full w-full h-full"
+                  width={180}
+                  height={180}
+                  className="object-cover rounded-full"
                 />
               </div>
               <h1 className="font-dm-serif text-2xl lg:text-3xl text-[#292F36] font-bold whitespace-nowrap">
@@ -86,11 +86,18 @@ export default function About() {
                 onMouseLeave={handleServicesMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 >
                   Services
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#C76904]`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {servicesDropdownOpen && isClient && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
@@ -108,11 +115,18 @@ export default function About() {
                 onMouseLeave={handleProjectsMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
                   onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
                 >
                   Projects
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${projectsDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#C76904]`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {projectsDropdownOpen && isClient && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
@@ -130,7 +144,7 @@ export default function About() {
               </div>
 
               <Link href="/contact" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
-                Contact
+                Contact us
               </Link>
             </nav>
 
@@ -139,7 +153,9 @@ export default function About() {
               onClick={() => setIsSearchOpen(true)}
               className="w-10 h-10 border-2 border-[#292F36] rounded-full flex items-center justify-center hover:bg-[#292F36] hover:text-white transition"
             >
-              <span className="text-lg">🔍</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
             </button>
 
             {/* Mobile Menu Button */}
@@ -162,7 +178,7 @@ export default function About() {
               <Link href="/about" className="font-jost text-lg text-[#C76904] font-medium">About us</Link>
               <Link href="/services" className="font-jost text-lg text-[#292F36]">Services</Link>
               <Link href="/projects" className="font-jost text-lg text-[#292F36]">Projects</Link>
-              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact</Link>
+              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact us</Link>
             </div>
           </div>
         )}
@@ -260,7 +276,9 @@ export default function About() {
             {/* Mission */}
             <div className="bg-white p-10 rounded-3xl shadow-xl">
               <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl text-white">🎯</span>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
               </div>
               <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-6 text-center">Our Mission</h3>
               <p className="font-jost text-lg text-[#4D5053] leading-relaxed text-center">
@@ -271,7 +289,10 @@ export default function About() {
             {/* Vision */}
             <div className="bg-white p-10 rounded-3xl shadow-xl">
               <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl text-white">🔮</span>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
               </div>
               <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-6 text-center">Our Vision</h3>
               <p className="font-jost text-lg text-[#4D5053] leading-relaxed text-center">
@@ -300,12 +321,12 @@ export default function About() {
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-xl group-hover:shadow-2xl transition duration-300">
                 <Image
                   src="/images/hero.jpg"
-                  alt="Sonia Martinez"
+                  alt="Sonia Jimmy"
                   fill
                   className="object-cover group-hover:scale-110 transition duration-300"
                 />
               </div>
-              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-2">Sonia Martinez</h3>
+              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-2">Sonia Jimmy</h3>
               <p className="font-jost text-lg text-[#CDA274] font-semibold mb-4">Founder & CEO</p>
               <p className="font-jost text-lg text-[#4D5053] leading-relaxed">
                 With over 15 years of experience, Sonia leads our team with passion, integrity, and deep market knowledge.
@@ -317,15 +338,15 @@ export default function About() {
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-xl group-hover:shadow-2xl transition duration-300">
                 <Image
                   src="/images/hero.jpg"
-                  alt="Michael Chen"
+                  alt="Tom Jimmy"
                   fill
                   className="object-cover group-hover:scale-110 transition duration-300"
                 />
               </div>
-              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-2">Michael Chen</h3>
-              <p className="font-jost text-lg text-[#CDA274] font-semibold mb-4">Senior Real Estate Advisor</p>
+              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-2">Tom Jimmy</h3>
+              <p className="font-jost text-lg text-[#CDA274] font-semibold mb-4">Content Creation</p>
               <p className="font-jost text-lg text-[#4D5053] leading-relaxed">
-                Michael specializes in luxury properties and has helped over 200 families find their dream homes.
+                Tom specializes in creating compelling content and marketing materials that showcase our properties beautifully.
               </p>
             </div>
 
@@ -334,15 +355,15 @@ export default function About() {
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-xl group-hover:shadow-2xl transition duration-300">
                 <Image
                   src="/images/hero.jpg"
-                  alt="Sarah Johnson"
+                  alt="Jimmy Thomas"
                   fill
                   className="object-cover group-hover:scale-110 transition duration-300"
                 />
               </div>
-              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-2">Sarah Johnson</h3>
-              <p className="font-jost text-lg text-[#CDA274] font-semibold mb-4">Market Analysis Expert</p>
+              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-2">Jimmy Thomas</h3>
+              <p className="font-jost text-lg text-[#CDA274] font-semibold mb-4">Business Development</p>
               <p className="font-jost text-lg text-[#4D5053] leading-relaxed">
-                Sarah provides detailed market insights and helps clients make informed investment decisions.
+                Jimmy focuses on expanding our business relationships and developing strategic partnerships in the real estate market.
               </p>
             </div>
           </div>
@@ -365,7 +386,9 @@ export default function About() {
             {/* Value 1 */}
             <div className="text-center bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
               <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl text-white">🤝</span>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
               </div>
               <h3 className="font-dm-serif text-xl text-[#292F36] font-bold mb-4">Integrity</h3>
               <p className="font-jost text-[#4D5053] leading-relaxed">
@@ -376,7 +399,9 @@ export default function About() {
             {/* Value 2 */}
             <div className="text-center bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
               <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl text-white">⭐</span>
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
               </div>
               <h3 className="font-dm-serif text-xl text-[#292F36] font-bold mb-4">Excellence</h3>
               <p className="font-jost text-[#4D5053] leading-relaxed">
@@ -387,7 +412,9 @@ export default function About() {
             {/* Value 3 */}
             <div className="text-center bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
               <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl text-white">❤️</span>
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
               </div>
               <h3 className="font-dm-serif text-xl text-[#292F36] font-bold mb-4">Passion</h3>
               <p className="font-jost text-[#4D5053] leading-relaxed">
@@ -398,7 +425,9 @@ export default function About() {
             {/* Value 4 */}
             <div className="text-center bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
               <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl text-white">🚀</span>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
               <h3 className="font-dm-serif text-xl text-[#292F36] font-bold mb-4">Innovation</h3>
               <p className="font-jost text-[#4D5053] leading-relaxed">

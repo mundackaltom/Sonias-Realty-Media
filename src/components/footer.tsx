@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-6 mt-12">
+    <footer className="bg-gray-900 text-white py-6 mt-12" suppressHydrationWarning>
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         
         {/* Left side - Copyright */}
@@ -20,7 +20,7 @@ export default function Footer() {
             Media
           </Link>
           <Link href="/contact" className="hover:text-gray-400 transition">
-            Contact
+            Contact us
           </Link>
         </nav>
       </div>

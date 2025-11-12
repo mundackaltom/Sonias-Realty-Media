@@ -76,7 +76,7 @@ export default function ProjectCard({
           )}
           <Link 
             href={`/projects/${id}`}
-            className="flex-1 bg-[#292F36] text-white px-4 py-3 rounded-[18px] font-jost font-semibold text-[14px] hover:bg-[#4D5053] transition text-center"
+            className="flex-1 bg-[#292F36] text-white px-4 py-3 rounded-[18px] font-jost font-semibold text-[14px] hover:bg-[#4D5053] transition text-center flex items-center justify-center"
           >
             View Details
           </Link>

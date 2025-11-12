@@ -5,83 +5,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import SearchModal from "../../../components/SearchModal";
+import InteractiveMap from "../../../components/InteractiveMap";
 
 // This would typically come from a database or API
 const projectsData = {
   "1": {
     id: "1",
-    title: "Riverside Towers",
-    location: "Downtown",
-    status: "Upcoming",
-    description: "Luxury 2–3 BHK apartments with river views, modern amenities and secure parking.",
-    fullDescription: "Riverside Towers represents the pinnacle of luxury urban living. Located in the heart of downtown, this prestigious development offers breathtaking river views and unparalleled access to the city's finest dining, shopping, and entertainment venues. Each apartment is meticulously designed with premium finishes, state-of-the-art appliances, and floor-to-ceiling windows that flood the space with natural light.",
-    image: "/images/hero.jpg",
-    gallery: ["/images/hero.jpg", "/images/Valencia.webp", "/images/hero.jpg"],
-    brochureUrl: "/brochures/Brigade Valencia - Brillio brochure-1.pdf",
-    youtubeUrl: "https://www.youtube.com/watch?v=VIDEOID1",
-    price: "₹75 Lakhs - ₹1.2 Crores",
-    area: "1,200 - 1,800 sq ft",
-    bedrooms: "2-3 BHK",
-    amenities: [
-      "Swimming Pool",
-      "Fitness Center", 
-      "24/7 Security",
-      "Parking",
-      "Garden Area",
-      "Community Hall",
-      "Kids Play Area",
-      "Power Backup"
-    ],
-    specifications: {
-      "Total Floors": "42 Floors",
-      "Total Units": "280 Units",
-      "Possession": "Dec 2025",
-      "RERA Registration": "KAR/RERA/1234/2023"
-    }
-  },
-  "2": {
-    id: "2",
-    title: "Garden Heights",
-    location: "Uptown",
-    status: "Existing",
-    description: "Family friendly apartments close to parks and schools.",
-    fullDescription: "Garden Heights is designed for families who value community, convenience, and quality of life. Situated in the peaceful uptown area, this development is surrounded by lush green parks, top-rated schools, and family-friendly amenities. The thoughtfully planned apartments offer spacious layouts, modern fixtures, and private balconies overlooking landscaped gardens.",
-    image: "/images/hero.jpg",
-    gallery: ["/images/hero.jpg", "/images/Valencia.webp", "/images/hero.jpg"],
-    brochureUrl: "/brochures/Brigade Valencia - Brillio brochure-1.pdf",
-    youtubeUrl: "https://www.youtube.com/watch?v=VIDEOID2",
-    price: "₹55 Lakhs - ₹95 Lakhs",
-    area: "1,000 - 1,500 sq ft",
-    bedrooms: "2-3 BHK",
-    amenities: [
-      "Children's Play Area",
-      "Jogging Track",
-      "Community Garden",
-      "Security",
-      "Parking",
-      "Clubhouse",
-      "Basketball Court",
-      "Intercom Facility"
-    ],
-    specifications: {
-      "Total Floors": "15 Floors",
-      "Total Units": "180 Units",
-      "Possession": "Ready to Move",
-      "RERA Registration": "KAR/RERA/5678/2021"
-    }
-  },
-  "3": {
-    id: "3",
-    title: "Valencia Premium",
-    location: "City Center",
+    title: "Brigade Valencia",
+    location: "Devanahalli, Bengaluru",
     status: "Upcoming",
     description: "Premium residential project with world-class amenities and modern architecture.",
-    fullDescription: "Valencia Premium sets a new standard for luxury living in the city center. This architectural masterpiece combines contemporary design with world-class amenities to create an unparalleled residential experience. Located in the most sought-after area of the city, residents enjoy easy access to business districts, cultural attractions, and premium shopping destinations.",
-    image: "/images/Valencia.webp",
-    gallery: ["/images/Valencia.webp", "/images/hero.jpg", "/images/Valencia.webp"],
-    brochureUrl: "/brochures/Brigade Valencia - Brillio brochure-1.pdf",
-    youtubeUrl: "https://www.youtube.com/watch?v=VIDEOID3",
-    price: "₹1.2 Crores - ₹2.5 Crores",
+    fullDescription: "Brigade Valencia sets a new standard for luxury living in Devanahalli. This architectural masterpiece combines contemporary design with world-class amenities to create an unparalleled residential experience. Located in the most sought-after area near the international airport, residents enjoy easy access to business districts, IT hubs, and premium shopping destinations while being surrounded by nature's tranquility.",
+    image: "/images/brigade_valencia/brigade_valencia_2.jpeg",
+    gallery: [
+      "/images/brigade_valencia/brigade_valencia_2.jpeg",
+      "/images/brigade_valencia/brigade_valencia_5.jpeg",
+      "/images/brigade_valencia/brigade_valencia_153.jpeg",
+      "/images/brigade_valencia/brigade_valencia_1.jpeg",
+      "/images/brigade_valencia/brigade_valencia_3.jpeg",
+      "/images/brigade_valencia/brigade_valencia_4.jpeg"
+    ],
+    brochureUrl: "/brochures/Brigade Valencia.pdf",
+    youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+    price: "Starting from ₹1.8 Crores",
     area: "1,800 - 3,000 sq ft",
     bedrooms: "3-4 BHK",
     amenities: [
@@ -92,45 +38,197 @@ const projectsData = {
       "Valet Parking",
       "Private Theater",
       "Wine Cellar",
-      "Rooftop Garden"
+      "Rooftop Garden",
+      "Fitness Center",
+      "Kids Play Area",
+      "24/7 Security",
+      "Power Backup"
     ],
     specifications: {
-      "Total Floors": "50 Floors",
-      "Total Units": "320 Units",
+      "Total Floors": "45 Floors",
+      "Total Units": "350 Units",
       "Possession": "March 2026",
-      "RERA Registration": "KAR/RERA/9999/2024"
-    }
+      "RERA Registration": "PRM/KA/RERA/1251/310/PR/200701/004230"
+    },
+    address: "Brigade Valencia, Devanahalli, Bengaluru 562110"
+  },
+  "2": {
+    id: "2",
+    title: "Brigade Avalon",
+    location: "Electronic City, Bengaluru",
+    status: "Upcoming",
+    description: "Luxury residential development with premium amenities and strategic location near IT hubs.",
+    fullDescription: "Brigade Avalon represents the perfect fusion of luxury and convenience in Electronic City. This prestigious development is strategically positioned to serve the bustling IT corridor while providing a serene residential environment. With its proximity to major tech companies, excellent connectivity, and world-class amenities, Brigade Avalon offers an ideal living experience for modern professionals and families.",
+    image: "/images/hero.jpg",
+    gallery: [
+      "/images/hero.jpg",
+      "/images/Valencia.webp",
+      "/images/jindal.webp",
+      "/images/hero.jpg",
+      "/images/Valencia.webp",
+      "/images/jindal.webp"
+    ],
+    brochureUrl: "/brochures/Brigade Avalon.pdf",
+    youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+    price: "Starting from ₹1.2 Crores",
+    area: "1,400 - 2,200 sq ft",
+    bedrooms: "2-3 BHK",
+    amenities: [
+      "Swimming Pool",
+      "State-of-the-art Gym",
+      "Multipurpose Hall",
+      "Children's Play Area",
+      "Jogging Track",
+      "Landscaped Gardens",
+      "24/7 Security",
+      "Power Backup",
+      "Clubhouse",
+      "Indoor Games",
+      "Yoga/Meditation Hall",
+      "Senior Citizen Area"
+    ],
+    specifications: {
+      "Total Floors": "38 Floors",
+      "Total Units": "280 Units",
+      "Possession": "December 2025",
+      "RERA Registration": "PRM/KA/RERA/1251/310/PR/200701/004231"
+    },
+    address: "Brigade Avalon, Electronic City, Bengaluru 560100"
+  },
+  "3": {
+    id: "3",
+    title: "Brigade Eternia",
+    location: "Whitefield, Bengaluru",
+    status: "Ready to Move",
+    description: "Premium residential project offering spacious apartments with modern amenities and excellent connectivity.",
+    fullDescription: "Brigade Eternia stands as a testament to quality living in the heart of Whitefield. This ready-to-move development offers residents immediate access to one of Bengaluru's most sought-after neighborhoods, known for its excellent infrastructure, proximity to IT parks, and vibrant community life. With spacious apartments and comprehensive amenities, Brigade Eternia provides the perfect blend of comfort and convenience.",
+    image: "/images/hero.jpg",
+    gallery: [
+      "/images/hero.jpg",
+      "/images/jindal.webp",
+      "/images/Valencia.webp",
+      "/images/hero.jpg",
+      "/images/jindal.webp",
+      "/images/Valencia.webp",
+      "/images/hero.jpg"
+    ],
+    brochureUrl: "/brochures/Brigade Eternia.pdf",
+    youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+    price: "Starting from ₹95 Lakhs",
+    area: "1,200 - 1,800 sq ft",
+    bedrooms: "2-3 BHK",
+    amenities: [
+      "Swimming Pool",
+      "Fitness Center",
+      "Community Hall",
+      "Children's Play Area",
+      "Basketball Court",
+      "Tennis Court",
+      "Landscaped Gardens",
+      "Jogging Track",
+      "24/7 Security",
+      "Power Backup",
+      "Clubhouse",
+      "Library"
+    ],
+    specifications: {
+      "Total Floors": "20 Floors",
+      "Total Units": "240 Units",
+      "Possession": "Ready to Move",
+      "RERA Registration": "PRM/KA/RERA/1251/310/PR/200701/004232"
+    },
+    address: "Brigade Eternia, Whitefield, Bengaluru 560066"
   },
   "4": {
     id: "4",
-    title: "Emerald Square",
-    location: "Suburbs",
-    status: "Existing",
-    description: "Spacious family homes with gardens and community facilities.",
-    fullDescription: "Emerald Square offers the perfect blend of suburban tranquility and modern convenience. This family-oriented development features spacious homes with private gardens, creating a peaceful retreat from city life while maintaining easy access to urban amenities. The community is designed to foster neighborly connections and provide a safe, nurturing environment for families.",
+    title: "Godrej Tiara",
+    location: "Yeshwantpur, Bengaluru",
+    status: "Upcoming",
+    description: "Elegant residential towers with luxury amenities and prime location near business districts.",
+    fullDescription: "Godrej Tiara represents sophisticated urban living in the prestigious Yeshwantpur area. This elegant development offers residents the perfect combination of luxury, convenience, and connectivity. With its proximity to business districts, railway stations, and commercial hubs, Godrej Tiara provides an ideal address for discerning homebuyers who value both comfort and accessibility.",
     image: "/images/hero.jpg",
-    gallery: ["/images/hero.jpg", "/images/Valencia.webp", "/images/hero.jpg"],
-    brochureUrl: "/brochures/Brigade Valencia - Brillio brochure-1.pdf",
-    youtubeUrl: "https://www.youtube.com/watch?v=VIDEOID4",
-    price: "₹45 Lakhs - ₹75 Lakhs",
-    area: "1,400 - 2,200 sq ft",
-    bedrooms: "2-4 BHK",
+    gallery: [
+      "/images/hero.jpg",
+      "/images/Valencia.webp",
+      "/images/jindal.webp",
+      "/images/hero.jpg",
+      "/images/Valencia.webp",
+      "/images/jindal.webp"
+    ],
+    brochureUrl: "/brochures/Godrej Tiara.pdf",
+    youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+    price: "Starting from ₹1.5 Crores",
+    area: "1,500 - 2,400 sq ft",
+    bedrooms: "2-3 BHK",
     amenities: [
-      "Private Gardens",
-      "Community Center",
-      "Walking Trails",
-      "Playground",
-      "Tennis Court",
-      "BBQ Area",
-      "Pet Park",
-      "24/7 Security"
+      "Rooftop Swimming Pool",
+      "Premium Fitness Center",
+      "Sky Lounge",
+      "Business Center",
+      "Concierge Services",
+      "Valet Parking",
+      "Children's Play Area",
+      "Landscaped Gardens",
+      "24/7 Security",
+      "Power Backup",
+      "High-speed Elevators",
+      "Multi-purpose Hall"
     ],
     specifications: {
-      "Total Floors": "4 Floors",
-      "Total Units": "120 Units", 
+      "Total Floors": "32 Floors",
+      "Total Units": "210 Units",
+      "Possession": "June 2026",
+      "RERA Registration": "PRM/KA/RERA/1251/310/PR/200701/004233"
+    },
+    address: "Godrej Tiara, Yeshwantpur, Bengaluru 560022"
+  },
+  "5": {
+    id: "5",
+    title: "Prestige Raintree Park",
+    location: "Whitefield, Bengaluru",
+    status: "Ready to Move",
+    description: "Sprawling residential community with villas and apartments, surrounded by lush greenery.",
+    fullDescription: "Prestige Raintree Park offers a unique living experience in the heart of Whitefield, combining the convenience of apartment living with the luxury of villa-style amenities. This expansive development is set amidst lush greenery, providing residents with a peaceful retreat while maintaining excellent connectivity to IT parks, schools, and shopping centers. The community is designed to promote an active, healthy lifestyle with extensive recreational facilities.",
+    image: "/images/hero.jpg",
+    gallery: [
+      "/images/hero.jpg",
+      "/images/jindal.webp",
+      "/images/Valencia.webp",
+      "/images/hero.jpg",
+      "/images/jindal.webp",
+      "/images/Valencia.webp",
+      "/images/hero.jpg"
+    ],
+    brochureUrl: "/brochures/Prestige Raintree Park.pdf",
+    youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+    price: "Starting from ₹1.8 Crores",
+    area: "1,800 - 3,500 sq ft",
+    bedrooms: "3-4 BHK",
+    amenities: [
+      "Large Swimming Pool",
+      "Tennis Court",
+      "Basketball Court",
+      "Badminton Court",
+      "Fitness Center",
+      "Yoga Pavilion",
+      "Children's Play Area",
+      "Jogging Track",
+      "Cycling Track",
+      "Community Hall",
+      "Landscaped Gardens",
+      "24/7 Security",
+      "Power Backup",
+      "Clubhouse",
+      "Library",
+      "Senior Citizen Area"
+    ],
+    specifications: {
+      "Total Floors": "25 Floors",
+      "Total Units": "320 Units",
       "Possession": "Ready to Move",
-      "RERA Registration": "KAR/RERA/3456/2020"
-    }
+      "RERA Registration": "PRM/KA/RERA/1251/310/PR/200701/004234"
+    },
+    address: "Prestige Raintree Park, Whitefield, Bengaluru 560066"
   }
 };
 
@@ -196,18 +294,18 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-[#F4F0EC] px-4 py-6">
+      <header className="bg-[#F4F0EC] px-4 py-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             {/* Logo and Brand Name */}
             <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible">
                 <Image
                   src="/images/logo.png"
                   alt="Sonia's Realty Media Logo"
-                  width={80}
-                  height={80}
-                  className="object-cover rounded-full w-full h-full"
+                  width={180}
+                  height={180}
+                  className="object-cover rounded-full"
                 />
               </div>
               <h1 className="font-dm-serif text-2xl lg:text-3xl text-[#292F36] font-bold whitespace-nowrap">
@@ -231,11 +329,18 @@ export default function ProjectDetail() {
                 onMouseLeave={handleServicesMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 >
                   Services
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#C76904]`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {servicesDropdownOpen && isClient && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
@@ -253,11 +358,18 @@ export default function ProjectDetail() {
                 onMouseLeave={handleProjectsMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-2 group"
                   onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
                 >
                   Projects
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${projectsDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#292F36]`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {projectsDropdownOpen && isClient && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
@@ -269,7 +381,7 @@ export default function ProjectDetail() {
               </div>
 
               <Link href="/contact" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
-                Contact
+                Contact us
               </Link>
             </nav>
 
@@ -303,7 +415,7 @@ export default function ProjectDetail() {
               <Link href="/about" className="font-jost text-lg text-[#292F36]">About us</Link>
               <Link href="/services" className="font-jost text-lg text-[#292F36]">Services</Link>
               <Link href="/projects" className="font-jost text-lg text-[#C76904] font-medium">Projects</Link>
-              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact</Link>
+              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact us</Link>
             </div>
           </div>
         )}
@@ -409,14 +521,26 @@ export default function ProjectDetail() {
                   <Link 
                     href={project.brochureUrl} 
                     target="_blank"
-                    className="flex-1 bg-[#CDA274] text-white px-6 py-4 rounded-2xl font-jost font-semibold text-lg hover:bg-[#B8956A] transition text-center"
+                    className="flex-1 border-2 border-[#CDA274] text-[#CDA274] px-6 py-4 rounded-2xl font-jost font-semibold text-lg hover:bg-[#CDA274] hover:text-white transition text-center"
                   >
                     Download Brochure
                   </Link>
                 )}
+                {project.youtubeUrl && (
+                  <Link 
+                    href={project.youtubeUrl} 
+                    target="_blank"
+                    className="flex-1 border-2 border-[#CDA274] text-[#CDA274] px-6 py-4 rounded-2xl font-jost font-semibold text-lg hover:bg-[#CDA274] hover:text-white transition text-center flex items-center justify-center gap-2"
+                  >
+                    <svg className="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"/>
+                    </svg>
+                    Watch Video
+                  </Link>
+                )}
                 <Link 
                   href="/contact"
-                  className="flex-1 border-2 border-[#CDA274] text-[#CDA274] px-6 py-4 rounded-2xl font-jost font-semibold text-lg hover:bg-[#CDA274] hover:text-white transition text-center"
+                  className="flex-1 bg-[#CDA274] text-white px-6 py-4 rounded-2xl font-jost font-semibold text-lg hover:bg-[#B8956A] transition text-center flex items-center justify-center"
                 >
                   Schedule Visit
                 </Link>
@@ -433,16 +557,96 @@ export default function ProjectDetail() {
             Amenities & Features
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {project.amenities.map((amenity, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                <div className="w-12 h-12 bg-[#CDA274] rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+            {project.amenities.map((amenity, index) => {
+              // Function to get appropriate icon for each amenity
+              const getAmenityIcon = (amenityName: string) => {
+                const name = amenityName.toLowerCase();
+                if (name.includes('pool') || name.includes('swimming')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M2 15c1.67-2.33 3.67-3.5 6-3.5s4.33 1.17 6 3.5c1.67-2.33 3.67-3.5 6-3.5v2c-1.67 0-3 1.17-4 2.5-1-1.33-2.33-2.5-4-2.5s-3 1.17-4 2.5c-1-1.33-2.33-2.5-4-2.5v-2zm0 4c1.67-2.33 3.67-3.5 6-3.5s4.33 1.17 6 3.5c1.67-2.33 3.67-3.5 6-3.5v2c-1.67 0-3 1.17-4 2.5-1-1.33-2.33-2.5-4-2.5s-3 1.17-4 2.5c-1-1.33-2.33-2.5-4-2.5v-2z"/>
+                    </svg>
+                  );
+                } else if (name.includes('fitness') || name.includes('gym') || name.includes('center')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 3v10a1 1 0 001 1h8a1 1 0 001-1V7M9 7h6M9 11h6m-6 4h6"/>
+                    </svg>
+                  );
+                } else if (name.includes('security') || name.includes('24/7')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                  );
+                } else if (name.includes('parking') || name.includes('car')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                    </svg>
+                  );
+                } else if (name.includes('garden') || name.includes('park') || name.includes('green')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                    </svg>
+                  );
+                } else if (name.includes('hall') || name.includes('community') || name.includes('club')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  );
+                } else if (name.includes('play') || name.includes('kids') || name.includes('child')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  );
+                } else if (name.includes('power') || name.includes('backup') || name.includes('generator')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                  );
+                } else if (name.includes('basketball') || name.includes('sport') || name.includes('court')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                  );
+                } else if (name.includes('intercom') || name.includes('communication')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                  );
+                } else if (name.includes('jogging') || name.includes('track') || name.includes('running')) {
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  );
+                } else {
+                  // Default icon for unmatched amenities
+                  return (
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                  );
+                }
+              };
+
+              return (
+                <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-lg">
+                  <div className="w-12 h-12 bg-[#CDA274] rounded-xl flex items-center justify-center mx-auto mb-3">
+                    {getAmenityIcon(amenity)}
+                  </div>
+                  <h3 className="font-jost text-lg font-medium text-[#292F36]">{amenity}</h3>
                 </div>
-                <h3 className="font-jost text-lg font-medium text-[#292F36]">{amenity}</h3>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -466,6 +670,30 @@ export default function ProjectDetail() {
         </div>
       </section>
 
+      {/* Location Section */}
+      <section className="py-20 bg-[#F4F0EC]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-dm-serif text-3xl md:text-4xl text-[#292F36] font-bold mb-6">
+              Project Location
+            </h2>
+            <p className="font-jost text-xl text-[#4D5053] max-w-3xl mx-auto leading-relaxed">
+              Visit us at our conveniently located project site for personalized consultation and assistance.
+            </p>
+          </div>
+
+          {/* Interactive Map */}
+          <div className="mb-8">
+            <InteractiveMap 
+              address={project.address}
+              businessName={project.title}
+            />
+          </div>
+
+
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-[#292F36]">
         <div className="max-w-7xl mx-auto px-4 text-center">
@@ -477,7 +705,7 @@ export default function ProjectDetail() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/contact" className="bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300 inline-block text-center">
-              Contact Us
+              Contact us
             </Link>
             <Link href="/projects" className="border-2 border-white text-white hover:bg-white hover:text-[#292F36] font-inter font-semibold text-lg px-8 py-4 rounded-2xl transition duration-300 inline-block text-center">
               View Other Projects

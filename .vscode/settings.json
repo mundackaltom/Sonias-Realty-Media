@@ -1,0 +1,15 @@
+"github.copilot.chat.context.provideEditorContext": "none",
+"github.copilot.chat.context.provideWorkspaceContext": false,
+"github.copilot.chat.context.provideFileContext": true,
+"github.copilot.editor.enableAutoCompletions": false,
+"github.copilot.inlineSuggest.enable": false,
+"github.copilot.advanced": {
+    "disableLanguageContexts": ["*"],
+    "ignoreFiles": [
+        "**/node_modules/**",
+        "**/.next/**",
+        "**/public/**",
+        "**/app/projects/**",
+        "**/images/**"
+    ]
+}

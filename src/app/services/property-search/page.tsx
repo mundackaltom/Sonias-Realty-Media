@@ -60,19 +60,19 @@ export default function PropertySearch() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-[#F4F0EC] px-4 py-6">
+      <header className="bg-[#F4F0EC] px-4 py-4">
         <div className="max-w-7xl mx-auto">
           {/* Single row with logo, brand name, navigation, and search */}
           <div className="flex items-center justify-between">
             {/* Logo and Brand Name */}
             <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible">
                 <Image
                   src="/images/logo.png"
                   alt="Sonia's Realty Media Logo"
-                  width={80}
-                  height={80}
-                  className="object-cover rounded-full w-full h-full"
+                  width={180}
+                  height={180}
+                  className="object-cover rounded-full"
                 />
               </div>
               <h1 className="font-dm-serif text-2xl lg:text-3xl text-[#292F36] font-bold whitespace-nowrap">
@@ -96,11 +96,18 @@ export default function PropertySearch() {
                 onMouseLeave={handleServicesMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-2 group"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 >
                   Services
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#292F36]`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {servicesDropdownOpen && isClient && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
@@ -118,11 +125,18 @@ export default function PropertySearch() {
                 onMouseLeave={handleProjectsMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
                   onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
                 >
                   Projects
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${projectsDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#C76904]`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {projectsDropdownOpen && isClient && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
@@ -143,7 +157,7 @@ export default function PropertySearch() {
               </div>
 
               <Link href="/contact" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
-                Contact
+                Contact us
               </Link>
             </nav>
 
@@ -175,7 +189,7 @@ export default function PropertySearch() {
               <Link href="/about" className="font-jost text-lg text-[#292F36]">About us</Link>
               <Link href="/services" className="font-jost text-lg text-[#C76904] font-medium">Services</Link>
               <Link href="/projects" className="font-jost text-lg text-[#292F36]">Projects</Link>
-              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact</Link>
+              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact us</Link>
             </div>
           </div>
         )}

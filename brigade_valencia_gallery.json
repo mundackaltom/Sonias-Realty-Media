@@ -1,0 +1,146 @@
+{
+  "gallery_paths": [
+    "/images/brigade_valencia/brigade_valencia_2.jpeg",
+    "/images/brigade_valencia/brigade_valencia_1.jpeg",
+    "/images/brigade_valencia/brigade_valencia_5.jpeg",
+    "/images/brigade_valencia/brigade_valencia_153.jpeg",
+    "/images/brigade_valencia/brigade_valencia_161.jpeg",
+    "/images/brigade_valencia/brigade_valencia_143.jpeg",
+    "/images/brigade_valencia/brigade_valencia_11.jpeg",
+    "/images/brigade_valencia/brigade_valencia_12.jpeg",
+    "/images/brigade_valencia/brigade_valencia_126.jpeg",
+    "/images/brigade_valencia/brigade_valencia_79.jpeg",
+    "/images/brigade_valencia/brigade_valencia_86.jpeg",
+    "/images/brigade_valencia/brigade_valencia_135.jpeg",
+    "/images/brigade_valencia/brigade_valencia_93.jpeg",
+    "/images/brigade_valencia/brigade_valencia_109.jpeg",
+    "/images/brigade_valencia/brigade_valencia_144.jpeg",
+    "/images/brigade_valencia/brigade_valencia_24.jpeg",
+    "/images/brigade_valencia/brigade_valencia_133.jpeg",
+    "/images/brigade_valencia/brigade_valencia_60.jpeg",
+    "/images/brigade_valencia/brigade_valencia_59.jpeg",
+    "/images/brigade_valencia/brigade_valencia_163.jpeg"
+  ],
+  "selected_images": [
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_2.jpeg",
+      "filename": "brigade_valencia_2.jpeg",
+      "dimensions": "2900x2284",
+      "size_kb": 499.4912109375
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_1.jpeg",
+      "filename": "brigade_valencia_1.jpeg",
+      "dimensions": "2900x2284",
+      "size_kb": 106.5849609375
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_5.jpeg",
+      "filename": "brigade_valencia_5.jpeg",
+      "dimensions": "2489x1959",
+      "size_kb": 354.0205078125
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_153.jpeg",
+      "filename": "brigade_valencia_153.jpeg",
+      "dimensions": "2281x1462",
+      "size_kb": 849.5517578125
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_161.jpeg",
+      "filename": "brigade_valencia_161.jpeg",
+      "dimensions": "2275x1460",
+      "size_kb": 868.7880859375
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_143.jpeg",
+      "filename": "brigade_valencia_143.jpeg",
+      "dimensions": "2184x1460",
+      "size_kb": 845.8798828125
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_11.jpeg",
+      "filename": "brigade_valencia_11.jpeg",
+      "dimensions": "2442x1285",
+      "size_kb": 36.4052734375
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_12.jpeg",
+      "filename": "brigade_valencia_12.jpeg",
+      "dimensions": "2442x1285",
+      "size_kb": 1175.4560546875
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_126.jpeg",
+      "filename": "brigade_valencia_126.jpeg",
+      "dimensions": "1944x1298",
+      "size_kb": 736.0732421875
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_79.jpeg",
+      "filename": "brigade_valencia_79.jpeg",
+      "dimensions": "2043x1202",
+      "size_kb": 2011.5615234375
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_86.jpeg",
+      "filename": "brigade_valencia_86.jpeg",
+      "dimensions": "2043x1202",
+      "size_kb": 2062.162109375
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_135.jpeg",
+      "filename": "brigade_valencia_135.jpeg",
+      "dimensions": "1924x1262",
+      "size_kb": 723.736328125
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_93.jpeg",
+      "filename": "brigade_valencia_93.jpeg",
+      "dimensions": "2043x1164",
+      "size_kb": 1894.9013671875
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_109.jpeg",
+      "filename": "brigade_valencia_109.jpeg",
+      "dimensions": "2043x1162",
+      "size_kb": 1337.2373046875
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_144.jpeg",
+      "filename": "brigade_valencia_144.jpeg",
+      "dimensions": "1880x1258",
+      "size_kb": 668.0283203125
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_24.jpeg",
+      "filename": "brigade_valencia_24.jpeg",
+      "dimensions": "2047x1144",
+      "size_kb": 1907.33203125
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_133.jpeg",
+      "filename": "brigade_valencia_133.jpeg",
+      "dimensions": "1882x1234",
+      "size_kb": 708.29296875
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_60.jpeg",
+      "filename": "brigade_valencia_60.jpeg",
+      "dimensions": "2050x1110",
+      "size_kb": 1161.798828125
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_59.jpeg",
+      "filename": "brigade_valencia_59.jpeg",
+      "dimensions": "2050x1110",
+      "size_kb": 26.486328125
+    },
+    {
+      "path": "/images/brigade_valencia/brigade_valencia_163.jpeg",
+      "filename": "brigade_valencia_163.jpeg",
+      "dimensions": "1772x1176",
+      "size_kb": 599.728515625
+    }
+  ]
+}

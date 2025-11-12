@@ -9,55 +9,54 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [heroStyles, setHeroStyles] = useState({ width: '100%', height: '100%', borderRadius: '0px' });
+  const [mounted, setMounted] = useState(false);
   
   // Timeout refs for delayed closing
   const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const projectsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Prevent hydration mismatch
+  // Handle mounting
   useEffect(() => {
-    setIsClient(true);
+    setMounted(true);
   }, []);
 
   // Handle scroll effect for hero image
   useEffect(() => {
+    if (!mounted) return;
+
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      const newScrollY = window.scrollY;
+      
+      // Update hero styles based on scroll
+      const maxScroll = 600;
+      const minWidth = 65;
+      const maxWidth = 100;
+      
+      let newWidth = maxWidth;
+      if (newScrollY >= maxScroll) {
+        newWidth = minWidth;
+      } else {
+        const widthReduction = ((newScrollY / maxScroll) * (maxWidth - minWidth));
+        newWidth = Math.max(minWidth, maxWidth - widthReduction);
+      }
+      
+      // Calculate border radius
+      const maxRadius = 40;
+      const widthFactor = (100 - newWidth) / (100 - 65);
+      const newBorderRadius = Math.min(maxRadius, 0 + (widthFactor * maxRadius));
+      
+      setHeroStyles({
+        width: `${newWidth}%`,
+        height: '100%',
+        borderRadius: `${newBorderRadius}px`
+      });
     };
 
-    if (isClient) {
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-  }, [isClient]);
-
-  // Calculate hero width based on scroll position
-  const calculateHeroWidth = () => {
-    const maxScroll = 600; // Increased scroll distance for smoother effect
-    const minWidth = 65; // Slightly higher minimum width
-    const maxWidth = 100; // Maximum width percentage
-    
-    if (scrollY >= maxScroll) {
-      return minWidth;
-    }
-    
-    const widthReduction = ((scrollY / maxScroll) * (maxWidth - minWidth));
-    return Math.max(minWidth, maxWidth - widthReduction);
-  };
-
-  // Calculate border radius based on how narrow the hero gets
-  const calculateHeroBorderRadius = () => {
-    const currentWidth = calculateHeroWidth();
-    const maxRadius = 40; // Maximum border radius in pixels
-    const minRadius = 0; // Minimum border radius when at full width
-    
-    // As width decreases from 100% to 65%, radius increases from 0 to 40px
-    const widthFactor = (100 - currentWidth) / (100 - 65); // Normalize to 0-1
-    return Math.min(maxRadius, minRadius + (widthFactor * maxRadius));
-  };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [mounted]);
 
   const handleServicesMouseEnter = () => {
     if (servicesTimeoutRef.current) {
@@ -88,19 +87,19 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-[#F4F0EC] px-4 py-6">
+      <header className="bg-[#F4F0EC] px-4 py-4">
         <div className="max-w-7xl mx-auto">
           {/* Single row with logo, brand name, navigation, and search */}
           <div className="flex items-center justify-between">
             {/* Logo and Brand Name */}
             <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible">
                 <Image
                   src="/images/logo.png"
                   alt="Sonia's Realty Media Logo"
-                  width={80}
-                  height={80}
-                  className="object-cover rounded-full w-full h-full"
+                  width={180}
+                  height={180}
+                  className="object-cover rounded-full"
                 />
               </div>
               <h1 className="font-dm-serif text-2xl lg:text-3xl text-[#292F36] font-bold whitespace-nowrap">
@@ -124,13 +123,21 @@ export default function Home() {
                 onMouseLeave={handleServicesMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 >
                   Services
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className="w-4 h-4 transition-transform duration-200 group-hover:text-[#C76904]"
+                    style={{ transform: servicesDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
-                {servicesDropdownOpen && isClient && (
+                {servicesDropdownOpen && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
                     <Link href="/services/property-search" className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
                       Property Search
@@ -146,13 +153,21 @@ export default function Home() {
                 onMouseLeave={handleProjectsMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1"
+                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
                   onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
                 >
                   Projects
-                  <span className="text-sm">▼</span>
+                  <svg 
+                    className="w-4 h-4 transition-transform duration-200 group-hover:text-[#C76904]"
+                    style={{ transform: projectsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
-                {projectsDropdownOpen && isClient && (
+                {projectsDropdownOpen && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
                     <Link href="/projects" className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
                       All Projects
@@ -171,7 +186,7 @@ export default function Home() {
               </div>
 
               <Link href="/contact" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
-                Contact
+                Contact us
               </Link>
             </nav>
 
@@ -196,14 +211,14 @@ export default function Home() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && isClient && (
+        {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               <Link href="/" className="font-jost text-lg text-[#C76904] font-medium">Home</Link>
               <Link href="/about" className="font-jost text-lg text-[#292F36]">About us</Link>
               <Link href="/services" className="font-jost text-lg text-[#292F36]">Services</Link>
               <Link href="/projects" className="font-jost text-lg text-[#292F36]">Projects</Link>
-              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact</Link>
+              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact us</Link>
             </div>
           </div>
         )}
@@ -214,12 +229,8 @@ export default function Home() {
 
         {/* Hero Container with Dynamic Width */}
         <div 
-          className="relative overflow-hidden transition-all duration-500 ease-out mx-auto shadow-2xl"
-          style={{ 
-            width: isClient ? `${calculateHeroWidth()}%` : '100%',
-            height: '100%',
-            borderRadius: isClient ? `${calculateHeroBorderRadius()}px` : '0px'
-          }}
+          className="relative overflow-hidden mx-auto shadow-2xl transition-all duration-500 ease-out"
+          style={mounted ? heroStyles : { width: '100%', height: '100%', borderRadius: '0px' }}
         >
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
@@ -323,20 +334,10 @@ export default function Home() {
               <p className="font-jost text-xl text-[#4D5053] leading-relaxed mb-8">
                 With over a decade of experience in the real estate industry, we've helped thousands of families find their perfect homes. Our commitment to excellence and personalized service sets us apart.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-8">
-                <div className="text-center">
-                  <div className="font-dm-serif text-4xl text-[#CDA274] font-bold mb-2">100+</div>
-                  <div className="font-jost text-lg text-[#4D5053]">Homes Sold</div>
-                </div>
-                <div className="text-center">
-                  <Link href="/about" className="inline-block bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300">
-                    Learn More About Us
-                  </Link>
-                </div>
-                <div className="text-center">
-                  <div className="font-dm-serif text-4xl text-[#CDA274] font-bold mb-2">4+</div>
-                  <div className="font-jost text-lg text-[#4D5053]">Years Experience</div>
-                </div>
+              <div className="mt-8">
+                <Link href="/about" className="inline-block bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300">
+                  Learn More About Us
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -367,83 +368,158 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Property 1 */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-              <div className="relative h-64">
-                <Image
-                  src="/images/hero.jpg"
-                  alt="Modern Villa"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-4 right-4 bg-[#CDA274] text-white px-3 py-1 rounded-full font-jost font-semibold">
-                  Featured
+            {/* Property 1 - Brigade Valencia */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group cursor-pointer">
+              <Link href="/projects/1" className="block">
+                <div className="relative h-64">
+                  <Image
+                    src="/images/brigade_valencia/brigade_valencia_2.jpeg"
+                    alt="Brigade Valencia"
+                    fill
+                    className="object-cover group-hover:scale-105 transition duration-300"
+                  />
+                  <div className="absolute top-4 right-4 bg-[#CDA274] text-white px-3 py-1 rounded-full font-jost font-semibold">
+                    Featured
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-3">Modern Villa</h3>
-                <p className="font-jost text-lg text-[#4D5053] mb-4">Luxury 4BR/3BA villa with stunning views</p>
-                <div className="flex justify-between items-center">
-                  <span className="font-dm-serif text-2xl text-[#CDA274] font-bold">$850,000</span>
-                  <button className="bg-[#292F36] text-white px-4 py-2 rounded-lg font-jost hover:bg-[#4D5053] transition">
+                <div className="p-6">
+                  <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-3 group-hover:text-[#CDA274] transition">Brigade Valencia</h3>
+                  <p className="font-jost text-lg text-[#4D5053] mb-4">Premium residential project with world-class amenities</p>
+                  <div className="flex flex-col gap-3">
+                    <div className="flex justify-between items-center">
+                      <span className="font-jost text-sm text-[#4D5053]">Devanahalli, Bengaluru</span>
+                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">Upcoming</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <div className="px-6 pb-6">
+                <div className="flex gap-2">
+                  <Link 
+                    href="https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg font-jost text-sm hover:bg-blue-700 transition text-center flex items-center justify-center gap-1"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"/>
+                    </svg>
+                    Video
+                  </Link>
+                  <Link 
+                    href="/projects/1"
+                    className="flex-1 bg-[#292F36] text-white px-3 py-2 rounded-lg font-jost text-sm hover:bg-[#4D5053] transition text-center"
+                  >
                     View Details
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* Property 2 */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-              <div className="relative h-64">
-                <Image
-                  src="/images/hero.jpg"
-                  alt="Downtown Condo"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-4 right-4 bg-[#CDA274] text-white px-3 py-1 rounded-full font-jost font-semibold">
-                  New
+            {/* Property 2 - Brigade Avalon */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group cursor-pointer">
+              <Link href="/projects/2" className="block">
+                <div className="relative h-64">
+                  <Image
+                    src="/images/hero.jpg"
+                    alt="Brigade Avalon"
+                    fill
+                    className="object-cover group-hover:scale-105 transition duration-300"
+                  />
+                  <div className="absolute top-4 right-4 bg-[#CDA274] text-white px-3 py-1 rounded-full font-jost font-semibold">
+                    Premium
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-3">Downtown Condo</h3>
-                <p className="font-jost text-lg text-[#4D5053] mb-4">Modern 2BR/2BA in prime location</p>
-                <div className="flex justify-between items-center">
-                  <span className="font-dm-serif text-2xl text-[#CDA274] font-bold">$650,000</span>
-                  <button className="bg-[#292F36] text-white px-4 py-2 rounded-lg font-jost hover:bg-[#4D5053] transition">
+                <div className="p-6">
+                  <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-3 group-hover:text-[#CDA274] transition">Brigade Avalon</h3>
+                  <p className="font-jost text-lg text-[#4D5053] mb-4">Luxury residential development with premium amenities</p>
+                  <div className="flex flex-col gap-3">
+                    <div className="flex justify-between items-center">
+                      <span className="font-jost text-sm text-[#4D5053]">Electronic City, Bengaluru</span>
+                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">Upcoming</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <div className="px-6 pb-6">
+                <div className="flex gap-2">
+                  <Link 
+                    href="https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg font-jost text-sm hover:bg-blue-700 transition text-center flex items-center justify-center gap-1"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"/>
+                    </svg>
+                    Video
+                  </Link>
+                  <Link 
+                    href="/projects/2"
+                    className="flex-1 bg-[#292F36] text-white px-3 py-2 rounded-lg font-jost text-sm hover:bg-[#4D5053] transition text-center"
+                  >
                     View Details
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* Property 3 */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-              <div className="relative h-64">
-                <Image
-                  src="/images/hero.jpg"
-                  alt="Family Home"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-3">Family Home</h3>
-                <p className="font-jost text-lg text-[#4D5053] mb-4">Spacious 5BR/4BA perfect for families</p>
-                <div className="flex justify-between items-center">
-                  <span className="font-dm-serif text-2xl text-[#CDA274] font-bold">$950,000</span>
-                  <button className="bg-[#292F36] text-white px-4 py-2 rounded-lg font-jost hover:bg-[#4D5053] transition">
+            {/* Property 3 - Brigade Eternia */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group cursor-pointer">
+              <Link href="/projects/3" className="block">
+                <div className="relative h-64">
+                  <Image
+                    src="/images/hero.jpg"
+                    alt="Brigade Eternia"
+                    fill
+                    className="object-cover group-hover:scale-105 transition duration-300"
+                  />
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full font-jost font-semibold">
+                    Ready
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-3 group-hover:text-[#CDA274] transition">Brigade Eternia</h3>
+                  <p className="font-jost text-lg text-[#4D5053] mb-4">Premium residential project with modern amenities</p>
+                  <div className="flex flex-col gap-3">
+                    <div className="flex justify-between items-center">
+                      <span className="font-jost text-sm text-[#4D5053]">Whitefield, Bengaluru</span>
+                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">Ready to Move</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <div className="px-6 pb-6">
+                <div className="flex gap-2">
+                  <Link 
+                    href="https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg font-jost text-sm hover:bg-blue-700 transition text-center flex items-center justify-center gap-1"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"/>
+                    </svg>
+                    Video
+                  </Link>
+                  <Link 
+                    href="/projects/3"
+                    className="flex-1 bg-[#292F36] text-white px-3 py-2 rounded-lg font-jost text-sm hover:bg-[#4D5053] transition text-center"
+                  >
                     View Details
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300">
+            <Link href="/projects" className="inline-block bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300">
               View All Properties
-            </button>
+            </Link>
           </div>
         </div>
       </section>

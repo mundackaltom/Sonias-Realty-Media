@@ -13,12 +13,29 @@ export default function InteractiveMap({
 }: InteractiveMapProps) {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
 
-  // Generate Google Maps embed URL with business location
-  const embedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.6748537086893!2d77.59456931482278!3d13.067439390774842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17d8d3bb8e63%3A0x7c5b4d6de2e6c5a0!2sBrigade%20Cornerstone%20Utopia!5e0!3m2!1sen!2sin!4v1636554800000!5m2!1sen!2sin`;
+  // Generate Google Maps embed URL with visible pins/markers
+  let embedUrl;
   
-  // Generate direct Google Maps links
-  const googleMapsUrl = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
-  const directionsUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&navigate=yes`;
+  if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia")) {
+    // Brigade Valencia with visible pin - using the most reliable embed format
+    embedUrl = `https://maps.google.com/maps?width=100%25&height=400&hl=en&q=Brigade%20Valencia%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  } else {
+    // Default location with visible pin
+    const encodedAddress = encodeURIComponent(address);
+    embedUrl = `https://maps.google.com/maps?width=100%25&height=400&hl=en&q=${encodedAddress}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  }
+  
+  // Generate direct Google Maps links with proper location handling
+  let googleMapsUrl, directionsUrl;
+  
+  if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia")) {
+    // Use the exact Brigade Valencia location from the provided Google Maps link
+    googleMapsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6`;
+    directionsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6?navigate=yes`;
+  } else {
+    googleMapsUrl = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
+    directionsUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&navigate=yes`;
+  }
 
   return (
     <div className="w-full">
@@ -136,7 +153,7 @@ export default function InteractiveMap({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
           </div>
-          <h3 className="font-dm-serif text-lg font-bold text-[#292F36] mb-2">Contact</h3>
+          <h3 className="font-dm-serif text-lg font-bold text-[#292F36] mb-2">Contact Us</h3>
           <p className="font-jost text-[#4D5053] text-sm leading-relaxed">
             +91 98765 43210<br />
             info@soniasrealtymedia.com

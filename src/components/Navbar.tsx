@@ -1,10 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="bg-[#C9A178] shadow-md">
@@ -26,14 +31,7 @@ export default function Navbar() {
           <Link href="/about" className="text-white hover:text-gray-800">About us</Link>
           <Link href="/services" className="text-white hover:text-gray-800">Services</Link>
           <Link href="/projects" className="text-white hover:text-gray-800">Projects</Link>
-          <Link href="/contact" className="text-white hover:text-gray-800">Contact</Link>
-          {/* Search Icon */}
-          <span className="ml-2 cursor-pointer">
-            <svg width="24" height="24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </span>
+          <Link href="/contact" className="text-white hover:text-gray-800">Contact us</Link>
         </nav>
 
         <button
@@ -46,19 +44,15 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden px-4 pb-4 space-y-2 text-white">
+      {mounted && (
+        <div className={`md:hidden px-4 pb-4 space-y-2 text-white transition-all duration-200 overflow-hidden ${
+          open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
           <Link href="/" onClick={() => setOpen(false)} className="block">Home</Link>
           <Link href="/about" onClick={() => setOpen(false)} className="block">About us</Link>
           <Link href="/services" onClick={() => setOpen(false)} className="block">Services</Link>
           <Link href="/projects" onClick={() => setOpen(false)} className="block">Projects</Link>
-          <Link href="/contact" onClick={() => setOpen(false)} className="block">Contact</Link>
-          <span className="block pt-2">
-            <svg width="24" height="24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </span>
+          <Link href="/contact" onClick={() => setOpen(false)} className="block">Contact us</Link>
         </div>
       )}
     </header>

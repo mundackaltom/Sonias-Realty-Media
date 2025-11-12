@@ -22,7 +22,7 @@ const searchData: SearchResult[] = [
   { id: '2', title: 'About Us', type: 'page', url: '/about', description: 'Learn about our company and team' },
   { id: '3', title: 'Services', type: 'page', url: '/services', description: 'Property search and real estate services' },
   { id: '4', title: 'Projects', type: 'page', url: '/projects', description: 'Explore our real estate projects' },
-  { id: '5', title: 'Contact', type: 'page', url: '/contact', description: 'Get in touch with our team' },
+  { id: '5', title: 'Contact Us', type: 'page', url: '/contact', description: 'Get in touch with our team' },
   
   // Services
   { id: '6', title: 'Property Search', type: 'service', url: '/services', description: 'Find your perfect property with our advanced search' },

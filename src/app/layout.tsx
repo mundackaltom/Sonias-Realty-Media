@@ -56,7 +56,7 @@ export default function RootLayout({
               <a href="/about" className="hover:text-blue-600">About</a>
               <a href="/projects" className="hover:text-blue-600">Projects</a>
               <a href="/media" className="hover:text-blue-600">Media</a>
-              <a href="/contact" className="hover:text-blue-600">Contact</a>
+              <a href="/contact" className="hover:text-blue-600">Contact us</a>
             </div>
           </div>
         </footer>

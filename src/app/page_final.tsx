@@ -33,7 +33,7 @@ export default function Home() {
               <li><Link href="/about" className="hover:text-[#292F36] transition">About us</Link></li>
               <li><Link href="/services" className="hover:text-[#292F36] transition">Services</Link></li>
               <li><Link href="/projects" className="hover:text-[#292F36] transition">Projects</Link></li>
-              <li><Link href="/contact" className="hover:text-[#292F36] transition">Contact</Link></li>
+              <li><Link href="/contact" className="hover:text-[#292F36] transition">Contact us</Link></li>
             </ul>
           </div>
           

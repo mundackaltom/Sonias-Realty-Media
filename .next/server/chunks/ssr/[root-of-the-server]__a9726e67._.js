@@ -515,9 +515,16 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
     const [isMapLoaded, setIsMapLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     // Generate Google Maps embed URL with visible pins/markers
     let embedUrl;
-    if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia")) {
-        // Brigade Valencia with visible pin - using the most reliable embed format
-        embedUrl = `https://maps.google.com/maps?width=100%25&height=400&hl=en&q=Brigade%20Valencia%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+    if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia") || businessName === "Brigade Avalon" || address.includes("Brigade Avalon") || address.includes("Prestige Jindal City") || businessName === "Prestige Jindal City") {
+        // Brigade Valencia / Brigade Avalon / Prestige Jindal City with visible pin - using the most reliable embed format
+        let nameForQuery = "Brigade%20Valencia%20Bengaluru";
+        if (businessName === "Brigade Avalon" || address.includes("Brigade Avalon")) {
+            nameForQuery = "Brigade%20Avalon%20Bengaluru";
+        } else if (businessName === "Prestige Jindal City" || address.includes("Prestige Jindal City")) {
+            // Use Prestige Jindal City as the office pin
+            nameForQuery = "Prestige%20Jindal%20City%20Bengaluru";
+        }
+        embedUrl = `https://maps.google.com/maps?width=100%25&height=400&hl=en&q=${nameForQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
     } else {
         // Default location with visible pin
         const encodedAddress = encodeURIComponent(address);
@@ -525,10 +532,19 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
     }
     // Generate direct Google Maps links with proper location handling
     let googleMapsUrl, directionsUrl;
-    if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia")) {
-        // Use the exact Brigade Valencia location from the provided Google Maps link
-        googleMapsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6`;
-        directionsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6?navigate=yes`;
+    if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia") || businessName === "Brigade Avalon" || address.includes("Brigade Avalon") || address.includes("Prestige Jindal City") || businessName === "Prestige Jindal City") {
+        // Use a specific link for Valencia; query links for Avalon and Prestige Jindal City so the pin is visible
+        if (businessName === "Brigade Avalon" || address.includes("Brigade Avalon")) {
+            googleMapsUrl = `https://maps.google.com/?q=Brigade%20Avalon%20Bengaluru`;
+            directionsUrl = `https://maps.google.com/maps?q=Brigade%20Avalon%20Bengaluru&navigate=yes`;
+        } else if (businessName === "Prestige Jindal City" || address.includes("Prestige Jindal City")) {
+            googleMapsUrl = `https://maps.google.com/?q=Prestige%20Jindal%20City%20Bengaluru`;
+            directionsUrl = `https://maps.google.com/maps?q=Prestige%20Jindal%20City%20Bengaluru&navigate=yes`;
+        } else {
+            // Brigade Valencia exact shared link (kept as-is)
+            googleMapsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6`;
+            directionsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6?navigate=yes`;
+        }
     } else {
         googleMapsUrl = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
         directionsUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&navigate=yes`;
@@ -559,7 +575,7 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                                 d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                                lineNumber: 49,
+                                                lineNumber: 89,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -569,18 +585,18 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                                 d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                                lineNumber: 50,
+                                                lineNumber: 90,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 88,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 87,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -588,18 +604,18 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                     children: "Loading Interactive Map..."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 93,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                            lineNumber: 46,
+                            lineNumber: 86,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 45,
+                        lineNumber: 85,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
@@ -617,13 +633,13 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                         onLoad: ()=>setIsMapLoaded(true)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 58,
+                        lineNumber: 98,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                lineNumber: 43,
+                lineNumber: 83,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -648,7 +664,7 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                         d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 121,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -658,20 +674,20 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                         d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 82,
+                                        lineNumber: 122,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 80,
+                                lineNumber: 120,
                                 columnNumber: 11
                             }, this),
                             "Open in Google Maps"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 74,
+                        lineNumber: 114,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -692,19 +708,19 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                     d: "M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 134,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 93,
+                                lineNumber: 133,
                                 columnNumber: 11
                             }, this),
                             "Get Directions"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 87,
+                        lineNumber: 127,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -734,29 +750,29 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                     d: "M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 115,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 114,
+                                lineNumber: 154,
                                 columnNumber: 11
                             }, this),
                             "Share Location"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 99,
+                        lineNumber: 139,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                lineNumber: 73,
+                lineNumber: 113,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid md:grid-cols-3 gap-6 mt-12",
+                className: "grid md:grid-cols-2 gap-6 mt-12",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "bg-white p-6 rounded-2xl shadow-lg border border-gray-100",
@@ -775,17 +791,17 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                         d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 166,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 125,
+                                    lineNumber: 165,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 124,
+                                lineNumber: 164,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -793,101 +809,21 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                 children: "Office Hours"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 129,
+                                lineNumber: 169,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "font-jost text-[#4D5053] text-sm leading-relaxed",
-                                children: [
-                                    "Mon-Sat: 9AM-7PM",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 131,
-                                        columnNumber: 29
-                                    }, this),
-                                    "Sunday: 10AM-5PM"
-                                ]
-                            }, void 0, true, {
+                                children: "Anytime — we're always reachable"
+                            }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 130,
+                                lineNumber: 170,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 123,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white p-6 rounded-2xl shadow-lg border border-gray-100",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-12 h-12 bg-[#CDA274] rounded-xl flex items-center justify-center mb-4",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    className: "w-6 h-6 text-white",
-                                    fill: "none",
-                                    stroke: "currentColor",
-                                    viewBox: "0 0 24 24",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            strokeLinecap: "round",
-                                            strokeLinejoin: "round",
-                                            strokeWidth: 2,
-                                            d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                            lineNumber: 139,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            strokeLinecap: "round",
-                                            strokeLinejoin: "round",
-                                            strokeWidth: 2,
-                                            d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                            lineNumber: 140,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 138,
-                                    columnNumber: 13
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 137,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "font-dm-serif text-lg font-bold text-[#292F36] mb-2",
-                                children: "Parking"
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 143,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "font-jost text-[#4D5053] text-sm leading-relaxed",
-                                children: [
-                                    "Free parking available",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 145,
-                                        columnNumber: 35
-                                    }, this),
-                                    "Underground & street parking"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 144,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 136,
+                        lineNumber: 163,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -907,17 +843,17 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                         d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 178,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 177,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 151,
+                                lineNumber: 176,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -925,41 +861,41 @@ function InteractiveMap({ address = "123 Real Estate Avenue, Business District, 
                                 children: "Contact Us"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 156,
+                                lineNumber: 181,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "font-jost text-[#4D5053] text-sm leading-relaxed",
                                 children: [
-                                    "+91 98765 43210",
+                                    "+91 90367 47821",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 183,
                                         columnNumber: 28
                                     }, this),
-                                    "info@soniasrealtymedia.com"
+                                    "soniasrealtymedia@gmail.com"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 157,
+                                lineNumber: 182,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 150,
+                        lineNumber: 175,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                lineNumber: 122,
+                lineNumber: 162,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-        lineNumber: 41,
+        lineNumber: 81,
         columnNumber: 5
     }, this);
 }
@@ -989,19 +925,27 @@ function Contact() {
     const [projectsDropdownOpen, setProjectsDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [servicesDropdownOpen, setServicesDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isSearchOpen, setIsSearchOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [isClient, setIsClient] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        type: null,
+        message: ""
+    });
+    const [isSubmitting, setIsSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [showBackToTop, setShowBackToTop] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
     });
     // Timeout refs for delayed closing
     const servicesTimeoutRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const projectsTimeoutRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
-    // Prevent hydration mismatch
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        setIsClient(true);
+        const handleScroll = ()=>{
+            setShowBackToTop(window.scrollY > 400);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return ()=>window.removeEventListener("scroll", handleScroll);
     }, []);
     const handleServicesMouseEnter = ()=>{
         if (servicesTimeoutRef.current) {
@@ -1031,16 +975,44 @@ function Contact() {
             [e.target.name]: e.target.value
         });
     };
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault();
-        // Handle form submission here
-        alert(`Thank you ${formData.name}! We'll get back to you soon.`);
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            message: ''
+        if (isSubmitting) return;
+        setIsSubmitting(true);
+        setStatus({
+            type: null,
+            message: ""
         });
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+            if (!res.ok) {
+                throw new Error("Failed to send message");
+            }
+            setStatus({
+                type: "success",
+                message: `Thank you ${formData.name}! Your message has been sent.`
+            });
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                message: ""
+            });
+        } catch (error) {
+            console.error("Contact form error", error);
+            setStatus({
+                type: "error",
+                message: "Sorry, something went wrong while sending your message. Please try again later."
+            });
+        } finally{
+            setIsSubmitting(false);
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-white",
@@ -1067,12 +1039,12 @@ function Contact() {
                                                 className: "object-cover rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 80,
+                                                lineNumber: 123,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 79,
+                                            lineNumber: 122,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1080,13 +1052,13 @@ function Contact() {
                                             children: "SONIA'S REALTY MEDIA"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 88,
+                                            lineNumber: 131,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 118,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1098,7 +1070,7 @@ function Contact() {
                                             children: "Home"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 95,
+                                            lineNumber: 138,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1107,7 +1079,7 @@ function Contact() {
                                             children: "About us"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 144,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1121,7 +1093,7 @@ function Contact() {
                                                     children: [
                                                         "Services",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                            className: `w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#C76904]`,
+                                                            className: `w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180" : ""} group-hover:text-[#C76904]`,
                                                             fill: "none",
                                                             stroke: "currentColor",
                                                             viewBox: "0 0 24 24",
@@ -1132,21 +1104,21 @@ function Contact() {
                                                                 d: "M19 9l-7 7-7-7"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 119,
+                                                                lineNumber: 170,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 113,
+                                                            lineNumber: 162,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                    lineNumber: 108,
+                                                    lineNumber: 157,
                                                     columnNumber: 17
                                                 }, this),
-                                                servicesDropdownOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                servicesDropdownOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                         href: "/services/property-search",
@@ -1154,18 +1126,18 @@ function Contact() {
                                                         children: "Property Search"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 124,
+                                                        lineNumber: 180,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                    lineNumber: 123,
+                                                    lineNumber: 179,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 152,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1179,7 +1151,7 @@ function Contact() {
                                                     children: [
                                                         "Projects",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                            className: `w-4 h-4 transition-transform duration-200 ${projectsDropdownOpen ? 'rotate-180' : ''} group-hover:text-[#C76904]`,
+                                                            className: `w-4 h-4 transition-transform duration-200 ${projectsDropdownOpen ? "rotate-180" : ""} group-hover:text-[#C76904]`,
                                                             fill: "none",
                                                             stroke: "currentColor",
                                                             viewBox: "0 0 24 24",
@@ -1190,21 +1162,21 @@ function Contact() {
                                                                 d: "M19 9l-7 7-7-7"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 148,
+                                                                lineNumber: 209,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 142,
+                                                            lineNumber: 201,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                    lineNumber: 137,
+                                                    lineNumber: 196,
                                                     columnNumber: 17
                                                 }, this),
-                                                projectsDropdownOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                projectsDropdownOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1213,7 +1185,7 @@ function Contact() {
                                                             children: "All Projects"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 153,
+                                                            lineNumber: 219,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1222,7 +1194,7 @@ function Contact() {
                                                             children: "Upcoming Projects"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 156,
+                                                            lineNumber: 225,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1231,19 +1203,19 @@ function Contact() {
                                                             children: "Completed Projects"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 159,
+                                                            lineNumber: 231,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 218,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 132,
+                                            lineNumber: 191,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1252,13 +1224,13 @@ function Contact() {
                                             children: "Contact us"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 166,
+                                            lineNumber: 241,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 137,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1276,17 +1248,17 @@ function Contact() {
                                             d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 255,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                        lineNumber: 176,
+                                        lineNumber: 254,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 250,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1297,41 +1269,41 @@ function Contact() {
                                             className: "w-6 h-0.5 bg-[#292F36] mb-1"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 186,
+                                            lineNumber: 264,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-6 h-0.5 bg-[#292F36] mb-1"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 187,
+                                            lineNumber: 265,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-6 h-0.5 bg-[#292F36]"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                            lineNumber: 188,
+                                            lineNumber: 266,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 182,
+                                    lineNumber: 260,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                            lineNumber: 76,
+                            lineNumber: 116,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                        lineNumber: 75,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, this),
-                    mobileMenuOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    mobileMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "md:hidden mt-4 pb-4",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex flex-col space-y-4",
@@ -1342,7 +1314,7 @@ function Contact() {
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 197,
+                                    lineNumber: 275,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1351,7 +1323,7 @@ function Contact() {
                                     children: "About us"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 198,
+                                    lineNumber: 278,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1360,7 +1332,7 @@ function Contact() {
                                     children: "Services"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 281,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1369,7 +1341,7 @@ function Contact() {
                                     children: "Projects"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 200,
+                                    lineNumber: 284,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1378,24 +1350,24 @@ function Contact() {
                                     children: "Contact us"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 201,
+                                    lineNumber: 287,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                            lineNumber: 196,
+                            lineNumber: 274,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                        lineNumber: 195,
+                        lineNumber: 273,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                lineNumber: 74,
+                lineNumber: 114,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1410,7 +1382,7 @@ function Contact() {
                                 children: "Contact Us"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                lineNumber: 211,
+                                lineNumber: 302,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1418,23 +1390,23 @@ function Contact() {
                                 children: "Ready to start your real estate journey? Get in touch with our expert team today."
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                lineNumber: 214,
+                                lineNumber: 305,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                        lineNumber: 210,
+                        lineNumber: 301,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                    lineNumber: 209,
+                    lineNumber: 300,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                lineNumber: 208,
+                lineNumber: 299,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1452,7 +1424,7 @@ function Contact() {
                                         children: "Send us a Message"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                        lineNumber: 227,
+                                        lineNumber: 318,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1467,7 +1439,7 @@ function Contact() {
                                                         children: "Full Name"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 232,
+                                                        lineNumber: 323,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1481,13 +1453,13 @@ function Contact() {
                                                         placeholder: "Enter your full name"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 235,
+                                                        lineNumber: 329,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 231,
+                                                lineNumber: 322,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1498,7 +1470,7 @@ function Contact() {
                                                         children: "Email Address"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 248,
+                                                        lineNumber: 342,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1512,13 +1484,13 @@ function Contact() {
                                                         placeholder: "Enter your email address"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 251,
+                                                        lineNumber: 348,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 247,
+                                                lineNumber: 341,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1529,7 +1501,7 @@ function Contact() {
                                                         children: "Phone Number"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 264,
+                                                        lineNumber: 361,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1543,13 +1515,13 @@ function Contact() {
                                                         placeholder: "Enter your phone number"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 267,
+                                                        lineNumber: 367,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 263,
+                                                lineNumber: 360,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1560,7 +1532,7 @@ function Contact() {
                                                         children: "Message"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 280,
+                                                        lineNumber: 380,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1574,34 +1546,43 @@ function Contact() {
                                                         placeholder: "Tell us about your requirements"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 283,
+                                                        lineNumber: 386,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 279,
+                                                lineNumber: 379,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 type: "submit",
-                                                className: "w-full bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300",
-                                                children: "Send Message"
+                                                disabled: isSubmitting,
+                                                className: "w-full bg-[#CDA274] hover:bg-[#B8956A] disabled:opacity-70 disabled:cursor-not-allowed text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300",
+                                                children: isSubmitting ? "Sending..." : "Send Message"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 295,
+                                                lineNumber: 398,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                        lineNumber: 230,
+                                        lineNumber: 321,
                                         columnNumber: 15
+                                    }, this),
+                                    status.type && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `mt-6 rounded-2xl border px-4 py-3 text-sm font-jost ${status.type === "success" ? "border-green-200 bg-green-50 text-green-800" : "border-red-200 bg-red-50 text-red-800"}`,
+                                        children: status.message
+                                    }, void 0, false, {
+                                        fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
+                                        lineNumber: 408,
+                                        columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                lineNumber: 226,
+                                lineNumber: 317,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1614,7 +1595,7 @@ function Contact() {
                                                 children: "Get in Touch"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 307,
+                                                lineNumber: 423,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1622,13 +1603,13 @@ function Contact() {
                                                 children: "We're here to help you with all your real estate needs. Contact us through any of the following methods."
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 310,
+                                                lineNumber: 426,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                        lineNumber: 306,
+                                        lineNumber: 422,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1652,7 +1633,7 @@ function Contact() {
                                                                     d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                    lineNumber: 320,
+                                                                    lineNumber: 441,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1662,18 +1643,18 @@ function Contact() {
                                                                     d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                    lineNumber: 321,
+                                                                    lineNumber: 447,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 319,
+                                                            lineNumber: 435,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 318,
+                                                        lineNumber: 434,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1683,23 +1664,23 @@ function Contact() {
                                                                 children: "Office Address"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 325,
+                                                                lineNumber: 456,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "font-jost text-lg text-[#4D5053] leading-relaxed",
                                                                 children: [
-                                                                    "123 Real Estate Avenue,",
+                                                                    "Prestige Jindal City,",
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                        lineNumber: 327,
-                                                                        columnNumber: 46
+                                                                        lineNumber: 460,
+                                                                        columnNumber: 44
                                                                     }, this),
-                                                                    "Business District, City 560001"
+                                                                    "Bengaluru, Karnataka 560073"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 326,
+                                                                lineNumber: 459,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1721,7 +1702,7 @@ function Contact() {
                                                                                 d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                                lineNumber: 337,
+                                                                                lineNumber: 475,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1731,32 +1712,32 @@ function Contact() {
                                                                                 d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                                lineNumber: 338,
+                                                                                lineNumber: 481,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                        lineNumber: 336,
+                                                                        lineNumber: 469,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "View on Google Maps"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 330,
+                                                                lineNumber: 463,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 324,
+                                                        lineNumber: 455,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 317,
+                                                lineNumber: 433,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1776,17 +1757,17 @@ function Contact() {
                                                                 d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 348,
+                                                                lineNumber: 501,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 347,
+                                                            lineNumber: 495,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 346,
+                                                        lineNumber: 494,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1796,35 +1777,27 @@ function Contact() {
                                                                 children: "Phone Number"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 352,
+                                                                lineNumber: 510,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "font-jost text-lg text-[#4D5053] leading-relaxed",
-                                                                children: [
-                                                                    "+91 98765 43210",
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                                        fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                        lineNumber: 354,
-                                                                        columnNumber: 38
-                                                                    }, this),
-                                                                    "+91 98765 43211"
-                                                                ]
-                                                            }, void 0, true, {
+                                                                children: "+91 90367 47821"
+                                                            }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 353,
+                                                                lineNumber: 513,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 351,
+                                                        lineNumber: 509,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 345,
+                                                lineNumber: 493,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1844,17 +1817,17 @@ function Contact() {
                                                                 d: "M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 363,
+                                                                lineNumber: 527,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 362,
+                                                            lineNumber: 521,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 361,
+                                                        lineNumber: 520,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1864,35 +1837,27 @@ function Contact() {
                                                                 children: "Email Address"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 367,
+                                                                lineNumber: 536,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "font-jost text-lg text-[#4D5053] leading-relaxed",
-                                                                children: [
-                                                                    "info@soniasrealtymedia.com",
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                                        fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                        lineNumber: 369,
-                                                                        columnNumber: 49
-                                                                    }, this),
-                                                                    "sales@soniasrealtymedia.com"
-                                                                ]
-                                                            }, void 0, true, {
+                                                                children: "soniasrealtymedia@gmail.com"
+                                                            }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 368,
+                                                                lineNumber: 539,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 366,
+                                                        lineNumber: 535,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 360,
+                                                lineNumber: 519,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1912,17 +1877,17 @@ function Contact() {
                                                                 d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 378,
+                                                                lineNumber: 553,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                            lineNumber: 377,
+                                                            lineNumber: 547,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 376,
+                                                        lineNumber: 546,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1932,63 +1897,55 @@ function Contact() {
                                                                 children: "Office Hours"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 382,
+                                                                lineNumber: 562,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "font-jost text-lg text-[#4D5053] leading-relaxed",
-                                                                children: [
-                                                                    "Monday - Saturday: 9:00 AM - 7:00 PM",
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                                        fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                        lineNumber: 384,
-                                                                        columnNumber: 59
-                                                                    }, this),
-                                                                    "Sunday: 10:00 AM - 5:00 PM"
-                                                                ]
-                                                            }, void 0, true, {
+                                                                children: "Anytime — we're always reachable"
+                                                            }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                                lineNumber: 383,
+                                                                lineNumber: 565,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 381,
+                                                        lineNumber: 561,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 375,
+                                                lineNumber: 545,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                        lineNumber: 316,
+                                        lineNumber: 432,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                lineNumber: 305,
+                                lineNumber: 421,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                        lineNumber: 224,
+                        lineNumber: 315,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                    lineNumber: 223,
+                    lineNumber: 314,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                lineNumber: 222,
+                lineNumber: 313,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2004,7 +1961,7 @@ function Contact() {
                                     children: "Find Our Office"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 399,
+                                    lineNumber: 580,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2012,7 +1969,7 @@ function Contact() {
                                     children: "Visit us at our conveniently located office for personalized consultation and assistance."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 402,
+                                    lineNumber: 583,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2036,7 +1993,7 @@ function Contact() {
                                                         d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 413,
+                                                        lineNumber: 599,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2046,50 +2003,50 @@ function Contact() {
                                                         d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                        lineNumber: 414,
+                                                        lineNumber: 605,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                                lineNumber: 412,
+                                                lineNumber: 593,
                                                 columnNumber: 17
                                             }, this),
                                             "Get Directions"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                        lineNumber: 406,
+                                        lineNumber: 587,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 405,
+                                    lineNumber: 586,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                            lineNumber: 398,
+                            lineNumber: 579,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$src$2f$components$2f$InteractiveMap$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            address: "123 Real Estate Avenue, Business District, City 560001",
-                            businessName: "Sonia's Realty Media"
+                            address: "Prestige Jindal City, Bengaluru",
+                            businessName: "Prestige Jindal City"
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                            lineNumber: 422,
+                            lineNumber: 618,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                    lineNumber: 397,
+                    lineNumber: 578,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                lineNumber: 396,
+                lineNumber: 577,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2102,7 +2059,7 @@ function Contact() {
                             children: "Let's Start Your Real Estate Journey"
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                            lineNumber: 432,
+                            lineNumber: 628,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2110,7 +2067,7 @@ function Contact() {
                             children: "Whether you're buying, selling, or investing, our expert team is here to guide you every step of the way."
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                            lineNumber: 435,
+                            lineNumber: 631,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2122,7 +2079,7 @@ function Contact() {
                                     children: "Search Properties"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 439,
+                                    lineNumber: 635,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2131,24 +2088,24 @@ function Contact() {
                                     children: "View Projects"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                                    lineNumber: 442,
+                                    lineNumber: 641,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                            lineNumber: 438,
+                            lineNumber: 634,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                    lineNumber: 431,
+                    lineNumber: 627,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                lineNumber: 430,
+                lineNumber: 626,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$src$2f$components$2f$SearchModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2156,13 +2113,47 @@ function Contact() {
                 onClose: ()=>setIsSearchOpen(false)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-                lineNumber: 450,
+                lineNumber: 652,
                 columnNumber: 7
+            }, this),
+            showBackToTop && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                onClick: ()=>{
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                },
+                className: "fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#CDA274] text-white shadow-lg hover:bg-[#B8956A] transition-colors",
+                "aria-label": "Back to top",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    className: "h-6 w-6",
+                    fill: "none",
+                    stroke: "currentColor",
+                    viewBox: "0 0 24 24",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round",
+                        strokeWidth: 2,
+                        d: "M5 15l7-7 7 7"
+                    }, void 0, false, {
+                        fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
+                        lineNumber: 671,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
+                    lineNumber: 665,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
+                lineNumber: 658,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Documents/SRM/src/app/contact/page.tsx",
-        lineNumber: 72,
+        lineNumber: 112,
         columnNumber: 5
     }, this);
 }

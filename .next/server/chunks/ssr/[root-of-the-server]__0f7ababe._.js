@@ -191,19 +191,19 @@ function SearchModal({ isOpen, onClose }) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "fixed inset-0 bg-transparent z-50 flex items-start justify-center pt-20",
+        className: "fixed inset-0 bg-black/20 z-50 flex items-start justify-center pt-4 sm:pt-20 px-2 sm:px-0",
         onClick: onClose,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "bg-white rounded-[20px] shadow-2xl w-full max-w-2xl mx-4 max-h-[70vh] overflow-hidden",
+            className: "bg-white rounded-[20px] shadow-2xl w-full max-w-2xl mx-2 sm:mx-4 max-h-[90vh] sm:max-h-[70vh] overflow-hidden",
             onClick: (e)=>e.stopPropagation(),
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "p-6 border-b border-[#E7E7E7]",
+                    className: "p-4 sm:p-6 border-b border-[#E7E7E7]",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-4",
+                        className: "flex items-center gap-3 sm:gap-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-2xl",
+                                className: "text-xl sm:text-2xl",
                                 children: "🔍"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/SearchModal.tsx",
@@ -216,7 +216,7 @@ function SearchModal({ isOpen, onClose }) {
                                 value: searchQuery,
                                 onChange: (e)=>setSearchQuery(e.target.value),
                                 placeholder: "Search for pages, projects, or services...",
-                                className: "flex-1 font-jost text-[18px] outline-none placeholder-[#4D5053]"
+                                className: "flex-1 font-jost text-base sm:text-[18px] outline-none placeholder-[#4D5053]"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/SearchModal.tsx",
                                 lineNumber: 115,
@@ -224,7 +224,7 @@ function SearchModal({ isOpen, onClose }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: onClose,
-                                className: "w-8 h-8 flex items-center justify-center text-[#4D5053] hover:text-[#292F36] transition",
+                                className: "w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-[#4D5053] hover:text-[#292F36] transition text-sm sm:text-base",
                                 children: "✕"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/SearchModal.tsx",
@@ -507,9 +507,9 @@ __turbopack_context__.s([
     ()=>PropertySearch
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Documents/SRM/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Documents/SRM/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Documents/SRM/node_modules/next/image.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Documents/SRM/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Documents/SRM/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$src$2f$components$2f$SearchModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Documents/SRM/src/components/SearchModal.tsx [app-ssr] (ecmascript)");
 "use client";
 ;
@@ -517,19 +517,68 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$src$2f$c
 ;
 ;
 ;
+// In‑memory list of all projects you want searchable.
+// Keep this in sync with your /projects cards.
+const ALL_PROPERTIES = [
+    {
+        id: 1,
+        name: "Brigade Valencia",
+        type: "apartment",
+        location: "Devanahalli, Bengaluru",
+        status: "Upcoming",
+        statusTag: "Featured",
+        badgeColor: "bg-[#CDA274]",
+        tagColor: "bg-blue-100 text-blue-800",
+        description: "Premium residential project with world-class amenities",
+        href: "/projects/1",
+        image: "/images/brigade_valencia/brigade_valencia_2.jpeg"
+    },
+    {
+        id: 2,
+        name: "Brigade Avalon",
+        type: "apartment",
+        location: "Electronic City, Bengaluru",
+        status: "Upcoming",
+        statusTag: "Premium",
+        badgeColor: "bg-[#CDA274]",
+        tagColor: "bg-blue-100 text-blue-800",
+        description: "Luxury residential development with premium amenities",
+        href: "/projects/2",
+        image: "/images/hero.jpg"
+    },
+    {
+        id: 3,
+        name: "Brigade Eternia",
+        type: "apartment",
+        location: "Whitefield, Bengaluru",
+        status: "Ready to Move",
+        statusTag: "Ready",
+        badgeColor: "bg-green-500",
+        tagColor: "bg-green-100 text-green-800",
+        description: "Premium residential project with modern amenities",
+        href: "/projects/3",
+        image: "/images/hero.jpg"
+    }
+];
 function PropertySearch() {
     const [isClient, setIsClient] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [mobileMenuOpen, setMobileMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [projectsDropdownOpen, setProjectsDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [servicesDropdownOpen, setServicesDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isSearchOpen, setIsSearchOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [searchForm, setSearchForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        propertyType: '',
-        location: '',
-        bedrooms: '',
-        minPrice: '',
-        maxPrice: ''
+    const [searchFilters, setSearchFilters] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        propertyType: "apartment",
+        location: "",
+        bedrooms: "3",
+        minPrice: "no-min",
+        maxPrice: "no-max"
     });
+    // NEW: results + "has searched" flag
+    const [results, setResults] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [hasSearched, setHasSearched] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Timeout refs for delayed closing
+    const servicesTimeoutRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const projectsTimeoutRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         setIsClient(true);
     }, []);
@@ -549,17 +598,29 @@ function PropertySearch() {
             setProjectsDropdownOpen(false);
         }, 300);
     };
-    const handleFormChange = (e)=>{
-        setSearchForm({
-            ...searchForm,
+    const handleInputChange = (e)=>{
+        setSearchFilters({
+            ...searchFilters,
             [e.target.name]: e.target.value
         });
     };
-    const handleFormSubmit = (e)=>{
+    // Filtering logic that works for all projects in ALL_PROPERTIES
+    const filterProperties = ()=>{
+        const { propertyType, location } = searchFilters;
+        const typeTerm = propertyType.trim().toLowerCase();
+        const locationTerm = location.trim().toLowerCase();
+        return ALL_PROPERTIES.filter((p)=>{
+            const typeMatch = !typeTerm || p.type.toLowerCase() === typeTerm;
+            const locationMatch = !locationTerm || p.location.toLowerCase().includes(locationTerm);
+            // For now we ignore bedrooms / price; you can extend this later.
+            return typeMatch && locationMatch;
+        });
+    };
+    const handleSearch = (e)=>{
         e.preventDefault();
-        // Handle the property search submission
-        console.log('Property search submitted:', searchForm);
-        alert(`Searching for properties:\nType: ${searchForm.propertyType}\nLocation: ${searchForm.location}\nBedrooms: ${searchForm.bedrooms}\nPrice: ${searchForm.minPrice} - ${searchForm.maxPrice}`);
+        const filtered = filterProperties();
+        setResults(filtered);
+        setHasSearched(true);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "min-h-screen bg-white",
@@ -577,21 +638,21 @@ function PropertySearch() {
                                     className: "flex items-center gap-4 hover:opacity-80 transition-opacity",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible",
+                                            className: "w-24 h-24 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 src: "/images/logo.png",
                                                 alt: "Sonia's Realty Media Logo",
-                                                width: 180,
-                                                height: 180,
+                                                width: 220,
+                                                height: 220,
                                                 className: "object-cover rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                lineNumber: 70,
+                                                lineNumber: 145,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 69,
+                                            lineNumber: 144,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -599,13 +660,13 @@ function PropertySearch() {
                                             children: "SONIA'S REALTY MEDIA"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 78,
+                                            lineNumber: 153,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 143,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -617,7 +678,7 @@ function PropertySearch() {
                                             children: "Home"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 160,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -626,7 +687,7 @@ function PropertySearch() {
                                             children: "About us"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 88,
+                                            lineNumber: 163,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -651,18 +712,18 @@ function PropertySearch() {
                                                                 d: "M19 9l-7 7-7-7"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 109,
+                                                                lineNumber: 184,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                            lineNumber: 103,
+                                                            lineNumber: 178,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                    lineNumber: 98,
+                                                    lineNumber: 173,
                                                     columnNumber: 17
                                                 }, this),
                                                 servicesDropdownOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -673,18 +734,18 @@ function PropertySearch() {
                                                         children: "Property Search"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 114,
+                                                        lineNumber: 189,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                    lineNumber: 113,
+                                                    lineNumber: 188,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 168,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -709,18 +770,18 @@ function PropertySearch() {
                                                                 d: "M19 9l-7 7-7-7"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 138,
+                                                                lineNumber: 213,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                            lineNumber: 132,
+                                                            lineNumber: 207,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 202,
                                                     columnNumber: 17
                                                 }, this),
                                                 projectsDropdownOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -732,7 +793,7 @@ function PropertySearch() {
                                                             children: "All Projects"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                            lineNumber: 143,
+                                                            lineNumber: 218,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -741,7 +802,7 @@ function PropertySearch() {
                                                             children: "Upcoming Projects"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                            lineNumber: 146,
+                                                            lineNumber: 221,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -750,7 +811,7 @@ function PropertySearch() {
                                                             children: "Completed Projects"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                            lineNumber: 149,
+                                                            lineNumber: 224,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -759,19 +820,19 @@ function PropertySearch() {
                                                             children: "View All Projects"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                            lineNumber: 152,
+                                                            lineNumber: 227,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                    lineNumber: 142,
+                                                    lineNumber: 217,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 122,
+                                            lineNumber: 197,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -780,13 +841,13 @@ function PropertySearch() {
                                             children: "Contact us"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 159,
+                                            lineNumber: 234,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 159,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -797,12 +858,12 @@ function PropertySearch() {
                                         children: "🔍"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                        lineNumber: 169,
+                                        lineNumber: 244,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 165,
+                                    lineNumber: 240,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -813,38 +874,38 @@ function PropertySearch() {
                                             className: "w-6 h-0.5 bg-[#292F36] mb-1"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 252,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-6 h-0.5 bg-[#292F36] mb-1"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 178,
+                                            lineNumber: 253,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-6 h-0.5 bg-[#292F36]"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 179,
+                                            lineNumber: 254,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 173,
+                                    lineNumber: 248,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                            lineNumber: 66,
+                            lineNumber: 141,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                        lineNumber: 64,
+                        lineNumber: 139,
                         columnNumber: 9
                     }, this),
                     mobileMenuOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -858,7 +919,7 @@ function PropertySearch() {
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 188,
+                                    lineNumber: 263,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -867,7 +928,7 @@ function PropertySearch() {
                                     children: "About us"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 189,
+                                    lineNumber: 264,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -876,7 +937,7 @@ function PropertySearch() {
                                     children: "Services"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 190,
+                                    lineNumber: 265,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -885,7 +946,7 @@ function PropertySearch() {
                                     children: "Projects"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 191,
+                                    lineNumber: 266,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -894,423 +955,600 @@ function PropertySearch() {
                                     children: "Contact us"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 192,
+                                    lineNumber: 267,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                            lineNumber: 187,
+                            lineNumber: 262,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                        lineNumber: 186,
+                        lineNumber: 261,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                lineNumber: 63,
+                lineNumber: 138,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "bg-gradient-to-r from-[#F4F0EC] to-[#E8E0D6] py-20 text-center",
+                className: "relative h-[60vh] overflow-hidden bg-white",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "max-w-[1200px] mx-auto px-4",
+                    className: "relative overflow-hidden mx-auto shadow-2xl h-full",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "font-dm-serif font-normal text-[48px] sm:text-[56px] lg:text-[65px] leading-[125%] text-[#292F36] mb-6",
-                            children: "Property Search"
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute inset-0 z-0",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    src: "/images/hero.jpg",
+                                    alt: "Property Search Hero",
+                                    fill: true,
+                                    className: "object-cover",
+                                    priority: true,
+                                    quality: 100,
+                                    sizes: "100vw"
+                                }, void 0, false, {
+                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                    lineNumber: 278,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-0 bg-black/60"
+                                }, void 0, false, {
+                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                    lineNumber: 288,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                            lineNumber: 201,
+                            lineNumber: 277,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "font-jost font-normal text-[18px] sm:text-[20px] lg:text-[22px] leading-[33px] text-[#4D5053] max-w-[600px] mx-auto",
-                            children: "Find your perfect property with our advanced search tools and extensive database of available homes."
-                        }, void 0, false, {
-                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                            lineNumber: 204,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                    lineNumber: 200,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                lineNumber: 199,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "py-16 bg-white",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "max-w-[1200px] mx-auto px-4",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-[#F4F0EC] rounded-[25px] p-8",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "font-dm-serif text-[32px] leading-[125%] text-[#292F36] mb-6 text-center",
-                                children: "Search Properties"
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                lineNumber: 214,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                                onSubmit: handleFormSubmit,
-                                className: "space-y-6",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "relative z-10 flex items-center justify-center h-full px-4",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-center max-w-4xl mx-auto",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid md:grid-cols-3 gap-6",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
-                                                        children: "Property Type"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 222,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                        name: "propertyType",
-                                                        value: searchForm.propertyType,
-                                                        onChange: handleFormChange,
-                                                        className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "",
-                                                                children: "Any Type"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 231,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "apartment",
-                                                                children: "Apartment"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 232,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "villa",
-                                                                children: "Villa"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 233,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "commercial",
-                                                                children: "Commercial"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 234,
-                                                                columnNumber: 21
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 225,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                lineNumber: 221,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
-                                                        children: "Location"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 240,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        type: "text",
-                                                        name: "location",
-                                                        value: searchForm.location,
-                                                        onChange: handleFormChange,
-                                                        placeholder: "Enter city or neighborhood",
-                                                        className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 243,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                lineNumber: 239,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
-                                                        children: "Bedrooms"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 255,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                        name: "bedrooms",
-                                                        value: searchForm.bedrooms,
-                                                        onChange: handleFormChange,
-                                                        className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "",
-                                                                children: "Any"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 264,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "1",
-                                                                children: "1"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 265,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "2",
-                                                                children: "2"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 266,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "3",
-                                                                children: "3"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 267,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "4+",
-                                                                children: "4+"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 268,
-                                                                columnNumber: 21
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 258,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                lineNumber: 254,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                        lineNumber: 219,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid md:grid-cols-2 gap-6",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
-                                                        children: "Min Price"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 276,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                        name: "minPrice",
-                                                        value: searchForm.minPrice,
-                                                        onChange: handleFormChange,
-                                                        className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "",
-                                                                children: "No Min"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 285,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "10lakh",
-                                                                children: "₹10 Lakh"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 286,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "25lakh",
-                                                                children: "₹25 Lakh"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 287,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "50lakh",
-                                                                children: "₹50 Lakh"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 288,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "1crore",
-                                                                children: "₹1 Crore"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 289,
-                                                                columnNumber: 21
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 279,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                lineNumber: 275,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
-                                                        children: "Max Price"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 295,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                        name: "maxPrice",
-                                                        value: searchForm.maxPrice,
-                                                        onChange: handleFormChange,
-                                                        className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "",
-                                                                children: "No Max"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 304,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "50lakh",
-                                                                children: "₹50 Lakh"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 305,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "1crore",
-                                                                children: "₹1 Crore"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 306,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "2crore",
-                                                                children: "₹2 Crore"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 307,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                value: "5crore",
-                                                                children: "₹5 Crore"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                                lineNumber: 308,
-                                                                columnNumber: 21
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                        lineNumber: 298,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                                lineNumber: 294,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                        lineNumber: 273,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "text-center",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            type: "submit",
-                                            className: "bg-[#CDA274] text-white font-jost font-semibold text-[18px] px-12 py-4 rounded-[18px] hover:bg-[#B8956A] transition duration-300",
-                                            children: "Search Properties"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                            lineNumber: 314,
-                                            columnNumber: 17
-                                        }, this)
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                        className: "font-dm-serif text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight mb-8",
+                                        children: "Property Search"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                        lineNumber: 313,
+                                        lineNumber: 294,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "font-jost text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed",
+                                        children: "Find your perfect property with our advanced search tools and extensive database of available homes."
+                                    }, void 0, false, {
+                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                        lineNumber: 297,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                lineNumber: 218,
+                                lineNumber: 293,
                                 columnNumber: 13
                             }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                        lineNumber: 213,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
+                        }, void 0, false, {
+                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                            lineNumber: 292,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                    lineNumber: 212,
+                    lineNumber: 275,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                lineNumber: 211,
+                lineNumber: 274,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                className: "py-20 bg-white",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "max-w-4xl mx-auto px-4",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "bg-[#F4F0EC] rounded-3xl p-8 shadow-lg",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "font-dm-serif text-3xl text-[#292F36] font-bold mb-8 text-center",
+                                    children: "Search Properties"
+                                }, void 0, false, {
+                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                    lineNumber: 309,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                    onSubmit: handleSearch,
+                                    className: "space-y-6",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "grid md:grid-cols-3 gap-6",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                            className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
+                                                            children: "Property Type"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 317,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                            name: "propertyType",
+                                                            value: searchFilters.propertyType,
+                                                            onChange: handleInputChange,
+                                                            className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "",
+                                                                    children: "Any Type"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 326,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "apartment",
+                                                                    children: "Apartment"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 327,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "villa",
+                                                                    children: "Villa"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 328,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "commercial",
+                                                                    children: "Commercial"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 329,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 320,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                    lineNumber: 316,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                            className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
+                                                            children: "Location"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 335,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            type: "text",
+                                                            name: "location",
+                                                            value: searchFilters.location,
+                                                            onChange: handleInputChange,
+                                                            placeholder: "Enter city or neighborhood",
+                                                            className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 338,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                    lineNumber: 334,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                            className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
+                                                            children: "Bedrooms"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 350,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                            name: "bedrooms",
+                                                            value: searchFilters.bedrooms,
+                                                            onChange: handleInputChange,
+                                                            className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "",
+                                                                    children: "Any"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 359,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "1",
+                                                                    children: "1"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 360,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "2",
+                                                                    children: "2"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 361,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "3",
+                                                                    children: "3"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 362,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "4+",
+                                                                    children: "4+"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 363,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 353,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                    lineNumber: 349,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                            lineNumber: 314,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "grid md:grid-cols-2 gap-6",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                            className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
+                                                            children: "Min Price"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 371,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                            name: "minPrice",
+                                                            value: searchFilters.minPrice,
+                                                            onChange: handleInputChange,
+                                                            className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "",
+                                                                    children: "No Min"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 380,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "10lakh",
+                                                                    children: "₹10 Lakh"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 381,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "25lakh",
+                                                                    children: "₹25 Lakh"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 382,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "50lakh",
+                                                                    children: "₹50 Lakh"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 383,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "1crore",
+                                                                    children: "₹1 Crore"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 384,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 374,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                    lineNumber: 370,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                            className: "block font-jost font-medium text-[16px] text-[#292F36] mb-2",
+                                                            children: "Max Price"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 390,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                            name: "maxPrice",
+                                                            value: searchFilters.maxPrice,
+                                                            onChange: handleInputChange,
+                                                            className: "w-full border-2 border-[#E7E7E7] rounded-[12px] px-4 py-3 font-jost text-[16px] focus:border-[#CDA274] focus:outline-none",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "",
+                                                                    children: "No Max"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 399,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "50lakh",
+                                                                    children: "₹50 Lakh"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 400,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "1crore",
+                                                                    children: "₹1 Crore"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 401,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "2crore",
+                                                                    children: "₹2 Crore"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 402,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "5crore",
+                                                                    children: "₹5 Crore"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                    lineNumber: 403,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                            lineNumber: 393,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                    lineNumber: 389,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                            lineNumber: 368,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-center mt-8",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "submit",
+                                                className: "bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-12 py-4 rounded-2xl shadow-lg transition duration-300 transform hover:scale-105",
+                                                children: "Search Properties"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                lineNumber: 409,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                            lineNumber: 408,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                    lineNumber: 313,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                            lineNumber: 308,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mt-12",
+                            children: [
+                                hasSearched && results.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-center font-jost text-lg text-[#4D5053]",
+                                    children: "No properties found matching your criteria."
+                                }, void 0, false, {
+                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                    lineNumber: 422,
+                                    columnNumber: 15
+                                }, this),
+                                results.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "font-dm-serif text-2xl text-[#292F36] font-bold mb-6",
+                                            children: "Search Results"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                            lineNumber: 429,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "grid md:grid-cols-2 lg:grid-cols-3 gap-8",
+                                            children: results.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group cursor-pointer",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                        href: p.href,
+                                                        className: "block",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "relative h-64",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                        src: p.image,
+                                                                        alt: p.name,
+                                                                        fill: true,
+                                                                        className: "object-cover group-hover:scale-105 transition duration-300"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                        lineNumber: 440,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: `absolute top-4 right-4 ${p.badgeColor} text-white px-3 py-1 rounded-full font-jost font-semibold`,
+                                                                        children: p.statusTag
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                        lineNumber: 446,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                lineNumber: 439,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "p-6",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                        className: "font-dm-serif text-2xl text-[#292F36] font-bold mb-2 group-hover:text-[#CDA274] transition",
+                                                                        children: p.name
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                        lineNumber: 453,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        className: "font-jost text-lg text-[#4D5053] mb-4",
+                                                                        children: p.description
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                        lineNumber: 456,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex justify-between items-center",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: "font-jost text-sm text-[#4D5053]",
+                                                                                children: p.location
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                                lineNumber: 460,
+                                                                                columnNumber: 29
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: `px-2 py-1 rounded-full text-xs font-semibold ${p.tagColor}`,
+                                                                                children: p.status
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                                lineNumber: 463,
+                                                                                columnNumber: 29
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                        lineNumber: 459,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                                lineNumber: 452,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                        lineNumber: 438,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                }, p.id, false, {
+                                                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                                    lineNumber: 434,
+                                                    columnNumber: 21
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                                            lineNumber: 432,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                            lineNumber: 420,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                    lineNumber: 307,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
+                lineNumber: 306,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1323,7 +1561,7 @@ function PropertySearch() {
                             children: "Need Help Finding the Perfect Property?"
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                            lineNumber: 329,
+                            lineNumber: 483,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1331,7 +1569,7 @@ function PropertySearch() {
                             children: "Our expert team can help you find exactly what you're looking for."
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                            lineNumber: 332,
+                            lineNumber: 486,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1343,7 +1581,7 @@ function PropertySearch() {
                                     children: "Contact Our Team"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 336,
+                                    lineNumber: 490,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1352,24 +1590,24 @@ function PropertySearch() {
                                     children: "View Our Projects"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                                    lineNumber: 339,
+                                    lineNumber: 493,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                            lineNumber: 335,
+                            lineNumber: 489,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                    lineNumber: 328,
+                    lineNumber: 482,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                lineNumber: 327,
+                lineNumber: 481,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$src$2f$components$2f$SearchModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1377,13 +1615,13 @@ function PropertySearch() {
                 onClose: ()=>setIsSearchOpen(false)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-                lineNumber: 347,
+                lineNumber: 501,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Documents/SRM/src/app/services/property-search/page.tsx",
-        lineNumber: 61,
+        lineNumber: 136,
         columnNumber: 5
     }, this);
 }

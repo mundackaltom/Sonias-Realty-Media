@@ -1574,7 +1574,7 @@ function Home() {
                                                             children: "Luxury residential development with premium amenities"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 436,
+                                                            lineNumber: 438,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1587,7 +1587,7 @@ function Home() {
                                                                         children: "Electronic City, Bengaluru"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                        lineNumber: 439,
+                                                                        lineNumber: 443,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1595,18 +1595,18 @@ function Home() {
                                                                         children: "Upcoming"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                        lineNumber: 440,
+                                                                        lineNumber: 446,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                lineNumber: 438,
+                                                                lineNumber: 442,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 437,
+                                                            lineNumber: 441,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
@@ -1641,19 +1641,19 @@ function Home() {
                                                                     d: "M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                    lineNumber: 455,
+                                                                    lineNumber: 463,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                lineNumber: 454,
+                                                                lineNumber: 462,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Video"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                        lineNumber: 447,
+                                                        lineNumber: 455,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1662,18 +1662,18 @@ function Home() {
                                                         children: "View Details"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                        lineNumber: 459,
+                                                        lineNumber: 467,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                lineNumber: 446,
+                                                lineNumber: 454,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 445,
+                                            lineNumber: 453,
                                             columnNumber: 15
                                         }, this)
                                     ]
@@ -1699,7 +1699,7 @@ function Home() {
                                                             className: "object-cover group-hover:scale-105 transition duration-300"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 473,
+                                                            lineNumber: 481,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1707,13 +1707,13 @@ function Home() {
                                                             children: "Ready"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 479,
+                                                            lineNumber: 487,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                    lineNumber: 472,
+                                                    lineNumber: 480,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1724,7 +1724,7 @@ function Home() {
                                                             children: "Brigade Eternia"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 484,
+                                                            lineNumber: 492,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1732,7 +1732,7 @@ function Home() {
                                                             children: "Premium residential project with modern amenities"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 485,
+                                                            lineNumber: 493,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1745,7 +1745,7 @@ function Home() {
                                                                         children: "Whitefield, Bengaluru"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                        lineNumber: 488,
+                                                                        lineNumber: 496,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1753,30 +1753,30 @@ function Home() {
                                                                         children: "Ready to Move"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                        lineNumber: 489,
+                                                                        lineNumber: 497,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                lineNumber: 487,
+                                                                lineNumber: 495,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 486,
+                                                            lineNumber: 494,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                    lineNumber: 483,
+                                                    lineNumber: 491,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 471,
+                                            lineNumber: 479,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1799,19 +1799,19 @@ function Home() {
                                                                     d: "M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                    lineNumber: 504,
+                                                                    lineNumber: 512,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                                lineNumber: 503,
+                                                                lineNumber: 511,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Video"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                        lineNumber: 496,
+                                                        lineNumber: 504,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1820,24 +1820,24 @@ function Home() {
                                                         children: "View Details"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                        lineNumber: 508,
+                                                        lineNumber: 516,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                lineNumber: 495,
+                                                lineNumber: 503,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 494,
+                                            lineNumber: 502,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                    lineNumber: 470,
+                                    lineNumber: 478,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -1854,12 +1854,12 @@ function Home() {
                                 children: "View All Properties"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                lineNumber: 520,
+                                lineNumber: 528,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                            lineNumber: 519,
+                            lineNumber: 527,
                             columnNumber: 11
                         }, this)
                     ]
@@ -1886,7 +1886,7 @@ function Home() {
                                     children: "What Our Clients Say"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                    lineNumber: 531,
+                                    lineNumber: 539,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1894,13 +1894,13 @@ function Home() {
                                     children: "Read testimonials from satisfied clients who found their dream homes with our help."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                    lineNumber: 534,
+                                    lineNumber: 542,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                            lineNumber: 530,
+                            lineNumber: 538,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1922,12 +1922,12 @@ function Home() {
                                                         className: "object-cover"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                        lineNumber: 544,
+                                                        lineNumber: 552,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                    lineNumber: 543,
+                                                    lineNumber: 551,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1937,7 +1937,7 @@ function Home() {
                                                             children: "Sarah Johnson"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 553,
+                                                            lineNumber: 561,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1945,19 +1945,19 @@ function Home() {
                                                             children: "Happy Homeowner"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 554,
+                                                            lineNumber: 562,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                    lineNumber: 552,
+                                                    lineNumber: 560,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 542,
+                                            lineNumber: 550,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1965,13 +1965,13 @@ function Home() {
                                             children: '"Sonia\'s team made our home buying experience seamless and stress-free. Their expertise and dedication are unmatched!"'
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 557,
+                                            lineNumber: 565,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                    lineNumber: 541,
+                                    lineNumber: 549,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1990,12 +1990,12 @@ function Home() {
                                                         className: "object-cover"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                        lineNumber: 566,
+                                                        lineNumber: 574,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                    lineNumber: 565,
+                                                    lineNumber: 573,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2005,7 +2005,7 @@ function Home() {
                                                             children: "Mike Chen"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 575,
+                                                            lineNumber: 583,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2013,19 +2013,19 @@ function Home() {
                                                             children: "First-time Buyer"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 576,
+                                                            lineNumber: 584,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                    lineNumber: 574,
+                                                    lineNumber: 582,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 564,
+                                            lineNumber: 572,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2033,13 +2033,13 @@ function Home() {
                                             children: '"As a first-time buyer, I was nervous, but Sonia guided me through every step. I couldn\'t be happier with my new home!"'
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 579,
+                                            lineNumber: 587,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                    lineNumber: 563,
+                                    lineNumber: 571,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2058,12 +2058,12 @@ function Home() {
                                                         className: "object-cover"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                        lineNumber: 588,
+                                                        lineNumber: 596,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                    lineNumber: 587,
+                                                    lineNumber: 595,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2073,7 +2073,7 @@ function Home() {
                                                             children: "Emily Rodriguez"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 597,
+                                                            lineNumber: 605,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2081,19 +2081,19 @@ function Home() {
                                                             children: "Property Investor"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                            lineNumber: 598,
+                                                            lineNumber: 606,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                                    lineNumber: 596,
+                                                    lineNumber: 604,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 586,
+                                            lineNumber: 594,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2101,30 +2101,30 @@ function Home() {
                                             children: '"Professional, knowledgeable, and results-driven. Sonia\'s team helped me build a successful investment portfolio."'
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                            lineNumber: 601,
+                                            lineNumber: 609,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                    lineNumber: 585,
+                                    lineNumber: 593,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                            lineNumber: 539,
+                            lineNumber: 547,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                    lineNumber: 529,
+                    lineNumber: 537,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                lineNumber: 528,
+                lineNumber: 536,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2137,7 +2137,7 @@ function Home() {
                             children: "Ready to Find Your Dream Home?"
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                            lineNumber: 612,
+                            lineNumber: 620,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2145,7 +2145,7 @@ function Home() {
                             children: "Contact us today to start your real estate journey with expert guidance and personalized service."
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                            lineNumber: 615,
+                            lineNumber: 623,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2157,7 +2157,7 @@ function Home() {
                                     children: "Schedule Consultation"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                    lineNumber: 619,
+                                    lineNumber: 627,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2166,24 +2166,24 @@ function Home() {
                                     children: "Browse Properties"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                                    lineNumber: 622,
+                                    lineNumber: 630,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                            lineNumber: 618,
+                            lineNumber: 626,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                    lineNumber: 611,
+                    lineNumber: 619,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                lineNumber: 610,
+                lineNumber: 618,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$src$2f$components$2f$SearchModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2191,7 +2191,7 @@ function Home() {
                 onClose: ()=>setIsSearchOpen(false)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/page.tsx",
-                lineNumber: 630,
+                lineNumber: 638,
                 columnNumber: 7
             }, this)
         ]

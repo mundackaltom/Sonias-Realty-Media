@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import SearchModal from "../../components/SearchModal";
+import BackToTopButton from "../../components/BackToTopButton";
 
 export default function Services() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ export default function Services() {
   const handleServicesMouseLeave = () => {
     servicesTimeoutRef.current = setTimeout(() => {
       setServicesDropdownOpen(false);
-    }, 300); // 300ms delay
+    }, 600); // 600ms delay for better user experience
   };
 
   const handleProjectsMouseEnter = () => {
@@ -44,38 +45,38 @@ export default function Services() {
   const handleProjectsMouseLeave = () => {
     projectsTimeoutRef.current = setTimeout(() => {
       setProjectsDropdownOpen(false);
-    }, 300); // 300ms delay
+    }, 600); // 600ms delay for better user experience
   };
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-[#F4F0EC] px-4 py-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Single row with logo, brand name, navigation, and search */}
           <div className="flex items-center justify-between">
             {/* Logo and Brand Name */}
-            <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible">
+            <Link href="/" className="flex items-center gap-2 md:gap-4 hover:opacity-80 transition-opacity">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-[#CDA274] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                 <Image
                   src="/images/logo.png"
                   alt="Sonia's Realty Media Logo"
-                  width={180}
-                  height={180}
-                  className="object-cover rounded-full"
+                  width={360}
+                  height={360}
+                  className="object-contain rounded-full scale-125"
                 />
               </div>
-              <h1 className="font-dm-serif text-2xl lg:text-3xl text-[#292F36] font-bold whitespace-nowrap">
+              <h1 className="font-dm-serif text-sm sm:text-lg md:text-lg lg:text-xl text-[#292F36] font-bold whitespace-nowrap">
                 SONIA'S REALTY MEDIA
               </h1>
             </Link>
 
             {/* Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
+            <nav className="hidden lg:flex items-center space-x-6">
+              <Link href="/" className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition">
                 Home
               </Link>
-              <Link href="/about" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
+              <Link href="/about" className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition">
                 About us
               </Link>
               
@@ -86,7 +87,7 @@ export default function Services() {
                 onMouseLeave={handleServicesMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-2 group"
+                  className="font-jost text-base text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-1 group"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 >
                   Services
@@ -100,9 +101,21 @@ export default function Services() {
                   </svg>
                 </button>
                 {servicesDropdownOpen && isClient && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
-                    <Link href="/services/property-search" className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                  <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+                    <Link href="/services/property-search" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
                       Property Search
+                    </Link>
+                    <Link href="/services/financial-planning" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                      Financial Planning
+                    </Link>
+                    <Link href="/services/real-estate-investment" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                      Real Estate Investment
+                    </Link>
+                    <Link href="/services/asset-management" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                      Asset Management
+                    </Link>
+                    <Link href="/services/home-loan" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                      Home Loan Services
                     </Link>
                   </div>
                 )}
@@ -115,7 +128,7 @@ export default function Services() {
                 onMouseLeave={handleProjectsMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
+                  className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1 group"
                   onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
                 >
                   Projects
@@ -129,21 +142,21 @@ export default function Services() {
                   </svg>
                 </button>
                 {projectsDropdownOpen && isClient && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
-                    <Link href="/projects" className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                  <div className="absolute top-full left-0 mt-1 w-44 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+                    <Link href="/projects" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
                       All Projects
                     </Link>
-                    <Link href="/projects" className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                    <Link href="/projects" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
                       Upcoming Projects
                     </Link>
-                    <Link href="/projects" className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                    <Link href="/projects" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
                       Completed Projects
                     </Link>
                   </div>
                 )}
               </div>
 
-              <Link href="/contact" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
+              <Link href="/contact" className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition">
                 Contact
               </Link>
             </nav>
@@ -151,16 +164,16 @@ export default function Services() {
             {/* Search Icon */}
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className="w-10 h-10 border-2 border-[#292F36] rounded-full flex items-center justify-center hover:bg-[#292F36] hover:text-white transition"
+              className="w-8 h-8 border-2 border-[#292F36] rounded-full flex items-center justify-center hover:bg-[#292F36] hover:text-white transition flex-shrink-0"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden w-8 h-8 flex flex-col justify-center items-center"
+              className="lg:hidden w-6 h-6 flex flex-col justify-center items-center flex-shrink-0"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <div className="w-6 h-0.5 bg-[#292F36] mb-1"></div>
@@ -172,7 +185,7 @@ export default function Services() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && isClient && (
-          <div className="md:hidden mt-4 pb-4">
+          <div className="lg:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               <Link href="/" className="font-jost text-lg text-[#292F36]">Home</Link>
               <Link href="/about" className="font-jost text-lg text-[#292F36]">About us</Link>
@@ -272,31 +285,68 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-3 gap-8">
             {/* Property Search & Buying */}
-            <div className="bg-white p-10 rounded-3xl shadow-xl">
+            <div className="bg-white p-8 rounded-3xl shadow-xl">
               <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-6 text-center">Property Search & Buying</h3>
-              <p className="font-jost text-lg text-[#4D5053] leading-relaxed text-center">
-                Find your perfect property with our advanced search tools, market expertise, and personalized guidance throughout the entire buying process from initial search to final closing.
+              <h3 className="font-dm-serif text-xl text-[#292F36] font-bold mb-6 text-center">Property Search & Buying</h3>
+              <p className="font-jost text-[#4D5053] leading-relaxed text-center mb-6">
+                Find your perfect property with our advanced search tools, market expertise, and personalized guidance throughout the entire buying process.
               </p>
+              <div className="text-center">
+                <Link 
+                  href="/services/property-search" 
+                  className="inline-block bg-[#CDA274] text-white px-6 py-3 rounded-xl font-jost font-semibold hover:bg-[#B8956A] transition"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+
+            {/* Financial Planning */}
+            <div className="bg-white p-8 rounded-3xl shadow-xl">
+              <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+              <h3 className="font-dm-serif text-xl text-[#292F36] font-bold mb-6 text-center">Financial Planning</h3>
+              <p className="font-jost text-[#4D5053] leading-relaxed text-center mb-6">
+                Expert financial guidance for real estate investments including loan assistance, tax planning, and portfolio optimization strategies.
+              </p>
+              <div className="text-center">
+                <Link 
+                  href="/services/financial-planning" 
+                  className="inline-block bg-[#CDA274] text-white px-6 py-3 rounded-xl font-jost font-semibold hover:bg-[#B8956A] transition"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
 
             {/* Property Selling */}
-            <div className="bg-white p-10 rounded-3xl shadow-xl">
+            <div className="bg-white p-8 rounded-3xl shadow-xl">
               <div className="w-16 h-16 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-6 text-center">Property Selling</h3>
-              <p className="font-jost text-lg text-[#4D5053] leading-relaxed text-center">
-                Maximize your property's value with our comprehensive selling services including market analysis, professional staging, marketing, and negotiation expertise.
+              <h3 className="font-dm-serif text-xl text-[#292F36] font-bold mb-6 text-center">Property Selling</h3>
+              <p className="font-jost text-[#4D5053] leading-relaxed text-center mb-6">
+                Maximize your property's value with our comprehensive selling services including market analysis, professional staging, and marketing expertise.
               </p>
+              <div className="text-center">
+                <Link 
+                  href="/contact" 
+                  className="inline-block bg-[#CDA274] text-white px-6 py-3 rounded-xl font-jost font-semibold hover:bg-[#B8956A] transition"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -337,15 +387,15 @@ export default function Services() {
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-xl group-hover:shadow-2xl transition duration-300">
                 <Image
                   src="/images/hero.jpg"
-                  alt="Investment Advisor"
+                  alt="Financial Planning Specialist"
                   fill
                   className="object-cover group-hover:scale-110 transition duration-300"
                 />
               </div>
               <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-2">Sarah Johnson</h3>
-              <p className="font-jost text-lg text-[#CDA274] font-semibold mb-4">Investment Advisor</p>
+              <p className="font-jost text-lg text-[#CDA274] font-semibold mb-4">Financial Planning Specialist</p>
               <p className="font-jost text-lg text-[#4D5053] leading-relaxed">
-                Specializes in investment properties and provides strategic advice for building real estate portfolios.
+                Expert in real estate financial planning, loan assistance, and investment strategy optimization for maximum returns.
               </p>
             </div>
 
@@ -429,28 +479,10 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#292F36]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="font-dm-serif text-4xl md:text-5xl text-white font-bold mb-8">
-            Ready to Experience Our Services?
-          </h2>
-          <p className="font-jost text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-12">
-            Let our expert team help you achieve your real estate goals with our comprehensive service offerings.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/contact" className="bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300 inline-block text-center">
-              Get Started Today
-            </Link>
-            <Link href="/services/property-search" className="border-2 border-white text-white hover:bg-white hover:text-[#292F36] font-inter font-semibold text-lg px-8 py-4 rounded-2xl transition duration-300 inline-block text-center">
-              Search Properties
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Search Modal */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+
+      <BackToTopButton />
     </div>
   );
 }

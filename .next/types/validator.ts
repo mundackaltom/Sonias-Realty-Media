@@ -59,16 +59,16 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/contact">
 }
 
-// Validate ../../src/app/media/page.tsx
-{
-  const handler = {} as typeof import("../../src/app/media/page.js")
-  handler satisfies AppPageConfig<"/media">
-}
-
 // Validate ../../src/app/page.tsx
 {
   const handler = {} as typeof import("../../src/app/page.js")
   handler satisfies AppPageConfig<"/">
+}
+
+// Validate ../../src/app/projects/2/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/projects/2/page.js")
+  handler satisfies AppPageConfig<"/projects/2">
 }
 
 // Validate ../../src/app/projects/[id]/page.tsx
@@ -83,6 +83,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/projects">
 }
 
+// Validate ../../src/app/services/asset-management/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/services/asset-management/page.js")
+  handler satisfies AppPageConfig<"/services/asset-management">
+}
+
+// Validate ../../src/app/services/financial-planning/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/services/financial-planning/page.js")
+  handler satisfies AppPageConfig<"/services/financial-planning">
+}
+
+// Validate ../../src/app/services/home-loan/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/services/home-loan/page.js")
+  handler satisfies AppPageConfig<"/services/home-loan">
+}
+
 // Validate ../../src/app/services/page.tsx
 {
   const handler = {} as typeof import("../../src/app/services/page.js")
@@ -93,6 +111,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   const handler = {} as typeof import("../../src/app/services/property-search/page.js")
   handler satisfies AppPageConfig<"/services/property-search">
+}
+
+// Validate ../../src/app/services/real-estate-investment/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/services/real-estate-investment/page.js")
+  handler satisfies AppPageConfig<"/services/real-estate-investment">
 }
 
 // Validate ../../src/app/api/contact/route.ts

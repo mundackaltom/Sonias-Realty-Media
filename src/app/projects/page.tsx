@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "../../components/ProjectCard";
 import SearchModal from "../../components/SearchModal";
+import BackToTopButton from "../../components/BackToTopButton";
+import BrochureModal from "../../components/BrochureModal";
+import DownloadTest from "../../components/DownloadTest";
 
 const projects = [
 	{
@@ -25,7 +28,7 @@ const projects = [
 		status: "Upcoming",
 		description:
 			"Luxury residential development with premium amenities and strategic location near IT hubs.",
-		image: "/images/hero.jpg",
+		image: "/images/brigade_avalon/brigade_avalon_1.jpeg",
 		brochureUrl: "/brochures/Brigade Avalon.pdf",
 		youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
 	},
@@ -36,7 +39,7 @@ const projects = [
 		status: "Ready to Move",
 		description:
 			"Premium residential project offering spacious apartments with modern amenities and excellent connectivity.",
-		image: "/images/hero.jpg",
+		image: "/images/brigade_eternia/brigade_eternia_1.jpeg",
 		brochureUrl: "/brochures/Brigade Eternia.pdf",
 		youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
 	},
@@ -47,7 +50,7 @@ const projects = [
 		status: "Upcoming",
 		description:
 			"Elegant residential towers with luxury amenities and prime location near business districts.",
-		image: "/images/hero.jpg",
+		image: "/images/godrej_tiara/godrej_tiara_1.jpeg",
 		brochureUrl: "/brochures/Godrej Tiara.pdf",
 		youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
 	},
@@ -62,6 +65,39 @@ const projects = [
 		brochureUrl: "/brochures/Prestige Raintree Park.pdf",
 		youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
 	},
+	{
+		id: "6",
+		title: "Century Marathahalli",
+		location: "Marathahalli, Bengaluru",
+		status: "Upcoming",
+		description:
+			"Modern residential project in Marathahalli with excellent connectivity to IT corridors and premium amenities.",
+		image: "/images/hero.jpg",
+		brochureUrl: "#",
+		youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+	},
+	{
+		id: "7",
+		title: "Century Regalia",
+		location: "Cunningham Road, Bengaluru",
+		status: "Upcoming",
+		description:
+			"Luxury high-rise development offering premium residences in the heart of the city.",
+		image: "/images/hero.jpg",
+		brochureUrl: "#",
+		youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+	},
+	{
+		id: "8",
+		title: "Century Serraya",
+		location: "Marathahalli, Bengaluru",
+		status: "Upcoming",
+		description:
+			"Elegant residential towers with contemporary design and world-class amenities in the vibrant Marathahalli locale.",
+		image: "/images/hero.jpg",
+		brochureUrl: "#",
+		youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+	},
 ];
 
 export default function Projects() {
@@ -71,6 +107,10 @@ export default function Projects() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [filterStatus, setFilterStatus] = useState("All");
+	
+	// Brochure modal state
+	const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
+	const [selectedProject, setSelectedProject] = useState<{title: string, brochureUrl: string} | null>(null);
 
 	// Timeout refs for delayed closing
 	const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -111,42 +151,53 @@ export default function Projects() {
 			? projects
 			: projects.filter((project) => project.status === filterStatus);
 
+	// Handle brochure modal opening
+	const handleBrochureClick = (projectTitle: string, brochureUrl: string) => {
+		setSelectedProject({ title: projectTitle, brochureUrl });
+		setIsBrochureModalOpen(true);
+	};
+
+	const handleBrochureModalClose = () => {
+		setIsBrochureModalOpen(false);
+		setSelectedProject(null);
+	};
+
 	return (
 		<div className="min-h-screen bg-white">
 			{/* Header */}
 			<header className="bg-[#F4F0EC] px-4 py-4">
-				<div className="max-w-7xl mx-auto">
+				<div className="max-w-5xl mx-auto">
 					<div className="flex items-center justify-between">
 						{/* Logo and Brand Name */}
 						<Link
 							href="/"
-							className="flex items-center gap-4 hover:opacity-80 transition-opacity"
+							className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity"
 						>
-							<div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible">
+							<div className="w-12 h-12 md:w-16 md:h-16 bg-[#CDA274] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
 								<Image
 									src="/images/logo.png"
 									alt="Sonia's Realty Media Logo"
-									width={180}
-									height={180}
-									className="object-cover rounded-full"
+									width={360}
+									height={360}
+									className="object-contain rounded-full scale-125"
 								/>
 							</div>
-							<h1 className="font-dm-serif text-2xl lg:text-3xl text-[#292F36] font-bold whitespace-nowrap">
+							<h1 className="font-dm-serif text-sm sm:text-base md:text-lg lg:text-xl text-[#292F36] font-bold whitespace-nowrap">
 								SONIA'S REALTY MEDIA
 							</h1>
 						</Link>
 
 						{/* Navigation */}
-						<nav className="hidden md:flex items-center space-x-8">
+						<nav className="hidden lg:flex items-center space-x-6">
 							<Link
 								href="/"
-								className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition"
+								className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition"
 							>
 								Home
 							</Link>
 							<Link
 								href="/about"
-								className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition"
+								className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition"
 							>
 								About us
 							</Link>
@@ -158,7 +209,7 @@ export default function Projects() {
 								onMouseLeave={handleServicesMouseLeave}
 							>
 								<button
-									className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
+									className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1 group"
 									onClick={() =>
 										setShowServicesDropdown(!showServicesDropdown)
 									}
@@ -181,12 +232,30 @@ export default function Projects() {
 									</svg>
 								</button>
 								{showServicesDropdown && isClient && (
-									<div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+									<div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
 										<Link
 											href="/services/property-search"
-											className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
+											className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
 										>
 											Property Search
+										</Link>
+										<Link
+											href="/services/financial-planning"
+											className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
+										>
+											Financial Planning
+										</Link>
+										<Link
+											href="/services/real-estate-investment"
+											className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
+										>
+											Real Estate Investment
+										</Link>
+										<Link
+											href="/services/asset-management"
+											className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
+										>
+											Asset Management
 										</Link>
 									</div>
 								)}
@@ -199,7 +268,7 @@ export default function Projects() {
 								onMouseLeave={handleProjectsMouseLeave}
 							>
 								<button
-									className="font-jost text-lg text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-2 group"
+									className="font-jost text-base text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-1 group"
 									onClick={() =>
 										setShowProjectsDropdown(!showProjectsDropdown)
 									}
@@ -222,22 +291,22 @@ export default function Projects() {
 									</svg>
 								</button>
 								{showProjectsDropdown && isClient && (
-									<div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+									<div className="absolute top-full left-0 mt-1 w-44 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
 										<Link
 											href="/projects"
-											className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
+											className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
 										>
 											All Projects
 										</Link>
 										<Link
 											href="/projects"
-											className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
+											className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
 										>
 											Upcoming Projects
 										</Link>
 										<Link
 											href="/projects"
-											className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
+											className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition"
 										>
 											Completed Projects
 										</Link>
@@ -247,7 +316,7 @@ export default function Projects() {
 
 							<Link
 								href="/contact"
-								className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition"
+								className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition"
 							>
 								Contact us
 							</Link>
@@ -256,10 +325,10 @@ export default function Projects() {
 						{/* Search Icon */}
 						<button
 							onClick={() => setIsSearchOpen(true)}
-							className="w-10 h-10 border-2 border-[#292F36] rounded-full flex items-center justify-center hover:bg-[#292F36] hover:text-white transition"
+							className="w-8 h-8 border-2 border-[#292F36] rounded-full flex items-center justify-center hover:bg-[#292F36] hover:text-white transition flex-shrink-0"
 						>
 							<svg
-								className="w-5 h-5"
+								className="w-4 h-4"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -275,7 +344,7 @@ export default function Projects() {
 
 						{/* Mobile Menu Button */}
 						<button
-							className="md:hidden w-8 h-8 flex flex-col justify-center items-center"
+							className="lg:hidden w-6 h-6 flex flex-col justify-center items-center flex-shrink-0"
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 						>
 							<div className="w-6 h-0.5 bg-[#292F36] mb-1"></div>
@@ -287,7 +356,7 @@ export default function Projects() {
 
 				{/* Mobile Menu */}
 				{isMobileMenuOpen && isClient && (
-					<div className="md:hidden mt-4 pb-4">
+					<div className="lg:hidden mt-4 pb-4">
 						<div className="flex flex-col space-y-4">
 							<Link
 								href="/"
@@ -324,31 +393,48 @@ export default function Projects() {
 				)}
 			</header>
 
-			{/* Hero Section */}
-			<section className="relative py-20 lg:py-32 bg-white">
-				<div className="max-w-7xl mx-auto px-4">
-					<div className="text-center max-w-4xl mx-auto">
-						<h1 className="font-dm-serif text-4xl md:text-6xl lg:text-7xl text-[#292F36] font-bold leading-tight mb-8">
-							Our Projects
-						</h1>
-						<p className="font-jost text-xl md:text-2xl text-[#4D5053] max-w-3xl mx-auto leading-relaxed">
-							Discover our exceptional real estate projects designed to create
-							lasting value and beautiful living spaces.
-						</p>
+			{/* Hero Section with Background Image */}
+			<section className="relative h-[60vh] overflow-hidden bg-white">
+				<div className="relative overflow-hidden mx-auto shadow-2xl h-full">
+					{/* Background Image */}
+					<div className="absolute inset-0 z-0">
+						<Image
+							src="/images/hero.jpg"
+							alt="Our Projects Hero"
+							fill
+							className="object-cover"
+							priority
+							quality={100}
+							sizes="100vw"
+						/>
+						{/* Dark overlay */}
+						<div className="absolute inset-0 bg-black/60"></div>
+					</div>
+
+					{/* Hero Content */}
+					<div className="relative z-10 flex items-center justify-center h-full px-4">
+						<div className="text-center max-w-4xl mx-auto">
+							<h1 className="font-dm-serif text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight mb-8">
+								Our Projects
+							</h1>
+							<p className="font-jost text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+								Discover our exceptional real estate projects designed to create lasting value and beautiful living spaces.
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
 
 			{/* Projects Section */}
-			<section className="py-20 bg-white">
+			<section className="pt-8 pb-20 bg-white">
 				<div className="max-w-7xl mx-auto px-4">
 					{/* Filter Buttons */}
-					<div className="flex flex-wrap justify-center gap-4 mb-16">
+					<div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-10 px-2">
 						{["All", "Upcoming", "Ready to Move"].map((status) => (
 							<button
 								key={status}
 								onClick={() => setFilterStatus(status)}
-								className={`px-6 py-3 rounded-2xl font-jost font-semibold text-lg transition duration-300 ${
+								className={`px-4 sm:px-6 py-2 sm:py-3 rounded-2xl font-jost font-semibold text-sm sm:text-lg transition duration-300 ${
 									filterStatus === status
 										? "bg-[#CDA274] text-white"
 										: "bg-[#F4F0EC] text-[#292F36] hover:bg-[#CDA274] hover:text-white"
@@ -360,7 +446,7 @@ export default function Projects() {
 					</div>
 
 					{/* Projects Grid */}
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
 						{filteredProjects.map((project) => (
 							<ProjectCard
 								key={project.id}
@@ -372,6 +458,7 @@ export default function Projects() {
 								image={project.image}
 								brochureUrl={project.brochureUrl}
 								youtubeUrl={project.youtubeUrl}
+								onBrochureClick={handleBrochureClick}
 							/>
 						))}
 					</div>
@@ -476,35 +563,20 @@ export default function Projects() {
 				</div>
 			</section>
 
-			{/* CTA Section */}
-			<section className="py-20 bg-[#292F36]">
-				<div className="max-w-7xl mx-auto px-4 text-center">
-					<h2 className="font-dm-serif text-4xl md:text-5xl text-white font-bold mb-8">
-						Ready to Invest in Your Future?
-					</h2>
-					<p className="font-jost text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-12">
-						Explore our exceptional projects and find the perfect property that
-						matches your vision and lifestyle.
-					</p>
-					<div className="flex flex-col sm:flex-row gap-6 justify-center">
-						<Link
-							href="/contact"
-							className="bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300 inline-block text-center"
-						>
-							Schedule Site Visit
-						</Link>
-						<Link
-							href="/services/property-search"
-							className="border-2 border-white text-white hover:bg-white hover:text-[#292F36] font-inter font-semibold text-lg px-8 py-4 rounded-2xl transition duration-300 inline-block text-center"
-						>
-							Search Properties
-						</Link>
-					</div>
-				</div>
-			</section>
-
 			{/* Search Modal */}
 			<SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+
+			{/* Brochure Modal */}
+			{selectedProject && (
+				<BrochureModal
+					isOpen={isBrochureModalOpen}
+					onClose={handleBrochureModalClose}
+					projectTitle={selectedProject.title}
+					brochureUrl={selectedProject.brochureUrl}
+				/>
+			)}
+
+			<BackToTopButton />
 		</div>
 	);
 }

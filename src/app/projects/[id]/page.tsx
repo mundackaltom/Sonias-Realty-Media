@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import SearchModal from "../../../components/SearchModal";
 import InteractiveMap from "../../../components/InteractiveMap";
+import BrochureModal from "../../../components/BrochureModal";
 
 // This would typically come from a database or API
 const projectsData = {
@@ -18,12 +19,33 @@ const projectsData = {
     fullDescription: "Brigade Valencia sets a new standard for luxury living in Devanahalli. This architectural masterpiece combines contemporary design with world-class amenities to create an unparalleled residential experience. Located in the most sought-after area near the international airport, residents enjoy easy access to business districts, IT hubs, and premium shopping destinations while being surrounded by nature's tranquility.",
     image: "/images/brigade_valencia/brigade_valencia_2.jpeg",
     gallery: [
-      "/images/brigade_valencia/brigade_valencia_2.jpeg",
       "/images/brigade_valencia/brigade_valencia_5.jpeg",
       "/images/brigade_valencia/brigade_valencia_153.jpeg",
       "/images/brigade_valencia/brigade_valencia_1.jpeg",
       "/images/brigade_valencia/brigade_valencia_3.jpeg",
-      "/images/brigade_valencia/brigade_valencia_4.jpeg"
+      "/images/brigade_valencia/brigade_valencia_4.jpeg",
+      "/images/brigade_valencia/brigade_valencia_6.jpeg",
+      "/images/brigade_valencia/brigade_valencia_7.jpeg",
+      "/images/brigade_valencia/brigade_valencia_8.jpeg",
+      "/images/brigade_valencia/brigade_valencia_9.jpeg",
+      "/images/brigade_valencia/brigade_valencia_10.jpeg",
+      "/images/brigade_valencia/brigade_valencia_11.jpeg",
+      "/images/brigade_valencia/brigade_valencia_12.jpeg",
+      "/images/brigade_valencia/brigade_valencia_13.jpeg",
+      "/images/brigade_valencia/brigade_valencia_14.jpeg",
+      "/images/brigade_valencia/brigade_valencia_15.jpeg",
+      "/images/brigade_valencia/brigade_valencia_16.jpeg",
+      "/images/brigade_valencia/brigade_valencia_17.jpeg",
+      "/images/brigade_valencia/brigade_valencia_18.jpeg",
+      "/images/brigade_valencia/brigade_valencia_19.jpeg",
+      "/images/brigade_valencia/brigade_valencia_20.jpeg",
+      "/images/brigade_valencia/brigade_valencia_21.jpeg",
+      "/images/brigade_valencia/brigade_valencia_22.jpeg",
+      "/images/brigade_valencia/brigade_valencia_23.jpeg",
+      "/images/brigade_valencia/brigade_valencia_24.jpeg",
+      "/images/brigade_valencia/brigade_valencia_25.jpeg",
+      "/images/brigade_valencia/brigade_valencia_26.jpeg",
+      "/images/brigade_valencia/brigade_valencia_27.jpeg"
     ],
     brochureUrl: "/brochures/Brigade Valencia.pdf",
     youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
@@ -59,14 +81,35 @@ const projectsData = {
     status: "Upcoming",
     description: "Luxury residential development with premium amenities and strategic location near IT hubs.",
     fullDescription: "Brigade Avalon represents the perfect fusion of luxury and convenience in Electronic City. This prestigious development is strategically positioned to serve the bustling IT corridor while providing a serene residential environment. With its proximity to major tech companies, excellent connectivity, and world-class amenities, Brigade Avalon offers an ideal living experience for modern professionals and families.",
-    image: "/images/hero.jpg",
+    image: "/images/brigade_avalon/brigade_avalon_1.jpeg",
     gallery: [
-      "/images/hero.jpg",
-      "/images/Valencia.webp",
-      "/images/jindal.webp",
-      "/images/hero.jpg",
-      "/images/Valencia.webp",
-      "/images/jindal.webp"
+      "/images/brigade_avalon/brigade_avalon_2.jpeg",
+      "/images/brigade_avalon/brigade_avalon_3.jpeg",
+      "/images/brigade_avalon/brigade_avalon_4.jpeg",
+      "/images/brigade_avalon/brigade_avalon_5.jpeg",
+      "/images/brigade_avalon/brigade_avalon_6.jpeg",
+      "/images/brigade_avalon/brigade_avalon_7.jpeg",
+      "/images/brigade_avalon/brigade_avalon_8.jpeg",
+      "/images/brigade_avalon/brigade_avalon_9.jpeg",
+      "/images/brigade_avalon/brigade_avalon_10.jpeg",
+      "/images/brigade_avalon/brigade_avalon_11.jpeg",
+      "/images/brigade_avalon/brigade_avalon_12.jpeg",
+      "/images/brigade_avalon/brigade_avalon_13.jpeg",
+      "/images/brigade_avalon/brigade_avalon_14.jpeg",
+      "/images/brigade_avalon/brigade_avalon_15.jpeg",
+      "/images/brigade_avalon/brigade_avalon_16.jpeg",
+      "/images/brigade_avalon/brigade_avalon_17.jpeg",
+      "/images/brigade_avalon/brigade_avalon_18.jpeg",
+      "/images/brigade_avalon/brigade_avalon_19.jpeg",
+      "/images/brigade_avalon/brigade_avalon_20.jpeg",
+      "/images/brigade_avalon/brigade_avalon_21.jpeg",
+      "/images/brigade_avalon/brigade_avalon_22.jpeg",
+      "/images/brigade_avalon/brigade_avalon_23.jpeg",
+      "/images/brigade_avalon/brigade_avalon_24.jpeg",
+      "/images/brigade_avalon/brigade_avalon_25.jpeg",
+      "/images/brigade_avalon/brigade_avalon_26.jpeg",
+      "/images/brigade_avalon/brigade_avalon_27.jpeg",
+      "/images/brigade_avalon/brigade_avalon_28.jpeg"
     ],
     brochureUrl: "/brochures/Brigade Avalon.pdf",
     youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
@@ -102,15 +145,38 @@ const projectsData = {
     status: "Ready to Move",
     description: "Premium residential project offering spacious apartments with modern amenities and excellent connectivity.",
     fullDescription: "Brigade Eternia stands as a testament to quality living in the heart of Whitefield. This ready-to-move development offers residents immediate access to one of Bengaluru's most sought-after neighborhoods, known for its excellent infrastructure, proximity to IT parks, and vibrant community life. With spacious apartments and comprehensive amenities, Brigade Eternia provides the perfect blend of comfort and convenience.",
-    image: "/images/hero.jpg",
+    image: "/images/brigade_eternia/brigade_eternia_1.jpeg",
     gallery: [
-      "/images/hero.jpg",
-      "/images/jindal.webp",
-      "/images/Valencia.webp",
-      "/images/hero.jpg",
-      "/images/jindal.webp",
-      "/images/Valencia.webp",
-      "/images/hero.jpg"
+      "/images/brigade_eternia/brigade_eternia_2.jpeg",
+      "/images/brigade_eternia/brigade_eternia_3.jpeg",
+      "/images/brigade_eternia/brigade_eternia_4.jpeg",
+      "/images/brigade_eternia/brigade_eternia_5.jpeg",
+      "/images/brigade_eternia/brigade_eternia_6.jpeg",
+      "/images/brigade_eternia/brigade_eternia_7.jpeg",
+      "/images/brigade_eternia/brigade_eternia_8.jpeg",
+      "/images/brigade_eternia/brigade_eternia_9.jpeg",
+      "/images/brigade_eternia/brigade_eternia_10.jpeg",
+      "/images/brigade_eternia/brigade_eternia_11.jpeg",
+      "/images/brigade_eternia/brigade_eternia_12.jpeg",
+      "/images/brigade_eternia/brigade_eternia_13.jpeg",
+      "/images/brigade_eternia/brigade_eternia_14.jpeg",
+      "/images/brigade_eternia/brigade_eternia_15.jpeg",
+      "/images/brigade_eternia/brigade_eternia_16.jpeg",
+      "/images/brigade_eternia/brigade_eternia_17.jpeg",
+      "/images/brigade_eternia/brigade_eternia_18.jpeg",
+      "/images/brigade_eternia/brigade_eternia_19.jpeg",
+      "/images/brigade_eternia/brigade_eternia_20.jpeg",
+      "/images/brigade_eternia/brigade_eternia_21.jpeg",
+      "/images/brigade_eternia/brigade_eternia_22.jpeg",
+      "/images/brigade_eternia/brigade_eternia_23.jpeg",
+      "/images/brigade_eternia/brigade_eternia_24.jpeg",
+      "/images/brigade_eternia/brigade_eternia_25.jpeg",
+      "/images/brigade_eternia/brigade_eternia_26.jpeg",
+      "/images/brigade_eternia/brigade_eternia_27.jpeg",
+      "/images/brigade_eternia/brigade_eternia_28.jpeg",
+      "/images/brigade_eternia/brigade_eternia_29.jpeg",
+      "/images/brigade_eternia/brigade_eternia_30.jpeg",
+      "/images/brigade_eternia/brigade_eternia_31.jpeg"
     ],
     brochureUrl: "/brochures/Brigade Eternia.pdf",
     youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
@@ -146,14 +212,22 @@ const projectsData = {
     status: "Upcoming",
     description: "Elegant residential towers with luxury amenities and prime location near business districts.",
     fullDescription: "Godrej Tiara represents sophisticated urban living in the prestigious Yeshwantpur area. This elegant development offers residents the perfect combination of luxury, convenience, and connectivity. With its proximity to business districts, railway stations, and commercial hubs, Godrej Tiara provides an ideal address for discerning homebuyers who value both comfort and accessibility.",
-    image: "/images/hero.jpg",
+    image: "/images/godrej_tiara/godrej_tiara_1.jpeg",
     gallery: [
-      "/images/hero.jpg",
-      "/images/Valencia.webp",
-      "/images/jindal.webp",
-      "/images/hero.jpg",
-      "/images/Valencia.webp",
-      "/images/jindal.webp"
+      "/images/godrej_tiara/godrej_tiara_1.jpeg",
+      "/images/godrej_tiara/godrej_tiara_2.jpeg",
+      "/images/godrej_tiara/godrej_tiara_3.jpeg",
+      "/images/godrej_tiara/godrej_tiara_4.jpeg",
+      "/images/godrej_tiara/godrej_tiara_5.jpeg",
+      "/images/godrej_tiara/godrej_tiara_6.jpeg",
+      "/images/godrej_tiara/godrej_tiara_7.jpeg",
+      "/images/godrej_tiara/godrej_tiara_8.jpeg",
+      "/images/godrej_tiara/godrej_tiara_9.jpeg",
+      "/images/godrej_tiara/godrej_tiara_10.jpeg",
+      "/images/godrej_tiara/godrej_tiara_11.jpeg",
+      "/images/godrej_tiara/godrej_tiara_12.jpeg",
+      "/images/godrej_tiara/godrej_tiara_13.jpeg",
+      "/images/godrej_tiara/godrej_tiara_14.jpeg"
     ],
     brochureUrl: "/brochures/Godrej Tiara.pdf",
     youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
@@ -229,6 +303,117 @@ const projectsData = {
       "RERA Registration": "PRM/KA/RERA/1251/310/PR/200701/004234"
     },
     address: "Prestige Raintree Park, Whitefield, Bengaluru 560066"
+  },
+  "6": {
+    id: "6",
+    title: "Century Marathahalli",
+    location: "Marathahalli, Bengaluru",
+    status: "Upcoming",
+    description: "Modern residential project in Marathahalli with excellent connectivity to IT corridors and premium amenities.",
+    fullDescription: "Century Marathahalli offers thoughtfully designed residences in one of Bengaluru's most well-connected neighborhoods. With easy access to major IT hubs, schools, and shopping destinations, this project is ideal for professionals and families seeking both convenience and comfort.",
+    image: "/images/hero.jpg",
+    gallery: [
+      "/images/hero.jpg",
+      "/images/Valencia.webp",
+      "/images/jindal.webp",
+      "/images/hero.jpg"
+    ],
+    brochureUrl: "#",
+    youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+    price: "Pricing on request",
+    area: "1,200 - 2,000 sq ft",
+    bedrooms: "2-3 BHK",
+    amenities: [
+      "Swimming Pool",
+      "Fitness Center",
+      "Children's Play Area",
+      "Landscaped Gardens",
+      "24/7 Security",
+      "Power Backup"
+    ],
+    specifications: {
+      "Total Floors": "G + 20 Floors",
+      "Total Units": "Coming Soon",
+      "Possession": "Upcoming",
+      "RERA Registration": "To be updated"
+    },
+    address: "Century Marathahalli, Marathahalli, Bengaluru"
+  },
+  "7": {
+    id: "7",
+    title: "Century Regalia",
+    location: "Cunningham Road, Bengaluru",
+    status: "Upcoming",
+    description: "Luxury high-rise development offering premium residences in the heart of the city.",
+    fullDescription: "Century Regalia is a landmark luxury project located off Cunningham Road, offering premium residences with stunning city views and top-tier amenities. Designed for discerning buyers, it combines elegant architecture with a prime central address.",
+    image: "/images/hero.jpg",
+    gallery: [
+      "/images/hero.jpg",
+      "/images/jindal.webp",
+      "/images/Valencia.webp",
+      "/images/hero.jpg"
+    ],
+    brochureUrl: "#",
+    youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+    price: "Pricing on request",
+    area: "2,000 - 3,000 sq ft",
+    bedrooms: "3-4 BHK",
+    amenities: [
+      "Infinity Pool",
+      "Rooftop Lounge",
+      "Fitness Center",
+      "Clubhouse",
+      "24/7 Security",
+      "Power Backup"
+    ],
+    specifications: {
+      "Total Floors": "G + 35 Floors",
+      "Total Units": "Coming Soon",
+      "Possession": "Upcoming",
+      "RERA Registration": "To be updated"
+    },
+    address: "Century Regalia, Off Cunningham Road, Bengaluru"
+  },
+  "8": {
+    id: "8",
+    title: "Century Serraya",
+    location: "Marathahalli, Bengaluru",
+    status: "Upcoming",
+    description: "Modern residential complex with contemporary design and excellent connectivity to IT corridors.",
+    fullDescription: "Century Serraya is a thoughtfully designed residential development in the bustling Marathahalli area. This modern complex offers residents the perfect blend of contemporary living and strategic location, with easy access to major IT parks, shopping centers, and transportation hubs. The project features state-of-the-art amenities and spacious apartments designed for the modern urban lifestyle.",
+    image: "/images/hero.jpg",
+    gallery: [
+      "/images/hero.jpg",
+      "/images/jindal.webp",
+      "/images/Valencia.webp",
+      "/images/hero.jpg",
+      "/images/jindal.webp",
+      "/images/Valencia.webp"
+    ],
+    brochureUrl: "/brochures/Brigade Valencia.pdf", // Using existing brochure for testing
+    youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+    price: "Starting from ₹1.1 Crores",
+    area: "1,200 - 2,000 sq ft",
+    bedrooms: "2-3 BHK",
+    amenities: [
+      "Swimming Pool",
+      "Fitness Center",
+      "Children's Play Area",
+      "Landscaped Gardens",
+      "Clubhouse",
+      "Jogging Track",
+      "24/7 Security",
+      "Power Backup",
+      "Visitor Parking",
+      "Community Hall"
+    ],
+    specifications: {
+      "Total Floors": "G + 25 Floors",
+      "Total Units": "320 Units",
+      "Possession": "December 2025",
+      "RERA Registration": "To be updated"
+    },
+    address: "Century Serraya, Marathahalli, Bengaluru 560037"
   }
 };
 
@@ -243,6 +428,7 @@ export default function ProjectDetail() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   
   // Timeout refs for delayed closing
   const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -295,30 +481,30 @@ export default function ProjectDetail() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-[#F4F0EC] px-4 py-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between">
             {/* Logo and Brand Name */}
-            <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center overflow-visible">
+            <Link href="/" className="flex items-center gap-2 md:gap-4 hover:opacity-80 transition-opacity">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-[#CDA274] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                 <Image
                   src="/images/logo.png"
                   alt="Sonia's Realty Media Logo"
-                  width={180}
-                  height={180}
-                  className="object-cover rounded-full"
+                  width={360}
+                  height={360}
+                  className="object-contain rounded-full scale-125"
                 />
               </div>
-              <h1 className="font-dm-serif text-2xl lg:text-3xl text-[#292F36] font-bold whitespace-nowrap">
+              <h1 className="font-dm-serif text-sm sm:text-lg md:text-lg lg:text-xl text-[#292F36] font-bold whitespace-nowrap">
                 SONIA'S REALTY MEDIA
               </h1>
             </Link>
 
             {/* Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
+            <nav className="hidden lg:flex items-center space-x-6">
+              <Link href="/" className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition">
                 Home
               </Link>
-              <Link href="/about" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
+              <Link href="/about" className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition">
                 About us
               </Link>
               
@@ -329,7 +515,7 @@ export default function ProjectDetail() {
                 onMouseLeave={handleServicesMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition flex items-center gap-2 group"
+                  className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1 group"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 >
                   Services
@@ -343,9 +529,12 @@ export default function ProjectDetail() {
                   </svg>
                 </button>
                 {servicesDropdownOpen && isClient && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
-                    <Link href="/services/property-search" className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                  <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+                    <Link href="/services/property-search" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
                       Property Search
+                    </Link>
+                    <Link href="/services/financial-planning" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                      Financial Planning
                     </Link>
                   </div>
                 )}
@@ -358,7 +547,7 @@ export default function ProjectDetail() {
                 onMouseLeave={handleProjectsMouseLeave}
               >
                 <button 
-                  className="font-jost text-lg text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-2 group"
+                  className="font-jost text-base text-[#C76904] font-medium hover:text-[#292F36] transition flex items-center gap-1 group"
                   onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
                 >
                   Projects
@@ -372,15 +561,15 @@ export default function ProjectDetail() {
                   </svg>
                 </button>
                 {projectsDropdownOpen && isClient && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
-                    <Link href="/projects" className="block px-4 py-2 font-jost text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
+                  <div className="absolute top-full left-0 mt-1 w-44 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+                    <Link href="/projects" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
                       All Projects
                     </Link>
                   </div>
                 )}
               </div>
 
-              <Link href="/contact" className="font-jost text-lg text-[#292F36] hover:text-[#C76904] transition">
+              <Link href="/contact" className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition">
                 Contact us
               </Link>
             </nav>
@@ -388,16 +577,16 @@ export default function ProjectDetail() {
             {/* Search Icon */}
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className="w-10 h-10 border-2 border-[#292F36] rounded-full flex items-center justify-center hover:bg-[#292F36] hover:text-white transition"
+              className="w-8 h-8 border-2 border-[#292F36] rounded-full flex items-center justify-center hover:bg-[#292F36] hover:text-white transition flex-shrink-0"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden p-2"
+              className="lg:hidden w-6 h-6 flex flex-col justify-center items-center flex-shrink-0"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <div className="w-6 h-0.5 bg-[#292F36] mb-1"></div>
@@ -409,7 +598,7 @@ export default function ProjectDetail() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && isClient && (
-          <div className="md:hidden mt-4 pb-4">
+          <div className="lg:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               <Link href="/" className="font-jost text-lg text-[#292F36]">Home</Link>
               <Link href="/about" className="font-jost text-lg text-[#292F36]">About us</Link>
@@ -421,21 +610,8 @@ export default function ProjectDetail() {
         )}
       </header>
 
-      {/* Breadcrumb */}
-      <div className="bg-[#F4F0EC] py-4">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm font-jost">
-            <Link href="/" className="text-[#4D5053] hover:text-[#CDA274] transition">Home</Link>
-            <span className="text-[#4D5053]">/</span>
-            <Link href="/projects" className="text-[#4D5053] hover:text-[#CDA274] transition">Projects</Link>
-            <span className="text-[#4D5053]">/</span>
-            <span className="text-[#CDA274] font-medium">{project.title}</span>
-          </div>
-        </div>
-      </div>
-
       {/* Hero Section */}
-      <section className="py-12 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Project Images */}
@@ -491,7 +667,7 @@ export default function ProjectDetail() {
                 </div>
               </div>
 
-              <p className="font-jost text-lg text-[#4D5053] leading-relaxed">
+              <p className="font-jost text-lg text-[#4D5053] leading-relaxed text-justify">
                 {project.fullDescription}
               </p>
 
@@ -518,13 +694,12 @@ export default function ProjectDetail() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 {project.brochureUrl && (
-                  <Link 
-                    href={project.brochureUrl} 
-                    target="_blank"
+                  <button 
+                    onClick={() => setIsBrochureModalOpen(true)}
                     className="flex-1 border-2 border-[#CDA274] text-[#CDA274] px-6 py-4 rounded-2xl font-jost font-semibold text-lg hover:bg-[#CDA274] hover:text-white transition text-center"
                   >
                     Download Brochure
-                  </Link>
+                  </button>
                 )}
                 {project.youtubeUrl && (
                   <Link 
@@ -694,28 +869,16 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#292F36]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="font-dm-serif text-4xl md:text-5xl text-white font-bold mb-8">
-            Interested in {project.title}?
-          </h2>
-          <p className="font-jost text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-12">
-            Get in touch with our expert team to learn more about this project and schedule a site visit.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/contact" className="bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300 inline-block text-center">
-              Contact us
-            </Link>
-            <Link href="/projects" className="border-2 border-white text-white hover:bg-white hover:text-[#292F36] font-inter font-semibold text-lg px-8 py-4 rounded-2xl transition duration-300 inline-block text-center">
-              View Other Projects
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Search Modal */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      
+      {/* Brochure Modal */}
+      <BrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
+        projectTitle={project.title}
+        brochureUrl={project.brochureUrl || '#'}
+      />
     </div>
   );
 }

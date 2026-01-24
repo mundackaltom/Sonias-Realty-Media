@@ -25,15 +25,18 @@ const searchData: SearchResult[] = [
   { id: '5', title: 'Contact Us', type: 'page', url: '/contact', description: 'Get in touch with our team' },
   
   // Services
-  { id: '6', title: 'Property Search', type: 'service', url: '/services', description: 'Find your perfect property with our advanced search' },
-  { id: '7', title: 'Real Estate Consultation', type: 'service', url: '/contact', description: 'Expert advice for buying and selling' },
-  { id: '8', title: 'Property Valuation', type: 'service', url: '/contact', description: 'Get accurate property valuations' },
+  { id: '6', title: 'Property Search', type: 'service', url: '/services/property-search', description: 'Find your perfect property with our advanced search' },
+  { id: '7', title: 'Financial Planning', type: 'service', url: '/services/financial-planning', description: 'Expert financial guidance for real estate investments' },
+  { id: '8', title: 'Real Estate Investment', type: 'service', url: '/services/real-estate-investment', description: 'Build wealth through strategic real estate investments' },
+  { id: '9', title: 'Asset Management', type: 'service', url: '/services/asset-management', description: 'Professional property management and asset optimization' },
+  { id: '10', title: 'Real Estate Consultation', type: 'service', url: '/contact', description: 'Expert advice for buying and selling' },
+  { id: '11', title: 'Property Valuation', type: 'service', url: '/contact', description: 'Get accurate property valuations' },
   
   // Projects
-  { id: '9', title: 'Riverside Towers', type: 'project', url: '/projects', description: 'Luxury 2-3 BHK apartments with river views' },
-  { id: '10', title: 'Garden Heights', type: 'project', url: '/projects', description: 'Family friendly apartments close to parks' },
-  { id: '11', title: 'Valencia Premium', type: 'project', url: '/projects', description: 'Premium residential project with world-class amenities' },
-  { id: '12', title: 'Emerald Square', type: 'project', url: '/projects', description: 'Spacious family homes with gardens' },
+  { id: '12', title: 'Riverside Towers', type: 'project', url: '/projects', description: 'Luxury 2-3 BHK apartments with river views' },
+  { id: '13', title: 'Garden Heights', type: 'project', url: '/projects', description: 'Family friendly apartments close to parks' },
+  { id: '14', title: 'Valencia Premium', type: 'project', url: '/projects', description: 'Premium residential project with world-class amenities' },
+  { id: '15', title: 'Emerald Square', type: 'project', url: '/projects', description: 'Spacious family homes with gardens' },
 ];
 
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
@@ -101,28 +104,28 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
   return (
     <div 
-      className="fixed inset-0 bg-transparent z-50 flex items-start justify-center pt-20"
+      className="fixed inset-0 bg-black/20 z-50 flex items-start justify-center pt-4 sm:pt-20 px-2 sm:px-0"
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-[20px] shadow-2xl w-full max-w-2xl mx-4 max-h-[70vh] overflow-hidden"
+        className="bg-white rounded-[20px] shadow-2xl w-full max-w-2xl mx-2 sm:mx-4 max-h-[90vh] sm:max-h-[70vh] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Header */}
-        <div className="p-6 border-b border-[#E7E7E7]">
-          <div className="flex items-center gap-4">
-            <span className="text-2xl">🔍</span>
+        <div className="p-4 sm:p-6 border-b border-[#E7E7E7]">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <span className="text-xl sm:text-2xl">🔍</span>
             <input
               ref={searchInputRef}
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for pages, projects, or services..."
-              className="flex-1 font-jost text-[18px] outline-none placeholder-[#4D5053]"
+              className="flex-1 font-jost text-base sm:text-[18px] outline-none placeholder-[#4D5053]"
             />
             <button
               onClick={onClose}
-              className="w-8 h-8 flex items-center justify-center text-[#4D5053] hover:text-[#292F36] transition"
+              className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-[#4D5053] hover:text-[#292F36] transition text-sm sm:text-base"
             >
               ✕
             </button>

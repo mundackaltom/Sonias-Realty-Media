@@ -182,19 +182,19 @@ function SearchModal(param) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "fixed inset-0 bg-transparent z-50 flex items-start justify-center pt-20",
+        className: "fixed inset-0 bg-black/20 z-50 flex items-start justify-center pt-4 sm:pt-20 px-2 sm:px-0",
         onClick: onClose,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "bg-white rounded-[20px] shadow-2xl w-full max-w-2xl mx-4 max-h-[70vh] overflow-hidden",
+            className: "bg-white rounded-[20px] shadow-2xl w-full max-w-2xl mx-2 sm:mx-4 max-h-[90vh] sm:max-h-[70vh] overflow-hidden",
             onClick: (e)=>e.stopPropagation(),
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "p-6 border-b border-[#E7E7E7]",
+                    className: "p-4 sm:p-6 border-b border-[#E7E7E7]",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-4",
+                        className: "flex items-center gap-3 sm:gap-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-2xl",
+                                className: "text-xl sm:text-2xl",
                                 children: "🔍"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/SearchModal.tsx",
@@ -207,7 +207,7 @@ function SearchModal(param) {
                                 value: searchQuery,
                                 onChange: (e)=>setSearchQuery(e.target.value),
                                 placeholder: "Search for pages, projects, or services...",
-                                className: "flex-1 font-jost text-[18px] outline-none placeholder-[#4D5053]"
+                                className: "flex-1 font-jost text-base sm:text-[18px] outline-none placeholder-[#4D5053]"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/SearchModal.tsx",
                                 lineNumber: 115,
@@ -215,7 +215,7 @@ function SearchModal(param) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: onClose,
-                                className: "w-8 h-8 flex items-center justify-center text-[#4D5053] hover:text-[#292F36] transition",
+                                className: "w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-[#4D5053] hover:text-[#292F36] transition text-sm sm:text-base",
                                 children: "✕"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/SearchModal.tsx",
@@ -516,9 +516,22 @@ function InteractiveMap(param) {
     const [isMapLoaded, setIsMapLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     // Generate Google Maps embed URL with visible pins/markers
     let embedUrl;
-    if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia")) {
-        // Brigade Valencia with visible pin - using the most reliable embed format
-        embedUrl = "https://maps.google.com/maps?width=100%25&height=400&hl=en&q=Brigade%20Valencia%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed";
+    if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia") || businessName === "Brigade Avalon" || address.includes("Brigade Avalon") || address.includes("Prestige Jindal City") || businessName === "Prestige Jindal City" || businessName === "Century Marathahalli" || address.includes("Century Marathahalli") || businessName === "Century Regalia" || address.includes("Century Regalia") || businessName === "Century Serraya" || address.includes("Century Serraya")) {
+        // Brigade Valencia / Brigade Avalon / Prestige Jindal City / Century projects with visible pin - using the most reliable embed format
+        let nameForQuery = "Brigade%20Valencia%20Bengaluru";
+        if (businessName === "Brigade Avalon" || address.includes("Brigade Avalon")) {
+            nameForQuery = "Brigade%20Avalon%20Bengaluru";
+        } else if (businessName === "Prestige Jindal City" || address.includes("Prestige Jindal City")) {
+            // Use Prestige Jindal City as the office pin
+            nameForQuery = "Prestige%20Jindal%20City%20Bengaluru";
+        } else if (businessName === "Century Marathahalli" || address.includes("Century Marathahalli")) {
+            nameForQuery = "Century%20Marathahalli%20Bengaluru";
+        } else if (businessName === "Century Regalia" || address.includes("Century Regalia")) {
+            nameForQuery = "Century%20Regalia%20Cunningham%20Road%20Bengaluru";
+        } else if (businessName === "Century Serraya" || address.includes("Century Serraya")) {
+            nameForQuery = "Century%20Serraya%20Marathahalli%20Bengaluru";
+        }
+        embedUrl = "https://maps.google.com/maps?width=100%25&height=400&hl=en&q=".concat(nameForQuery, "&t=&z=15&ie=UTF8&iwloc=&output=embed");
     } else {
         // Default location with visible pin
         const encodedAddress = encodeURIComponent(address);
@@ -526,10 +539,28 @@ function InteractiveMap(param) {
     }
     // Generate direct Google Maps links with proper location handling
     let googleMapsUrl, directionsUrl;
-    if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia")) {
-        // Use the exact Brigade Valencia location from the provided Google Maps link
-        googleMapsUrl = "https://maps.app.goo.gl/5FKnixuuk46kG9WK6";
-        directionsUrl = "https://maps.app.goo.gl/5FKnixuuk46kG9WK6?navigate=yes";
+    if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia") || businessName === "Brigade Avalon" || address.includes("Brigade Avalon") || address.includes("Prestige Jindal City") || businessName === "Prestige Jindal City" || businessName === "Century Marathahalli" || address.includes("Century Marathahalli") || businessName === "Century Regalia" || address.includes("Century Regalia") || businessName === "Century Serraya" || address.includes("Century Serraya")) {
+        // Use a specific link for Valencia; query links for Avalon, Prestige Jindal City, and Century projects so the pin is visible
+        if (businessName === "Brigade Avalon" || address.includes("Brigade Avalon")) {
+            googleMapsUrl = "https://maps.google.com/?q=Brigade%20Avalon%20Bengaluru";
+            directionsUrl = "https://maps.google.com/maps?q=Brigade%20Avalon%20Bengaluru&navigate=yes";
+        } else if (businessName === "Prestige Jindal City" || address.includes("Prestige Jindal City")) {
+            googleMapsUrl = "https://maps.google.com/?q=Prestige%20Jindal%20City%20Bengaluru";
+            directionsUrl = "https://maps.google.com/maps?q=Prestige%20Jindal%20City%20Bengaluru&navigate=yes";
+        } else if (businessName === "Century Marathahalli" || address.includes("Century Marathahalli")) {
+            googleMapsUrl = "https://maps.google.com/?q=Century%20Marathahalli%20Bengaluru";
+            directionsUrl = "https://maps.google.com/maps?q=Century%20Marathahalli%20Bengaluru&navigate=yes";
+        } else if (businessName === "Century Regalia" || address.includes("Century Regalia")) {
+            googleMapsUrl = "https://maps.google.com/?q=Century%20Regalia%20Cunningham%20Road%20Bengaluru";
+            directionsUrl = "https://maps.google.com/maps?q=Century%20Regalia%20Cunningham%20Road%20Bengaluru&navigate=yes";
+        } else if (businessName === "Century Serraya" || address.includes("Century Serraya")) {
+            googleMapsUrl = "https://maps.google.com/?q=Century%20Serraya%20Marathahalli%20Bengaluru";
+            directionsUrl = "https://maps.google.com/maps?q=Century%20Serraya%20Marathahalli%20Bengaluru&navigate=yes";
+        } else {
+            // Brigade Valencia exact shared link (kept as-is)
+            googleMapsUrl = "https://maps.app.goo.gl/5FKnixuuk46kG9WK6";
+            directionsUrl = "https://maps.app.goo.gl/5FKnixuuk46kG9WK6?navigate=yes";
+        }
     } else {
         googleMapsUrl = "https://maps.google.com/?q=".concat(encodeURIComponent(address));
         directionsUrl = "https://maps.google.com/maps?q=".concat(encodeURIComponent(address), "&navigate=yes");
@@ -560,7 +591,7 @@ function InteractiveMap(param) {
                                                 d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                                lineNumber: 49,
+                                                lineNumber: 116,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -570,18 +601,18 @@ function InteractiveMap(param) {
                                                 d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                                lineNumber: 50,
+                                                lineNumber: 117,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 115,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 114,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -589,18 +620,18 @@ function InteractiveMap(param) {
                                     children: "Loading Interactive Map..."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 120,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                            lineNumber: 46,
+                            lineNumber: 113,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 45,
+                        lineNumber: 112,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
@@ -618,13 +649,13 @@ function InteractiveMap(param) {
                         onLoad: ()=>setIsMapLoaded(true)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 58,
+                        lineNumber: 125,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                lineNumber: 43,
+                lineNumber: 110,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -649,7 +680,7 @@ function InteractiveMap(param) {
                                         d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 148,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -659,20 +690,20 @@ function InteractiveMap(param) {
                                         d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 82,
+                                        lineNumber: 149,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 80,
+                                lineNumber: 147,
                                 columnNumber: 11
                             }, this),
                             "Open in Google Maps"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 74,
+                        lineNumber: 141,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -693,19 +724,19 @@ function InteractiveMap(param) {
                                     d: "M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 93,
+                                lineNumber: 160,
                                 columnNumber: 11
                             }, this),
                             "Get Directions"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 87,
+                        lineNumber: 154,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -735,29 +766,29 @@ function InteractiveMap(param) {
                                     d: "M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 115,
+                                    lineNumber: 182,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 114,
+                                lineNumber: 181,
                                 columnNumber: 11
                             }, this),
                             "Share Location"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 99,
+                        lineNumber: 166,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                lineNumber: 73,
+                lineNumber: 140,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid md:grid-cols-3 gap-6 mt-12",
+                className: "grid md:grid-cols-2 gap-6 mt-12",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "bg-white p-6 rounded-2xl shadow-lg border border-gray-100",
@@ -776,17 +807,17 @@ function InteractiveMap(param) {
                                         d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 193,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 125,
+                                    lineNumber: 192,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 124,
+                                lineNumber: 191,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -794,101 +825,21 @@ function InteractiveMap(param) {
                                 children: "Office Hours"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 129,
+                                lineNumber: 196,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "font-jost text-[#4D5053] text-sm leading-relaxed",
-                                children: [
-                                    "Mon-Sat: 9AM-7PM",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 131,
-                                        columnNumber: 29
-                                    }, this),
-                                    "Sunday: 10AM-5PM"
-                                ]
-                            }, void 0, true, {
+                                children: "Anytime — we're always reachable"
+                            }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 130,
+                                lineNumber: 197,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 123,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white p-6 rounded-2xl shadow-lg border border-gray-100",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-12 h-12 bg-[#CDA274] rounded-xl flex items-center justify-center mb-4",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    className: "w-6 h-6 text-white",
-                                    fill: "none",
-                                    stroke: "currentColor",
-                                    viewBox: "0 0 24 24",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            strokeLinecap: "round",
-                                            strokeLinejoin: "round",
-                                            strokeWidth: 2,
-                                            d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                            lineNumber: 139,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            strokeLinecap: "round",
-                                            strokeLinejoin: "round",
-                                            strokeWidth: 2,
-                                            d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                            lineNumber: 140,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 138,
-                                    columnNumber: 13
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 137,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "font-dm-serif text-lg font-bold text-[#292F36] mb-2",
-                                children: "Parking"
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 143,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "font-jost text-[#4D5053] text-sm leading-relaxed",
-                                children: [
-                                    "Free parking available",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 145,
-                                        columnNumber: 35
-                                    }, this),
-                                    "Underground & street parking"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 144,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 136,
+                        lineNumber: 190,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -908,17 +859,17 @@ function InteractiveMap(param) {
                                         d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 205,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 204,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 151,
+                                lineNumber: 203,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -926,41 +877,41 @@ function InteractiveMap(param) {
                                 children: "Contact Us"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 156,
+                                lineNumber: 208,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "font-jost text-[#4D5053] text-sm leading-relaxed",
                                 children: [
-                                    "+91 98765 43210",
+                                    "+91 90367 47821",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 210,
                                         columnNumber: 28
                                     }, this),
-                                    "info@soniasrealtymedia.com"
+                                    "soniasrealtymedia@gmail.com"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                                lineNumber: 157,
+                                lineNumber: 209,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                        lineNumber: 150,
+                        lineNumber: 202,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-                lineNumber: 122,
+                lineNumber: 189,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Documents/SRM/src/components/InteractiveMap.tsx",
-        lineNumber: 41,
+        lineNumber: 108,
         columnNumber: 5
     }, this);
 }
@@ -1217,6 +1168,117 @@ const projectsData = {
             "RERA Registration": "PRM/KA/RERA/1251/310/PR/200701/004234"
         },
         address: "Prestige Raintree Park, Whitefield, Bengaluru 560066"
+    },
+    "6": {
+        id: "6",
+        title: "Century Marathahalli",
+        location: "Marathahalli, Bengaluru",
+        status: "Upcoming",
+        description: "Modern residential project in Marathahalli with excellent connectivity to IT corridors and premium amenities.",
+        fullDescription: "Century Marathahalli offers thoughtfully designed residences in one of Bengaluru's most well-connected neighborhoods. With easy access to major IT hubs, schools, and shopping destinations, this project is ideal for professionals and families seeking both convenience and comfort.",
+        image: "/images/hero.jpg",
+        gallery: [
+            "/images/hero.jpg",
+            "/images/Valencia.webp",
+            "/images/jindal.webp",
+            "/images/hero.jpg"
+        ],
+        brochureUrl: "#",
+        youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+        price: "Pricing on request",
+        area: "1,200 - 2,000 sq ft",
+        bedrooms: "2-3 BHK",
+        amenities: [
+            "Swimming Pool",
+            "Fitness Center",
+            "Children's Play Area",
+            "Landscaped Gardens",
+            "24/7 Security",
+            "Power Backup"
+        ],
+        specifications: {
+            "Total Floors": "G + 20 Floors",
+            "Total Units": "Coming Soon",
+            "Possession": "Upcoming",
+            "RERA Registration": "To be updated"
+        },
+        address: "Century Marathahalli, Marathahalli, Bengaluru"
+    },
+    "7": {
+        id: "7",
+        title: "Century Regalia",
+        location: "Cunningham Road, Bengaluru",
+        status: "Upcoming",
+        description: "Luxury high-rise development offering premium residences in the heart of the city.",
+        fullDescription: "Century Regalia is a landmark luxury project located off Cunningham Road, offering premium residences with stunning city views and top-tier amenities. Designed for discerning buyers, it combines elegant architecture with a prime central address.",
+        image: "/images/hero.jpg",
+        gallery: [
+            "/images/hero.jpg",
+            "/images/jindal.webp",
+            "/images/Valencia.webp",
+            "/images/hero.jpg"
+        ],
+        brochureUrl: "#",
+        youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+        price: "Pricing on request",
+        area: "2,000 - 3,000 sq ft",
+        bedrooms: "3-4 BHK",
+        amenities: [
+            "Infinity Pool",
+            "Rooftop Lounge",
+            "Fitness Center",
+            "Clubhouse",
+            "24/7 Security",
+            "Power Backup"
+        ],
+        specifications: {
+            "Total Floors": "G + 35 Floors",
+            "Total Units": "Coming Soon",
+            "Possession": "Upcoming",
+            "RERA Registration": "To be updated"
+        },
+        address: "Century Regalia, Off Cunningham Road, Bengaluru"
+    },
+    "8": {
+        id: "8",
+        title: "Century Serraya",
+        location: "Marathahalli, Bengaluru",
+        status: "Upcoming",
+        description: "Modern residential complex with contemporary design and excellent connectivity to IT corridors.",
+        fullDescription: "Century Serraya is a thoughtfully designed residential development in the bustling Marathahalli area. This modern complex offers residents the perfect blend of contemporary living and strategic location, with easy access to major IT parks, shopping centers, and transportation hubs. The project features state-of-the-art amenities and spacious apartments designed for the modern urban lifestyle.",
+        image: "/images/hero.jpg",
+        gallery: [
+            "/images/hero.jpg",
+            "/images/jindal.webp",
+            "/images/Valencia.webp",
+            "/images/hero.jpg",
+            "/images/jindal.webp",
+            "/images/Valencia.webp"
+        ],
+        brochureUrl: "#",
+        youtubeUrl: "https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf",
+        price: "Starting from ₹1.1 Crores",
+        area: "1,200 - 2,000 sq ft",
+        bedrooms: "2-3 BHK",
+        amenities: [
+            "Swimming Pool",
+            "Fitness Center",
+            "Children's Play Area",
+            "Landscaped Gardens",
+            "Clubhouse",
+            "Jogging Track",
+            "24/7 Security",
+            "Power Backup",
+            "Visitor Parking",
+            "Community Hall"
+        ],
+        specifications: {
+            "Total Floors": "G + 25 Floors",
+            "Total Units": "320 Units",
+            "Possession": "December 2025",
+            "RERA Registration": "To be updated"
+        },
+        address: "Century Serraya, Marathahalli, Bengaluru 560037"
     }
 };
 function ProjectDetail() {
@@ -1230,6 +1292,7 @@ function ProjectDetail() {
     const [servicesDropdownOpen, setServicesDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isSearchOpen, setIsSearchOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [selectedImage, setSelectedImage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [isBrochureModalOpen, setIsBrochureModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     // Timeout refs for delayed closing
     const servicesTimeoutRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const projectsTimeoutRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -1271,7 +1334,7 @@ function ProjectDetail() {
                         children: "Project Not Found"
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                        lineNumber: 285,
+                        lineNumber: 398,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1280,18 +1343,18 @@ function ProjectDetail() {
                         children: "Back to Projects"
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                        lineNumber: 286,
+                        lineNumber: 399,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 284,
+                lineNumber: 397,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-            lineNumber: 283,
+            lineNumber: 396,
             columnNumber: 7
         }, this);
     }
@@ -1320,12 +1383,12 @@ function ProjectDetail() {
                                                 className: "object-cover rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 303,
+                                                lineNumber: 416,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 302,
+                                            lineNumber: 415,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1333,13 +1396,13 @@ function ProjectDetail() {
                                             children: "SONIA'S REALTY MEDIA"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 311,
+                                            lineNumber: 424,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 301,
+                                    lineNumber: 414,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1351,7 +1414,7 @@ function ProjectDetail() {
                                             children: "Home"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 318,
+                                            lineNumber: 431,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1360,7 +1423,7 @@ function ProjectDetail() {
                                             children: "About us"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 321,
+                                            lineNumber: 434,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1385,18 +1448,18 @@ function ProjectDetail() {
                                                                 d: "M19 9l-7 7-7-7"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                                lineNumber: 342,
+                                                                lineNumber: 455,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                            lineNumber: 336,
+                                                            lineNumber: 449,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 331,
+                                                    lineNumber: 444,
                                                     columnNumber: 17
                                                 }, this),
                                                 servicesDropdownOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1407,18 +1470,18 @@ function ProjectDetail() {
                                                         children: "Property Search"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 347,
+                                                        lineNumber: 460,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 346,
+                                                    lineNumber: 459,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 326,
+                                            lineNumber: 439,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1443,18 +1506,18 @@ function ProjectDetail() {
                                                                 d: "M19 9l-7 7-7-7"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                                lineNumber: 371,
+                                                                lineNumber: 484,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                            lineNumber: 365,
+                                                            lineNumber: 478,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 360,
+                                                    lineNumber: 473,
                                                     columnNumber: 17
                                                 }, this),
                                                 projectsDropdownOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1465,18 +1528,18 @@ function ProjectDetail() {
                                                         children: "All Projects"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 376,
+                                                        lineNumber: 489,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 375,
+                                                    lineNumber: 488,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 355,
+                                            lineNumber: 468,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1485,13 +1548,13 @@ function ProjectDetail() {
                                             children: "Contact us"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 383,
+                                            lineNumber: 496,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 317,
+                                    lineNumber: 430,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1509,17 +1572,17 @@ function ProjectDetail() {
                                             d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 394,
+                                            lineNumber: 507,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                        lineNumber: 393,
+                                        lineNumber: 506,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 389,
+                                    lineNumber: 502,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1530,38 +1593,38 @@ function ProjectDetail() {
                                             className: "w-6 h-0.5 bg-[#292F36] mb-1"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 403,
+                                            lineNumber: 516,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-6 h-0.5 bg-[#292F36] mb-1"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 404,
+                                            lineNumber: 517,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-6 h-0.5 bg-[#292F36]"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 405,
+                                            lineNumber: 518,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 399,
+                                    lineNumber: 512,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 299,
+                            lineNumber: 412,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                        lineNumber: 298,
+                        lineNumber: 411,
                         columnNumber: 9
                     }, this),
                     mobileMenuOpen && isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1575,7 +1638,7 @@ function ProjectDetail() {
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 414,
+                                    lineNumber: 527,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1584,7 +1647,7 @@ function ProjectDetail() {
                                     children: "About us"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 415,
+                                    lineNumber: 528,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1593,7 +1656,7 @@ function ProjectDetail() {
                                     children: "Services"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 416,
+                                    lineNumber: 529,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1602,7 +1665,7 @@ function ProjectDetail() {
                                     children: "Projects"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 417,
+                                    lineNumber: 530,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1611,24 +1674,24 @@ function ProjectDetail() {
                                     children: "Contact us"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 418,
+                                    lineNumber: 531,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 413,
+                            lineNumber: 526,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                        lineNumber: 412,
+                        lineNumber: 525,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 297,
+                lineNumber: 410,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1644,7 +1707,7 @@ function ProjectDetail() {
                                 children: "Home"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 428,
+                                lineNumber: 541,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1652,7 +1715,7 @@ function ProjectDetail() {
                                 children: "/"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 429,
+                                lineNumber: 542,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1661,7 +1724,7 @@ function ProjectDetail() {
                                 children: "Projects"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 430,
+                                lineNumber: 543,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1669,7 +1732,7 @@ function ProjectDetail() {
                                 children: "/"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 431,
+                                lineNumber: 544,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1677,23 +1740,23 @@ function ProjectDetail() {
                                 children: project.title
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 432,
+                                lineNumber: 545,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                        lineNumber: 427,
+                        lineNumber: 540,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                    lineNumber: 426,
+                    lineNumber: 539,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 425,
+                lineNumber: 538,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1716,7 +1779,7 @@ function ProjectDetail() {
                                                 className: "object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 444,
+                                                lineNumber: 557,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1726,18 +1789,18 @@ function ProjectDetail() {
                                                     children: project.status
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 451,
+                                                    lineNumber: 564,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 450,
+                                                lineNumber: 563,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                        lineNumber: 443,
+                                        lineNumber: 556,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1752,23 +1815,23 @@ function ProjectDetail() {
                                                     className: "object-cover"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 471,
+                                                    lineNumber: 584,
                                                     columnNumber: 21
                                                 }, this)
                                             }, index, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 464,
+                                                lineNumber: 577,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                        lineNumber: 462,
+                                        lineNumber: 575,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 442,
+                                lineNumber: 555,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1783,12 +1846,12 @@ function ProjectDetail() {
                                                     children: project.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 481,
+                                                    lineNumber: 594,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 480,
+                                                lineNumber: 593,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1807,7 +1870,7 @@ function ProjectDetail() {
                                                                 d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                                lineNumber: 487,
+                                                                lineNumber: 600,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1817,13 +1880,13 @@ function ProjectDetail() {
                                                                 d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                                lineNumber: 488,
+                                                                lineNumber: 601,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 486,
+                                                        lineNumber: 599,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1831,19 +1894,19 @@ function ProjectDetail() {
                                                         children: project.location
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 490,
+                                                        lineNumber: 603,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 485,
+                                                lineNumber: 598,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                        lineNumber: 479,
+                                        lineNumber: 592,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1851,7 +1914,7 @@ function ProjectDetail() {
                                         children: project.fullDescription
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                        lineNumber: 494,
+                                        lineNumber: 607,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1865,7 +1928,7 @@ function ProjectDetail() {
                                                         children: "Price Range"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 501,
+                                                        lineNumber: 614,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1873,13 +1936,13 @@ function ProjectDetail() {
                                                         children: project.price
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 502,
+                                                        lineNumber: 615,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 500,
+                                                lineNumber: 613,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1890,7 +1953,7 @@ function ProjectDetail() {
                                                         children: "Area"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 505,
+                                                        lineNumber: 618,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1898,13 +1961,13 @@ function ProjectDetail() {
                                                         children: project.area
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 506,
+                                                        lineNumber: 619,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 504,
+                                                lineNumber: 617,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1915,7 +1978,7 @@ function ProjectDetail() {
                                                         children: "Configuration"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 509,
+                                                        lineNumber: 622,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1923,13 +1986,13 @@ function ProjectDetail() {
                                                         children: project.bedrooms
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 510,
+                                                        lineNumber: 623,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 508,
+                                                lineNumber: 621,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1940,7 +2003,7 @@ function ProjectDetail() {
                                                         children: "Status"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 513,
+                                                        lineNumber: 626,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1948,19 +2011,19 @@ function ProjectDetail() {
                                                         children: project.specifications.Possession
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 514,
+                                                        lineNumber: 627,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 512,
+                                                lineNumber: 625,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                        lineNumber: 499,
+                                        lineNumber: 612,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1973,7 +2036,7 @@ function ProjectDetail() {
                                                 children: "Download Brochure"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 521,
+                                                lineNumber: 634,
                                                 columnNumber: 19
                                             }, this),
                                             project.youtubeUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1989,19 +2052,19 @@ function ProjectDetail() {
                                                             d: "M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                            lineNumber: 536,
+                                                            lineNumber: 649,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                        lineNumber: 535,
+                                                        lineNumber: 648,
                                                         columnNumber: 21
                                                     }, this),
                                                     "Watch Video"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 530,
+                                                lineNumber: 643,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2010,35 +2073,35 @@ function ProjectDetail() {
                                                 children: "Schedule Visit"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 541,
+                                                lineNumber: 654,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                        lineNumber: 519,
+                                        lineNumber: 632,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 478,
+                                lineNumber: 591,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                        lineNumber: 440,
+                        lineNumber: 553,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                    lineNumber: 439,
+                    lineNumber: 552,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 438,
+                lineNumber: 551,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2051,7 +2114,7 @@ function ProjectDetail() {
                             children: "Amenities & Features"
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 556,
+                            lineNumber: 669,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2069,12 +2132,12 @@ function ProjectDetail() {
                                                 d: "M2 15c1.67-2.33 3.67-3.5 6-3.5s4.33 1.17 6 3.5c1.67-2.33 3.67-3.5 6-3.5v2c-1.67 0-3 1.17-4 2.5-1-1.33-2.33-2.5-4-2.5s-3 1.17-4 2.5c-1-1.33-2.33-2.5-4-2.5v-2zm0 4c1.67-2.33 3.67-3.5 6-3.5s4.33 1.17 6 3.5c1.67-2.33 3.67-3.5 6-3.5v2c-1.67 0-3 1.17-4 2.5-1-1.33-2.33-2.5-4-2.5s-3 1.17-4 2.5c-1-1.33-2.33-2.5-4-2.5v-2z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 567,
+                                                lineNumber: 680,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 566,
+                                            lineNumber: 679,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('fitness') || name.includes('gym') || name.includes('center')) {
@@ -2090,12 +2153,12 @@ function ProjectDetail() {
                                                 d: "M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 3v10a1 1 0 001 1h8a1 1 0 001-1V7M9 7h6M9 11h6m-6 4h6"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 573,
+                                                lineNumber: 686,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 572,
+                                            lineNumber: 685,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('security') || name.includes('24/7')) {
@@ -2111,12 +2174,12 @@ function ProjectDetail() {
                                                 d: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 579,
+                                                lineNumber: 692,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 578,
+                                            lineNumber: 691,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('parking') || name.includes('car')) {
@@ -2132,12 +2195,12 @@ function ProjectDetail() {
                                                 d: "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 585,
+                                                lineNumber: 698,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 584,
+                                            lineNumber: 697,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('garden') || name.includes('park') || name.includes('green')) {
@@ -2153,12 +2216,12 @@ function ProjectDetail() {
                                                 d: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 591,
+                                                lineNumber: 704,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 590,
+                                            lineNumber: 703,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('hall') || name.includes('community') || name.includes('club')) {
@@ -2175,7 +2238,7 @@ function ProjectDetail() {
                                                     d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 597,
+                                                    lineNumber: 710,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2185,13 +2248,13 @@ function ProjectDetail() {
                                                     d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                    lineNumber: 598,
+                                                    lineNumber: 711,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 596,
+                                            lineNumber: 709,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('play') || name.includes('kids') || name.includes('child')) {
@@ -2207,12 +2270,12 @@ function ProjectDetail() {
                                                 d: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 604,
+                                                lineNumber: 717,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 603,
+                                            lineNumber: 716,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('power') || name.includes('backup') || name.includes('generator')) {
@@ -2228,12 +2291,12 @@ function ProjectDetail() {
                                                 d: "M13 10V3L4 14h7v7l9-11h-7z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 610,
+                                                lineNumber: 723,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 609,
+                                            lineNumber: 722,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('basketball') || name.includes('sport') || name.includes('court')) {
@@ -2245,12 +2308,12 @@ function ProjectDetail() {
                                                 d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 616,
+                                                lineNumber: 729,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 615,
+                                            lineNumber: 728,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('intercom') || name.includes('communication')) {
@@ -2266,12 +2329,12 @@ function ProjectDetail() {
                                                 d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 622,
+                                                lineNumber: 735,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 621,
+                                            lineNumber: 734,
                                             columnNumber: 21
                                         }, this);
                                     } else if (name.includes('jogging') || name.includes('track') || name.includes('running')) {
@@ -2287,12 +2350,12 @@ function ProjectDetail() {
                                                 d: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 628,
+                                                lineNumber: 741,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 627,
+                                            lineNumber: 740,
                                             columnNumber: 21
                                         }, this);
                                     } else {
@@ -2309,12 +2372,12 @@ function ProjectDetail() {
                                                 d: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 635,
+                                                lineNumber: 748,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 634,
+                                            lineNumber: 747,
                                             columnNumber: 21
                                         }, this);
                                     }
@@ -2327,7 +2390,7 @@ function ProjectDetail() {
                                             children: getAmenityIcon(amenity)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 643,
+                                            lineNumber: 756,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2335,30 +2398,30 @@ function ProjectDetail() {
                                             children: amenity
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                            lineNumber: 646,
+                                            lineNumber: 759,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 642,
+                                    lineNumber: 755,
                                     columnNumber: 17
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 559,
+                            lineNumber: 672,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                    lineNumber: 555,
+                    lineNumber: 668,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 554,
+                lineNumber: 667,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2371,7 +2434,7 @@ function ProjectDetail() {
                             children: "Project Specifications"
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 657,
+                            lineNumber: 770,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2388,7 +2451,7 @@ function ProjectDetail() {
                                                 children: key
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 664,
+                                                lineNumber: 777,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2396,35 +2459,35 @@ function ProjectDetail() {
                                                 children: value
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                                lineNumber: 665,
+                                                lineNumber: 778,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, key, true, {
                                         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                        lineNumber: 663,
+                                        lineNumber: 776,
                                         columnNumber: 17
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 661,
+                                lineNumber: 774,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 660,
+                            lineNumber: 773,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                    lineNumber: 656,
+                    lineNumber: 769,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 655,
+                lineNumber: 768,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2440,7 +2503,7 @@ function ProjectDetail() {
                                     children: "Project Location"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 677,
+                                    lineNumber: 790,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2448,13 +2511,13 @@ function ProjectDetail() {
                                     children: "Visit us at our conveniently located project site for personalized consultation and assistance."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 680,
+                                    lineNumber: 793,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 676,
+                            lineNumber: 789,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2464,23 +2527,23 @@ function ProjectDetail() {
                                 businessName: project.title
                             }, void 0, false, {
                                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                lineNumber: 687,
+                                lineNumber: 800,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 686,
+                            lineNumber: 799,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                    lineNumber: 675,
+                    lineNumber: 788,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 674,
+                lineNumber: 787,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2497,7 +2560,7 @@ function ProjectDetail() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 700,
+                            lineNumber: 813,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2505,19 +2568,50 @@ function ProjectDetail() {
                             children: "Get in touch with our expert team to learn more about this project and schedule a site visit."
                         }, void 0, false, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 703,
+                            lineNumber: 816,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex flex-col sm:flex-row gap-6 justify-center",
                             children: [
+                                project.brochureUrl && project.brochureUrl !== '#' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>setIsBrochureModalOpen(true),
+                                    className: "bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300 inline-flex items-center justify-center gap-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: "w-5 h-5",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            viewBox: "0 0 24 24",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                strokeWidth: 2,
+                                                d: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
+                                                lineNumber: 826,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
+                                            lineNumber: 825,
+                                            columnNumber: 17
+                                        }, this),
+                                        "Download Brochure"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
+                                    lineNumber: 821,
+                                    columnNumber: 15
+                                }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     href: "/contact",
-                                    className: "bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300 inline-block text-center",
+                                    className: "bg-[#292F36] hover:bg-[#4D5053] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300 inline-block text-center",
                                     children: "Contact us"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 707,
+                                    lineNumber: 831,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2526,24 +2620,24 @@ function ProjectDetail() {
                                     children: "View Other Projects"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                                    lineNumber: 710,
+                                    lineNumber: 834,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                            lineNumber: 706,
+                            lineNumber: 819,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                    lineNumber: 699,
+                    lineNumber: 812,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 698,
+                lineNumber: 811,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$src$2f$components$2f$SearchModal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2551,17 +2645,17 @@ function ProjectDetail() {
                 onClose: ()=>setIsSearchOpen(false)
             }, void 0, false, {
                 fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-                lineNumber: 718,
+                lineNumber: 842,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Documents/SRM/src/app/projects/[id]/page.tsx",
-        lineNumber: 295,
+        lineNumber: 408,
         columnNumber: 5
     }, this);
 }
-_s(ProjectDetail, "JhuCCeKEaoEhypc3f+lhL9F5/hY=", false, function() {
+_s(ProjectDetail, "HWZmxg0Gff6B9Vcmy0xc3DSLSgc=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$SRM$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"]
     ];

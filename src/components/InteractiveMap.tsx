@@ -16,9 +16,41 @@ export default function InteractiveMap({
   // Generate Google Maps embed URL with visible pins/markers
   let embedUrl;
   
-  if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia")) {
-    // Brigade Valencia with visible pin - using the most reliable embed format
-    embedUrl = `https://maps.google.com/maps?width=100%25&height=400&hl=en&q=Brigade%20Valencia%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  if (
+    businessName === "Valencia Premium" ||
+    businessName === "Brigade Valencia" ||
+    address.includes("Brigade Valencia") ||
+    businessName === "Brigade Avalon" ||
+    address.includes("Brigade Avalon") ||
+    address.includes("Prestige Jindal City") ||
+    businessName === "Prestige Jindal City" ||
+    businessName === "Century Marathahalli" ||
+    address.includes("Century Marathahalli") ||
+    businessName === "Century Regalia" ||
+    address.includes("Century Regalia") ||
+    businessName === "Century Serraya" ||
+    address.includes("Century Serraya")
+  ) {
+    // Brigade Valencia / Brigade Avalon / Prestige Jindal City / Century projects with visible pin - using the most reliable embed format
+    let nameForQuery = "Brigade%20Valencia%20Bengaluru";
+
+    if (businessName === "Brigade Avalon" || address.includes("Brigade Avalon")) {
+      nameForQuery = "Brigade%20Avalon%20Bengaluru";
+    } else if (
+      businessName === "Prestige Jindal City" ||
+      address.includes("Prestige Jindal City")
+    ) {
+      // Use Prestige Jindal City as the office pin
+      nameForQuery = "Prestige%20Jindal%20City%20Bengaluru";
+    } else if (businessName === "Century Marathahalli" || address.includes("Century Marathahalli")) {
+      nameForQuery = "Century%20Marathahalli%20Bengaluru";
+    } else if (businessName === "Century Regalia" || address.includes("Century Regalia")) {
+      nameForQuery = "Cunningham%20Road%20Bengaluru";
+    } else if (businessName === "Century Serraya" || address.includes("Century Serraya")) {
+      nameForQuery = "Century%20Serraya%20Marathahalli%20Bengaluru";
+    }
+
+    embedUrl = `https://maps.google.com/maps?width=100%25&height=400&hl=en&q=${nameForQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
   } else {
     // Default location with visible pin
     const encodedAddress = encodeURIComponent(address);
@@ -28,10 +60,45 @@ export default function InteractiveMap({
   // Generate direct Google Maps links with proper location handling
   let googleMapsUrl, directionsUrl;
   
-  if (businessName === "Valencia Premium" || businessName === "Brigade Valencia" || address.includes("Brigade Valencia")) {
-    // Use the exact Brigade Valencia location from the provided Google Maps link
-    googleMapsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6`;
-    directionsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6?navigate=yes`;
+  if (
+    businessName === "Valencia Premium" ||
+    businessName === "Brigade Valencia" ||
+    address.includes("Brigade Valencia") ||
+    businessName === "Brigade Avalon" ||
+    address.includes("Brigade Avalon") ||
+    address.includes("Prestige Jindal City") ||
+    businessName === "Prestige Jindal City" ||
+    businessName === "Century Marathahalli" ||
+    address.includes("Century Marathahalli") ||
+    businessName === "Century Regalia" ||
+    address.includes("Century Regalia") ||
+    businessName === "Century Serraya" ||
+    address.includes("Century Serraya")
+  ) {
+    // Use a specific link for Valencia; query links for Avalon, Prestige Jindal City, and Century projects so the pin is visible
+    if (businessName === "Brigade Avalon" || address.includes("Brigade Avalon")) {
+      googleMapsUrl = `https://maps.google.com/?q=Brigade%20Avalon%20Bengaluru`;
+      directionsUrl = `https://maps.google.com/maps?q=Brigade%20Avalon%20Bengaluru&navigate=yes`;
+    } else if (
+      businessName === "Prestige Jindal City" ||
+      address.includes("Prestige Jindal City")
+    ) {
+      googleMapsUrl = `https://maps.google.com/?q=Prestige%20Jindal%20City%20Bengaluru`;
+      directionsUrl = `https://maps.google.com/maps?q=Prestige%20Jindal%20City%20Bengaluru&navigate=yes`;
+    } else if (businessName === "Century Marathahalli" || address.includes("Century Marathahalli")) {
+      googleMapsUrl = `https://maps.google.com/?q=Century%20Marathahalli%20Bengaluru`;
+      directionsUrl = `https://maps.google.com/maps?q=Century%20Marathahalli%20Bengaluru&navigate=yes`;
+    } else if (businessName === "Century Regalia" || address.includes("Century Regalia")) {
+      googleMapsUrl = `https://maps.google.com/?q=Cunningham%20Road%20Bengaluru`;
+      directionsUrl = `https://maps.google.com/maps?q=Cunningham%20Road%20Bengaluru&navigate=yes`;
+    } else if (businessName === "Century Serraya" || address.includes("Century Serraya")) {
+      googleMapsUrl = `https://maps.google.com/?q=Century%20Serraya%20Marathahalli%20Bengaluru`;
+      directionsUrl = `https://maps.google.com/maps?q=Century%20Serraya%20Marathahalli%20Bengaluru&navigate=yes`;
+    } else {
+      // Brigade Valencia exact shared link (kept as-is)
+      googleMapsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6`;
+      directionsUrl = `https://maps.app.goo.gl/5FKnixuuk46kG9WK6?navigate=yes`;
+    }
   } else {
     googleMapsUrl = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
     directionsUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&navigate=yes`;
@@ -119,7 +186,7 @@ export default function InteractiveMap({
       </div>
 
       {/* Quick Info Cards */}
-      <div className="grid md:grid-cols-3 gap-6 mt-12">
+      <div className="grid md:grid-cols-2 gap-6 mt-12">
         <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
           <div className="w-12 h-12 bg-[#CDA274] rounded-xl flex items-center justify-center mb-4">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,22 +195,7 @@ export default function InteractiveMap({
           </div>
           <h3 className="font-dm-serif text-lg font-bold text-[#292F36] mb-2">Office Hours</h3>
           <p className="font-jost text-[#4D5053] text-sm leading-relaxed">
-            Mon-Sat: 9AM-7PM<br />
-            Sunday: 10AM-5PM
-          </p>
-        </div>
-
-        <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-          <div className="w-12 h-12 bg-[#CDA274] rounded-xl flex items-center justify-center mb-4">
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <h3 className="font-dm-serif text-lg font-bold text-[#292F36] mb-2">Parking</h3>
-          <p className="font-jost text-[#4D5053] text-sm leading-relaxed">
-            Free parking available<br />
-            Underground & street parking
+            Anytime — we're always reachable
           </p>
         </div>
 
@@ -155,8 +207,8 @@ export default function InteractiveMap({
           </div>
           <h3 className="font-dm-serif text-lg font-bold text-[#292F36] mb-2">Contact Us</h3>
           <p className="font-jost text-[#4D5053] text-sm leading-relaxed">
-            +91 98765 43210<br />
-            info@soniasrealtymedia.com
+            +91 90367 47821<br />
+            soniasrealtymedia@gmail.com
           </p>
         </div>
       </div>

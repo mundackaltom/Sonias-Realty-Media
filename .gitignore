@@ -24,3 +24,5 @@ yarn-error.log*
 # Optional IDE stuff
 .vscode/
 .idea/
+.next
+.DS_Store

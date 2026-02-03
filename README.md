@@ -1,48 +1,40 @@
-<div align="center">
+# 🏡 Sonia’s Realty Media — Real Estate Website
 
-# 🏢 Sonias Realty Media  
-### SRM University Website Clone
-
-A **modern, responsive, and user-friendly web application** built with **Next.js**,  
-designed to provide students quick access to academic resources, campus information,  
-and essential services.
-
-</div>
+A modern, responsive real estate website built for **Sonia’s Realty Media** to showcase property listings, services, and business details in a clean and user-friendly way.  
+Designed to work smoothly across **mobile, tablet, and desktop** with a fast and elegant UI.
 
 ---
 
-## 🚀 Project Overview
+## 📌 Project Overview
 
-**Sonias Realty Media** is a frontend-focused web project that recreates the experience of a real-world university website.
+Real estate businesses need a strong online presence to:
+- showcase property listings  
+- highlight services and special offerings  
+- help customers quickly contact the business  
+- build credibility through a clean professional website  
 
-🔹 Built with scalability in mind  
-🔹 Clean and modular UI architecture  
-🔹 Optimized for performance and responsiveness  
-
-This project demonstrates **practical frontend engineering skills** and real-world project structuring.
+This project provides a front-end focused real estate website with modern design, responsive layout, and scalable structure.
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
-✅ Fully responsive (mobile, tablet & desktop)  
-✅ Fast rendering with **Next.js**  
-✅ Intuitive navigation & layout  
-✅ Media gallery integration  
-✅ Reusable & modular components  
-✅ Python utility scripts for media handling  
+✅ Fully responsive UI (mobile-first)  
+✅ Modern layout for real estate businesses  
+✅ Clean navigation with structured sections  
+✅ Property showcase / listing-style UI  
+✅ Dedicated sections for services, about, and contact  
+✅ Optimized build using Next.js  
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category | Tools |
-|--------|------|
-| **Framework** | Next.js, React |
-| **Languages** | JavaScript, TypeScript |
-| **Styling** | CSS / Tailwind CSS |
-| **Linting** | ESLint |
-| **Tools** | Node.js, npm |
+- **Next.js** (React Framework)
+- **JavaScript / TypeScript**
+- **Tailwind CSS**
+- **PostCSS**
+- **Node.js**
 
 ---
 
@@ -50,19 +42,16 @@ This project demonstrates **practical frontend engineering skills** and real-wor
 
 ```bash
 Sonias-Realty-Media/
-├── public/                 # Static assets
-├── src/                    # Application source code
-│   ├── components/         # Reusable UI components
-│   ├── pages/              # Routes & views
-│   └── styles/             # Styling files
 │
-├── scripts/                # Python utility scripts
-│   ├── extract_images_generic.py
-│   ├── extract_pdf_images.py
-│   ├── filter_images.py
-│   └── check_images.py
+├── public/                # Static assets (images/icons)
+├── src/                   # Main application source code
 │
-├── package.json
-├── next.config.ts
-├── eslint.config.mjs
-└── README.md
+├── package.json           # Project scripts & dependencies
+├── package-lock.json      # Dependency lock file
+├── next.config.ts         # Next.js configuration
+├── tailwind.config.js     # Tailwind configuration
+├── postcss.config.mjs     # PostCSS configuration
+├── eslint.config.mjs      # ESLint configuration
+├── tsconfig.json          # TypeScript configuration
+└── README.md              # Documentation
+

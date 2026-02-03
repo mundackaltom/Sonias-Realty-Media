@@ -9,16 +9,9 @@ import CompanyStrip from "../components/CompanyStrip";
 import BankStrip from "../components/BankStrip";
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [heroStyles, setHeroStyles] = useState({ width: '100%', height: '100%', borderRadius: '0px' });
   const [mounted, setMounted] = useState(false);
-  
-  // Timeout refs for delayed closing
-  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const projectsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Handle mounting
   useEffect(() => {
@@ -61,184 +54,10 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [mounted]);
 
-  const handleServicesMouseEnter = () => {
-    if (servicesTimeoutRef.current) {
-      clearTimeout(servicesTimeoutRef.current);
-    }
-    setServicesDropdownOpen(true);
-  };
-
-  const handleServicesMouseLeave = () => {
-    servicesTimeoutRef.current = setTimeout(() => {
-      setServicesDropdownOpen(false);
-    }, 300); // 300ms delay
-  };
-
-  const handleProjectsMouseEnter = () => {
-    if (projectsTimeoutRef.current) {
-      clearTimeout(projectsTimeoutRef.current);
-    }
-    setProjectsDropdownOpen(true);
-  };
-
-  const handleProjectsMouseLeave = () => {
-    projectsTimeoutRef.current = setTimeout(() => {
-      setProjectsDropdownOpen(false);
-    }, 300); // 300ms delay
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-[#F4F0EC] px-4 py-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Single row with logo, brand name, navigation, and search */}
-          <div className="flex items-center justify-between">
-            {/* Logo and Brand Name */}
-            <Link href="/" className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-[#CDA274] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
-                <Image
-                  src="/images/logo.png"
-                  alt="Sonia's Realty Media Logo"
-                  width={360}
-                  height={360}
-                  className="object-contain rounded-full scale-125"
-                />
-              </div>
-              <h1 className="font-dm-serif text-sm sm:text-base md:text-lg lg:text-xl text-[#292F36] font-bold whitespace-nowrap">
-                SONIA'S REALTY MEDIA
-              </h1>
-            </Link>
-
-            {/* Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6">
-              <Link href="/" className="font-jost text-base text-[#C76904] font-medium hover:text-[#292F36] transition">
-                Home
-              </Link>
-              <Link href="/about" className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition">
-                About us
-              </Link>
-              
-              {/* Services Dropdown */}
-              <div 
-                className="relative"
-                onMouseEnter={handleServicesMouseEnter}
-                onMouseLeave={handleServicesMouseLeave}
-              >
-                <button 
-                  className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1 group"
-                  onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                >
-                  Services
-                  <svg 
-                    className="w-4 h-4 transition-transform duration-200 group-hover:text-[#C76904]"
-                    style={{ transform: servicesDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {servicesDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
-                    <Link href="/services/property-search" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
-                      Property Search
-                    </Link>
-                    <Link href="/services/financial-planning" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
-                      Financial Planning
-                    </Link>
-                    <Link href="/services/real-estate-investment" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
-                      Real Estate Investment
-                    </Link>
-                    <Link href="/services/asset-management" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
-                      Asset Management
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Projects Dropdown */}
-              <div 
-                className="relative"
-                onMouseEnter={handleProjectsMouseEnter}
-                onMouseLeave={handleProjectsMouseLeave}
-              >
-                <button 
-                  className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition flex items-center gap-1 group"
-                  onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
-                >
-                  Projects
-                  <svg 
-                    className="w-4 h-4 transition-transform duration-200 group-hover:text-[#C76904]"
-                    style={{ transform: projectsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {projectsDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-44 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
-                    <Link href="/projects" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
-                      All Projects
-                    </Link>
-                    <Link href="/projects" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
-                      Upcoming Projects
-                    </Link>
-                    <Link href="/projects" className="block px-4 py-2 font-jost text-sm text-[#292F36] hover:bg-[#F4F0EC] hover:text-[#C76904] transition">
-                      Completed Projects
-                    </Link>
-                    <Link href="/projects" className="block px-4 py-2 font-jost text-sm text-[#C76904] font-semibold hover:bg-[#F4F0EC] transition border-t border-gray-100 mt-1">
-                      View All Projects
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              <Link href="/contact" className="font-jost text-base text-[#292F36] hover:text-[#C76904] transition">
-                Contact us
-              </Link>
-            </nav>
-
-            {/* Search Icon */}
-            <button 
-              onClick={() => setIsSearchOpen(true)}
-              className="w-8 h-8 border-2 border-[#292F36] rounded-full flex items-center justify-center hover:bg-[#292F36] hover:text-white transition flex-shrink-0"
-            >
-              <span className="text-sm">🔍</span>
-            </button>
-
-            {/* Mobile Menu Button */}
-            <button 
-              className="lg:hidden p-2 flex-shrink-0"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <div className="w-6 h-0.5 bg-[#292F36] mb-1"></div>
-              <div className="w-6 h-0.5 bg-[#292F36] mb-1"></div>
-              <div className="w-6 h-0.5 bg-[#292F36]"></div>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4">
-              <Link href="/" className="font-jost text-lg text-[#C76904] font-medium">Home</Link>
-              <Link href="/about" className="font-jost text-lg text-[#292F36]">About us</Link>
-              <Link href="/services" className="font-jost text-lg text-[#292F36]">Services</Link>
-              <Link href="/projects" className="font-jost text-lg text-[#292F36]">Projects</Link>
-              <Link href="/contact" className="font-jost text-lg text-[#292F36]">Contact us</Link>
-            </div>
-          </div>
-        )}
-      </header>
-
-      {/* Hero Section */}
-      <section className="relative h-[88vh] overflow-hidden bg-white">
-
+      {/* Hero Section - adjusted for fixed header */}
+      <section className="relative h-[100vh] overflow-hidden bg-white">
         {/* Hero Container with Dynamic Width */}
         <div 
           className="relative overflow-hidden mx-auto shadow-2xl transition-all duration-500 ease-out"

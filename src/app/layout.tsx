@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "../components/footer";
+import SiteHeader from "../components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Sonia's Realty Media | Premium Real Estate in Bengaluru",
@@ -34,6 +35,9 @@ export default function RootLayout({
         suppressHydrationWarning
         className="font-jost antialiased"
       >
+  {/* Site Header */}
+  <SiteHeader transparent={true} />
+
   {/* Page Content */}
   <main>{children}</main>
 

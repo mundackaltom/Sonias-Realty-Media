@@ -28,8 +28,8 @@ export const Menu = ({ list }: MenuProps) => {
                 <Link
                   className={`
                     relative flex items-center justify-center rounded px-8 py-3 transition-all
-                    hover:bg-foreground/10
-                    ${hovered === item?.id ? 'bg-foreground/10' : ''}
+                    hover:bg-white/10
+                    ${hovered === item?.id ? 'bg-white/10' : ''}
                   `}
                   onMouseEnter={() => setHovered(item.id)}
                   onMouseLeave={() => setHovered(null)}
@@ -41,7 +41,7 @@ export const Menu = ({ list }: MenuProps) => {
                   <motion.div
                     layout
                     layoutId={`cursor`}
-                    className={'absolute h-0.5 w-full bg-foreground'}
+                    className={'absolute h-0.5 w-full bg-white'}
                   />
                 )}
                 {item?.dropdown && hovered === item?.id && (

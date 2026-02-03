@@ -56,15 +56,15 @@ export default function SiteHeader({ onSearchOpen, transparent = false }: SiteHe
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const headerClasses = transparent
-    ? "fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm"
+    ? "fixed top-0 left-0 right-0 z-50 bg-transparent"
     : "bg-[#F4F0EC] shadow-sm";
 
   const textClasses = transparent
-    ? "text-gray-900"
+    ? "text-white"
     : "text-[#292F36]";
 
   const logoTextClasses = transparent
-    ? "text-gray-900 font-bold"
+    ? "text-white font-bold"
     : "text-[#292F36] font-bold";
 
   return (
@@ -100,7 +100,7 @@ export default function SiteHeader({ onSearchOpen, transparent = false }: SiteHe
             {/* Search Icon */}
             <button 
               onClick={onSearchOpen}
-              className={`w-8 h-8 border-2 border-current rounded-full flex items-center justify-center hover:bg-current hover:text-white transition flex-shrink-0 ${textClasses}`}
+              className={`w-8 h-8 border-2 border-current rounded-full flex items-center justify-center hover:bg-white/10 transition flex-shrink-0 ${textClasses}`}
             >
               <span className="text-sm">🔍</span>
             </button>
@@ -110,9 +110,9 @@ export default function SiteHeader({ onSearchOpen, transparent = false }: SiteHe
               className="lg:hidden p-2 flex-shrink-0"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <div className={`w-6 h-0.5 mb-1 ${transparent ? 'bg-gray-900' : 'bg-[#292F36]'}`}></div>
-              <div className={`w-6 h-0.5 mb-1 ${transparent ? 'bg-gray-900' : 'bg-[#292F36]'}`}></div>
-              <div className={`w-6 h-0.5 ${transparent ? 'bg-gray-900' : 'bg-[#292F36]'}`}></div>
+              <div className={`w-6 h-0.5 mb-1 ${transparent ? 'bg-white' : 'bg-[#292F36]'}`}></div>
+              <div className={`w-6 h-0.5 mb-1 ${transparent ? 'bg-white' : 'bg-[#292F36]'}`}></div>
+              <div className={`w-6 h-0.5 ${transparent ? 'bg-white' : 'bg-[#292F36]'}`}></div>
             </button>
           </div>
         </div>

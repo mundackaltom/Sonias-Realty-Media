@@ -74,8 +74,8 @@ export default function Home() {
               quality={100}
               sizes="100vw"
             />
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/50"></div>
+            {/* Heavy dark overlay for better navbar contrast */}
+            <div className="absolute inset-0 bg-black/80"></div>
           </div>
           
           {/* Hero Content */}

@@ -49,4 +49,12 @@ export default function Navbar() {
           open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
           <Link href="/" onClick={() => setOpen(false)} className="block">Home</Link>
-          <Link href="/about" onClick={() => setOpen(false)
+          <Link href="/about" onClick={() => setOpen(false)} className="block">About us</Link>
+          <Link href="/services" onClick={() => setOpen(false)} className="block">Services</Link>
+          <Link href="/projects" onClick={() => setOpen(false)} className="block">Projects</Link>
+          <Link href="/contact" onClick={() => setOpen(false)} className="block">Contact us</Link>
+        </div>
+      )}
+    </header>
+  );
+}

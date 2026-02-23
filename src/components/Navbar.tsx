@@ -23,7 +23,7 @@ export default function Navbar() {
             </svg>
           </span>
           {/* Title */}
-          <span className="text-3xl font-dm-serif font-bold tracking-tight text-gray-800">SONIA'S REALTY MEDIA</span>
+          <span className="text-3xl font-dm-serif font-bold tracking-tight text-gray-800">SONIA&apos;S REALTY MEDIA</span>
         </div>
 
         <nav className="hidden md:flex items-center space-x-10 text-lg font-medium">
@@ -49,12 +49,4 @@ export default function Navbar() {
           open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
           <Link href="/" onClick={() => setOpen(false)} className="block">Home</Link>
-          <Link href="/about" onClick={() => setOpen(false)} className="block">About us</Link>
-          <Link href="/services" onClick={() => setOpen(false)} className="block">Services</Link>
-          <Link href="/projects" onClick={() => setOpen(false)} className="block">Projects</Link>
-          <Link href="/contact" onClick={() => setOpen(false)} className="block">Contact us</Link>
-        </div>
-      )}
-    </header>
-  );
-}
+          <Link href="/about" onClick={() => setOpen(false)

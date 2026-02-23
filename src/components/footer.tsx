@@ -15,14 +15,14 @@ export default function Footer() {
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#CDA274] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                 <Image
                   src="/images/logo.png"
-                  alt="Sonia's Realty Media Logo"
+                  alt="Sonia&apos;s Realty Media Logo"
                   width={64}
                   height={64}
                   className="object-contain rounded-full"
                 />
               </div>
               <h3 className="font-dm-serif text-lg sm:text-xl text-white font-bold leading-tight">
-                Sonia's Realty Media
+                Sonia&apos;s Realty Media
               </h3>
             </Link>
             <p className="font-jost text-sm sm:text-base text-white/80 mb-4 sm:mb-6 leading-relaxed max-w-sm">
@@ -97,7 +97,7 @@ export default function Footer() {
         <div className="border-t border-white/20 mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="font-jost text-xs sm:text-sm text-white/60 text-center sm:text-left">
-              © {new Date().getFullYear()} Sonia's Realty Media. All rights reserved.
+              © {new Date().getFullYear()} Sonia&apos;s Realty Media. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6">
               <Link href="/about" className="font-jost text-xs sm:text-sm text-white/60 hover:text-[#CDA274] transition">

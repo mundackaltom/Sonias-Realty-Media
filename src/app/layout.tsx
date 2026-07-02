@@ -36,7 +36,7 @@ export default function RootLayout({
         className="font-jost antialiased"
       >
   {/* Site Header */}
-  <SiteHeader transparent={true} />
+  <SiteHeader />
 
   {/* Page Content */}
   <main>{children}</main>

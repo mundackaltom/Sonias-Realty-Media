@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Menu, { IMenu } from "./ui/navbar";
+import SearchModal from "./SearchModal";
 
 // Menu data matching the current site structure
 const menuItems: IMenu[] = [
@@ -48,22 +50,24 @@ const menuItems: IMenu[] = [
 ];
 
 interface SiteHeaderProps {
-	onSearchOpen?: () => void;
 	transparent?: boolean;
 }
 
-export default function SiteHeader({ onSearchOpen, transparent = false }: SiteHeaderProps) {
+export default function SiteHeader({ transparent }: SiteHeaderProps) {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [isSearchOpen, setIsSearchOpen] = useState(false);
+	const pathname = usePathname();
+	const isTransparent = transparent ?? pathname === "/";
 
-	const headerClasses = transparent
+	const headerClasses = isTransparent
 		? "fixed top-0 left-0 right-0 z-50 bg-transparent"
 		: "bg-[#F4F0EC] shadow-sm";
 
-	const textClasses = transparent
+	const textClasses = isTransparent
 		? "text-white"
 		: "text-[#292F36]";
 
-	const logoTextClasses = transparent
+	const logoTextClasses = isTransparent
 		? "text-white font-bold"
 		: "text-[#292F36] font-bold";
 
@@ -99,7 +103,7 @@ export default function SiteHeader({ onSearchOpen, transparent = false }: SiteHe
 					<div className="flex items-center gap-3">
 						{/* Search Icon */}
 						<button
-							onClick={onSearchOpen}
+							onClick={() => setIsSearchOpen(true)}
 							className={`w-8 h-8 border-2 border-current rounded-full flex items-center justify-center hover:bg-white/10 transition flex-shrink-0 ${textClasses}`}
 						>
 							<span className="text-sm">🔍</span>
@@ -153,6 +157,7 @@ export default function SiteHeader({ onSearchOpen, transparent = false }: SiteHe
 					</div>
 				</div>
 			)}
+				<SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 		</header>
 	);
 }

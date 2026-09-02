@@ -2,51 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import SearchModal from "../../components/SearchModal";
 import BackToTopButton from "../../components/BackToTopButton";
 
 export default function Services() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  
-  // Timeout refs for delayed closing
-  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const projectsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Prevent hydration mismatch
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const handleServicesMouseEnter = () => {
-    if (servicesTimeoutRef.current) {
-      clearTimeout(servicesTimeoutRef.current);
-    }
-    setServicesDropdownOpen(true);
-  };
-
-  const handleServicesMouseLeave = () => {
-    servicesTimeoutRef.current = setTimeout(() => {
-      setServicesDropdownOpen(false);
-    }, 600); // 600ms delay for better user experience
-  };
-
-  const handleProjectsMouseEnter = () => {
-    if (projectsTimeoutRef.current) {
-      clearTimeout(projectsTimeoutRef.current);
-    }
-    setProjectsDropdownOpen(true);
-  };
-
-  const handleProjectsMouseLeave = () => {
-    projectsTimeoutRef.current = setTimeout(() => {
-      setProjectsDropdownOpen(false);
-    }, 600); // 600ms delay for better user experience
-  };
 
   return (
     <div className="min-h-screen bg-white">

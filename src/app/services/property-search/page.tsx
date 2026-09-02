@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import SearchModal from "../../../components/SearchModal";
 
 // In‑memory list of all projects you want searchable.
@@ -50,10 +50,6 @@ const ALL_PROPERTIES = [
 ];
 
 export default function PropertySearch() {
-  const [isClient, setIsClient] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const [searchFilters, setSearchFilters] = useState({
@@ -67,40 +63,6 @@ export default function PropertySearch() {
   // NEW: results + "has searched" flag
   const [results, setResults] = useState<typeof ALL_PROPERTIES>([]);
   const [hasSearched, setHasSearched] = useState(false);
-
-  // Timeout refs for delayed closing
-  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const projectsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const handleServicesMouseEnter = () => {
-    if (servicesTimeoutRef.current) {
-      clearTimeout(servicesTimeoutRef.current);
-    }
-    setServicesDropdownOpen(true);
-  };
-
-  const handleServicesMouseLeave = () => {
-    servicesTimeoutRef.current = setTimeout(() => {
-      setServicesDropdownOpen(false);
-    }, 500);
-  };
-
-  const handleProjectsMouseEnter = () => {
-    if (projectsTimeoutRef.current) {
-      clearTimeout(projectsTimeoutRef.current);
-    }
-    setProjectsDropdownOpen(true);
-  };
-
-  const handleProjectsMouseLeave = () => {
-    projectsTimeoutRef.current = setTimeout(() => {
-      setProjectsDropdownOpen(false);
-    }, 500);
-  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

@@ -7,7 +7,6 @@ import ProjectCard from "../../components/ProjectCard";
 import SearchModal from "../../components/SearchModal";
 import BackToTopButton from "../../components/BackToTopButton";
 import BrochureModal from "../../components/BrochureModal";
-import DownloadTest from "../../components/DownloadTest";
 
 const projects = [
 	{

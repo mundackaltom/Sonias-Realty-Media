@@ -5,6 +5,14 @@
 /* Import mobile-specific styles */
 @import '../styles/mobile.css';
 
+/* Font families for the font-jost / font-dm-serif / font-inter utilities */
+@theme {
+  --font-jost: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-dm-serif: "DM Serif Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -20,7 +28,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jost);
 }
 
 /* Prevent horizontal scrolling */

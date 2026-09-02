@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Footer from "../components/footer";
 import SiteHeader from "../components/SiteHeader";
+import CookieConsentBanner from "../components/CookieConsentBanner";
 
 export const metadata: Metadata = {
   title: "Sonia's Realty Media | Premium Real Estate in Bengaluru",
@@ -47,6 +48,9 @@ export default function RootLayout({
 
   {/* Footer */}
   <Footer />
+
+  {/* Cookie Consent */}
+  <CookieConsentBanner />
       </body>
     </html>
   );

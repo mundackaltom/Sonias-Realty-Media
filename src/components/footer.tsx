@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { openCookiePreferences } from "@/lib/consent";
 
 export default function Footer() {
   return (
@@ -109,6 +110,16 @@ export default function Footer() {
               <Link href="/contact" className="font-jost text-xs sm:text-sm text-white/60 hover:text-[#CDA274] transition">
                 Contact us
               </Link>
+              <Link href="/privacy-policy" className="font-jost text-xs sm:text-sm text-white/60 hover:text-[#CDA274] transition">
+                Privacy Policy
+              </Link>
+              <button
+                type="button"
+                onClick={openCookiePreferences}
+                className="font-jost text-xs sm:text-sm text-white/60 hover:text-[#CDA274] transition"
+              >
+                Cookie Preferences
+              </button>
             </div>
           </div>
         </div>

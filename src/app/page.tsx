@@ -1,460 +1,266 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import SearchModal from "../components/SearchModal";
-import BackToTopButton from "../components/BackToTopButton";
-import CompanyStrip from "../components/CompanyStrip";
-import BankStrip from "../components/BankStrip";
+import { PROJECTS } from "@/lib/projects";
+import { CREDENTIALS, DEVELOPER_LOGOS, LENDER_LOGOS, MARQUEE_ITEMS, QUOTES, whatsappUrl } from "@/lib/content";
+import HomeSearchBand from "@/components/HomeSearchBand";
+import Marquee from "@/components/Marquee";
+import ProjectCard from "@/components/ProjectCard";
+
+const FIGURES = [
+  { value: "6", label: "Years advising" },
+  { value: "108", label: "Homes handed over" },
+  { value: String(PROJECTS.length), label: "Live projects" },
+  { value: "0%", label: "Fee for buyers" },
+];
 
 export default function Home() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [heroStyles, setHeroStyles] = useState({ width: '100%', height: '100%', borderRadius: '0px' });
-  const [mounted, setMounted] = useState(false);
-
-  // Handle mounting
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Handle scroll effect for hero image
-  useEffect(() => {
-    if (!mounted) return;
-
-    const handleScroll = () => {
-      const newScrollY = window.scrollY;
-      
-      // Update hero styles based on scroll
-      const maxScroll = 600;
-      const minWidth = 65;
-      const maxWidth = 100;
-      
-      let newWidth = maxWidth;
-      if (newScrollY >= maxScroll) {
-        newWidth = minWidth;
-      } else {
-        const widthReduction = ((newScrollY / maxScroll) * (maxWidth - minWidth));
-        newWidth = Math.max(minWidth, maxWidth - widthReduction);
-      }
-      
-      // Calculate border radius
-      const maxRadius = 40;
-      const widthFactor = (100 - newWidth) / (100 - 65);
-      const newBorderRadius = Math.min(maxRadius, 0 + (widthFactor * maxRadius));
-      
-      setHeroStyles({
-        width: `${newWidth}%`,
-        height: '100%',
-        borderRadius: `${newBorderRadius}px`
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [mounted]);
+  const featured = PROJECTS.slice(0, 3);
+  const marqueeX2 = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section - adjusted for fixed header */}
-      <section className="relative h-[100vh] overflow-hidden bg-white">
-        {/* Hero Container with Dynamic Width */}
-        <div 
-          className="relative overflow-hidden mx-auto shadow-2xl transition-all duration-500 ease-out"
-          style={mounted ? heroStyles : { width: '100%', height: '100%', borderRadius: '0px' }}
-        >
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/hero.jpg"
-              alt="Hero Background"
-              fill
-              className="object-cover"
-              priority
-              quality={100}
-              sizes="100vw"
-            />
-            {/* Heavy dark overlay for better navbar contrast */}
-            <div className="absolute inset-0 bg-black/80"></div>
-          </div>
-          
-          {/* Hero Content */}
-          <div className="relative z-10 flex items-center justify-center h-full px-4">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="font-dm-serif text-2xl sm:text-3xl md:text-5xl lg:text-7xl text-white font-bold leading-tight mb-4 md:mb-8">
-                Let's Find Your Dream Home Together
-              </h1>
-              <p className="font-jost text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 md:mb-12 max-w-2xl mx-auto leading-relaxed px-4">
-                Discover exceptional properties with personalized service and expert guidance every step of the way.
-              </p>
-              <Link href="/projects" className="inline-block bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-2xl shadow-xl transition duration-300 transform hover:scale-105">
-                Get Started
-                <span className="ml-2 sm:ml-3">→</span>
-              </Link>
-            </div>
-          </div>
+    <div className="bg-[var(--paper)] text-[var(--ink)]">
+      {/* Top marquee strip */}
+      <div className="overflow-hidden whitespace-nowrap border-b border-black/[.15] bg-[var(--gold-text)]">
+        <div className="srm-marquee-track flex w-max" style={{ "--srm-marquee-duration": "48s" } as React.CSSProperties}>
+          {[...marqueeX2, ...marqueeX2].map((m, i) => (
+            <span
+              key={i}
+              className="flex items-center border-l border-white/[.22] px-[clamp(18px,2.2vw,30px)] py-2 font-archivo text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--card)]"
+            >
+              {m}
+            </span>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="font-dm-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#292F36] font-bold mb-4 sm:mb-6">
-              Our Services
-            </h2>
-            <p className="font-jost text-base sm:text-lg lg:text-xl text-[#4D5053] max-w-3xl mx-auto leading-relaxed px-4">
-              We provide comprehensive real estate solutions tailored to your unique needs and preferences.
-            </p>
+      {/* Hero */}
+      <section className="relative grid min-h-[clamp(560px,86vh,820px)] bg-[var(--ink)] md:grid-cols-[minmax(320px,46%)_1fr]">
+        <div className="relative z-[2] flex flex-col justify-center gap-7 px-[clamp(24px,4vw,56px)] py-[clamp(40px,6vw,88px)]">
+          <div className="font-archivo text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--gold-warm)]">
+            Bengaluru residential advisory
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
-            {/* Service 1 */}
-            <div className="text-center group flex flex-col h-full p-4 sm:p-0">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition duration-300">
-                <span className="text-2xl sm:text-3xl text-white">🏠</span>
-              </div>
-              <h3 className="font-dm-serif text-xl sm:text-2xl text-[#292F36] font-bold mb-3 sm:mb-4">Property Search</h3>
-              <p className="font-jost text-sm sm:text-base lg:text-lg text-[#4D5053] leading-relaxed mb-4 sm:mb-6 flex-grow">
-                Find your perfect home with our extensive property database and personalized search filters.
-              </p>
-              <Link href="/services" className="font-jost text-sm sm:text-base lg:text-lg text-[#4D5053] font-semibold hover:text-[#CDA274] transition mt-auto">
-                Learn More →
-              </Link>
-            </div>
-
-            {/* Service 2 */}
-            <div className="text-center group flex flex-col h-full">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300">
-                <span className="text-3xl text-white">💼</span>
-              </div>
-              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-4">Market Analysis</h3>
-              <p className="font-jost text-lg text-[#4D5053] leading-relaxed mb-6 flex-grow">
-                Get detailed market insights and property valuations to make informed decisions.
-              </p>
-              <Link href="/services" className="font-jost text-lg text-[#4D5053] font-semibold hover:text-[#CDA274] transition mt-auto">
-                Learn More →
-              </Link>
-            </div>
-
-            {/* Service 3 */}
-            <div className="text-center group flex flex-col h-full">
-              <div className="w-20 h-20 bg-[#CDA274] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300">
-                <span className="text-3xl text-white">🤝</span>
-              </div>
-              <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-4">Expert Consultation</h3>
-              <p className="font-jost text-lg text-[#4D5053] leading-relaxed mb-6 flex-grow">
-                Receive professional guidance throughout your entire real estate journey.
-              </p>
-              <Link href="/services" className="font-jost text-lg text-[#4D5053] font-semibold hover:text-[#CDA274] transition mt-auto">
-                Learn More →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Company Partners Strip */}
-      <CompanyStrip />
-
-      {/* About Section */}
-      <section className="py-20 bg-[#F4F0EC]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-dm-serif text-4xl md:text-5xl text-[#292F36] font-bold mb-8">
-                About Sonia's Realty Media
-              </h2>
-              <p className="font-jost text-xl text-[#4D5053] leading-relaxed mb-8">
-                With over a decade of experience in the real estate industry, we've helped thousands of families find their perfect homes. Our commitment to excellence and personalized service sets us apart.
-              </p>
-              <div className="mt-8">
-                <Link href="/about" className="inline-block bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300">
-                  Learn More About Us
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/hero.jpg"
-                  alt="About Us"
-                  width={600}
-                  height={500}
-                  className="object-cover w-full h-[500px]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Banking Partners Strip */}
-      <BankStrip />
-
-      {/* Featured Properties */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-dm-serif text-4xl md:text-5xl text-[#292F36] font-bold mb-6">
-              Featured Properties
-            </h2>
-            <p className="font-jost text-xl text-[#4D5053] max-w-3xl mx-auto leading-relaxed">
-              Explore our handpicked selection of premium properties available in prime locations.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {/* Property 1 - Brigade Valencia */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group cursor-pointer">
-              <Link href="/projects/1" className="block">
-                <div className="relative h-48 sm:h-56 lg:h-64">
-                  <Image
-                    src="/images/brigade_valencia/brigade_valencia_2.jpeg"
-                    alt="Brigade Valencia"
-                    fill
-                    className="object-cover group-hover:scale-105 transition duration-300"
-                  />
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-[#CDA274] text-white px-2 sm:px-3 py-1 rounded-full font-jost font-semibold text-xs sm:text-sm">
-                    Featured
-                  </div>
-                </div>
-                <div className="p-4 sm:p-6">
-                  <h3 className="font-dm-serif text-lg sm:text-xl lg:text-2xl text-[#292F36] font-bold mb-2 sm:mb-3 group-hover:text-[#CDA274] transition">Brigade Valencia</h3>
-                  <p className="font-jost text-sm sm:text-base lg:text-lg text-[#4D5053] mb-3 sm:mb-4">Premium residential project with world-class amenities</p>
-                  <div className="flex flex-col gap-2 sm:gap-3">
-                    <div className="flex justify-between items-center">
-                      <span className="font-jost text-xs sm:text-sm text-[#4D5053]">Devanahalli, Bengaluru</span>
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">Upcoming</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                <div className="flex w-full gap-2 sm:gap-3">
-                  <Link
-                    href="https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-1 sm:gap-2 bg-transparent border border-[#CDA274] text-[#CDA274] px-2 sm:px-4 py-2 sm:py-3 rounded-[1.5rem] font-jost text-xs sm:text-sm font-semibold hover:bg-[#CDA274] hover:text-white transition"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"/>
-                    </svg>
-                    Video
-                  </Link>
-                  <Link
-                    href="/projects/1"
-                    className="flex-1 bg-[#292F36] text-white px-2 sm:px-4 py-2 sm:py-3 rounded-[1.5rem] font-jost text-xs sm:text-sm font-semibold hover:bg-[#4D5053] transition text-center"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Property 2 - Brigade Avalon */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group cursor-pointer">
-              <Link href="/projects/2" className="block">
-                <div className="relative h-64">
-                  <Image
-                    src="/images/hero.jpg"
-                    alt="Brigade Avalon"
-                    fill
-                    className="object-cover group-hover:scale-105 transition duration-300"
-                  />
-                  <div className="absolute top-4 right-4 bg-[#CDA274] text-white px-3 py-1 rounded-full font-jost font-semibold">
-                    Premium
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-3 group-hover:text-[#CDA274] transition">
-                    Brigade Avalon
-                  </h3>
-                  <p className="font-jost text-lg text-[#4D5053] mb-4">
-                    Luxury residential development with premium amenities
-                  </p>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex justify-between items-center">
-                      <span className="font-jost text-sm text-[#4D5053]">
-                        Electronic City, Bengaluru
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Upcoming
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              <div className="px-6 pb-6">
-                <div className="flex w-full gap-3">
-                  <Link
-                    href="https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-transparent border border-[#CDA274] text-[#CDA274] px-4 py-3 rounded-[1.5rem] font-jost text-sm font-semibold hover:bg-[#CDA274] hover:text-white transition"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"/>
-                    </svg>
-                    Video
-                  </Link>
-                  <Link
-                    href="/projects/2"
-                    className="flex-1 bg-[#292F36] text-white px-4 py-3 rounded-[1.5rem] font-jost text-sm font-semibold hover:bg-[#4D5053] transition text-center"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Property 3 - Brigade Eternia */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group cursor-pointer">
-              <Link href="/projects/3" className="block">
-                <div className="relative h-64">
-                  <Image
-                    src="/images/hero.jpg"
-                    alt="Brigade Eternia"
-                    fill
-                    className="object-cover group-hover:scale-105 transition duration-300"
-                  />
-                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full font-jost font-semibold">
-                    Ready
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-dm-serif text-2xl text-[#292F36] font-bold mb-3 group-hover:text-[#CDA274] transition">Brigade Eternia</h3>
-                  <p className="font-jost text-lg text-[#4D5053] mb-4">Premium residential project with modern amenities</p>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex justify-between items-center">
-                      <span className="font-jost text-sm text-[#4D5053]">Whitefield, Bengaluru</span>
-                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">Ready to Move</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              <div className="px-6 pb-6">
-                <div className="flex w-full gap-3">
-                  <Link
-                    href="https://youtu.be/Uk87MZBi1KA?si=GNQH4RJN3jLTy8xf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-transparent border border-[#CDA274] text-[#CDA274] px-4 py-3 rounded-[1.5rem] font-jost text-sm font-semibold hover:bg-[#CDA274] hover:text-white transition"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.498 6.186a2.92 2.92 0 0 0-2.057-2.057C19.706 3.75 12 3.75 12 3.75s-7.706 0-9.441.379a2.92 2.92 0 0 0-2.057 2.057C.123 7.921.123 12 .123 12s0 4.079.379 5.814a2.92 2.92 0 0 0 2.057 2.057C4.294 20.25 12 20.25 12 20.25s7.706 0 9.441-.379a2.92 2.92 0 0 0 2.057-2.057C23.877 16.079 23.877 12 23.877 12s0-4.079-.379-5.814zM9.75 15.75V8.25L15.75 12l-6 3.75z"/>
-                    </svg>
-                    Video
-                  </Link>
-                  <Link
-                    href="/projects/3"
-                    className="flex-1 bg-[#292F36] text-white px-4 py-3 rounded-[1.5rem] font-jost text-sm font-semibold hover:bg-[#4D5053] transition text-center"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/projects" className="inline-block bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-8 py-4 rounded-2xl shadow-lg transition duration-300">
-              View All Properties
+          <h1 className="m-0 font-playfair text-[clamp(40px,6vw,74px)] font-semibold leading-[0.98] tracking-[-0.03em] text-[var(--card)]">
+            Find your dream home &mdash; the honest way
+          </h1>
+          <div className="h-px w-16 bg-[var(--gold)]" />
+          <p className="m-0 max-w-[440px] font-lora text-[clamp(15px,1.4vw,18px)] leading-[1.7] text-white/80">
+            Independent advice on Bengaluru&#8217;s residential launches &mdash; every project verified, every number on the table before you commit.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/projects"
+              className="bg-[var(--gold)] px-[30px] py-4 font-archivo text-[12.5px] font-bold uppercase tracking-[0.14em] text-[var(--ink)] transition-colors hover:bg-[var(--gold-hover)]"
+            >
+              Browse all projects
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-white/50 px-[30px] py-4 font-archivo text-[12.5px] font-semibold uppercase tracking-[0.14em] text-[var(--card)] transition-colors hover:bg-white/10"
+            >
+              Talk to an advisor
             </Link>
           </div>
+        </div>
+        <div className="relative order-first overflow-hidden md:order-none">
+          <Image
+            src="/images/hero.jpg"
+            alt="Bengaluru residential skyline"
+            fill
+            priority
+            className="object-cover [filter:sepia(.14)_saturate(.8)_contrast(1.05)]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(24,23,22,.9)] to-transparent md:[background:linear-gradient(90deg,rgba(24,23,22,.9)_0%,rgba(24,23,22,0)_16%)]" />
+        </div>
+      </section>
+
+      <HomeSearchBand />
+
+      {/* Figures */}
+      <section className="border-b-2 border-[var(--ink)] bg-[var(--paper)]">
+        <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)]">
+          <div className="grid [grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
+            {FIGURES.map((f) => (
+              <div key={f.label} className="border-l border-[var(--hairline)] py-[30px] pr-5">
+                <div className="pl-[22px]">
+                  <div className="font-playfair text-[clamp(38px,4vw,52px)] font-bold leading-none tracking-[-0.03em] [font-feature-settings:'tnum']">
+                    {f.value}
+                  </div>
+                  <div className="mt-3 font-archivo text-[10.5px] font-medium uppercase tracking-[0.2em] text-[var(--muted-1)]">
+                    {f.label}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured projects */}
+      <section className="border-b-2 border-[var(--ink)] bg-[var(--paper)]">
+        <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)] py-[clamp(40px,5vw,64px)] pb-[clamp(48px,6vw,72px)]">
+          <div className="mb-3.5 flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+            <div>
+              <div className="mb-3.5 font-archivo text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--gold-text)]">
+                Currently advising on
+              </div>
+              <h2 className="m-0 font-playfair text-[clamp(32px,4.4vw,50px)] font-bold leading-[1.04] tracking-[-0.03em]">
+                Featured projects
+              </h2>
+            </div>
+            <Link
+              href="/projects"
+              className="border-b border-[var(--gold)] py-1.5 font-archivo text-xs font-semibold uppercase tracking-[0.14em] text-[var(--gold-text)]"
+            >
+              All {PROJECTS.length} projects
+            </Link>
+          </div>
+          <div className="h-0.5 bg-[var(--ink)]" />
+          <div className="grid border-l border-[var(--hairline)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,264px),1fr))]">
+            {featured.map((p) => (
+              <ProjectCard key={p.id} project={p} variant="grid" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Developers strip */}
+      <section className="border-b-2 border-[var(--ink)] bg-[var(--card)]">
+        <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)] py-[clamp(26px,3vw,40px)]">
+          <div className="mb-[clamp(18px,2.2vw,26px)] flex flex-wrap items-baseline justify-between gap-x-[clamp(28px,4vw,64px)] gap-y-2.5">
+            <div className="font-archivo text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--gold-text)]">
+              Authorised channel partner
+            </div>
+            <p className="m-0 max-w-[640px] flex-1 basis-[420px] font-lora text-[clamp(14.5px,1.3vw,16px)] leading-[1.7] text-[var(--muted-3)]">
+              We are an authorised channel partner for the developers below, which is how launch pricing reaches you before it reaches the portals.
+            </p>
+          </div>
+          <Marquee logos={DEVELOPER_LOGOS} durationSeconds={136} />
+        </div>
+      </section>
+
+      {/* Advisor */}
+      <section className="border-b-2 border-[var(--ink)] bg-[var(--paper)]">
+        <div className="mx-auto flex max-w-[1560px] flex-wrap items-start gap-[clamp(32px,4vw,64px)] px-[clamp(16px,3vw,32px)] py-[clamp(44px,5vw,72px)]">
+          <div className="min-w-0 flex-1 basis-[320px]">
+            <div className="h-[clamp(320px,38vw,480px)] w-full overflow-hidden border border-[var(--hairline)]">
+              <Image
+                src="/images/sonia.jpeg"
+                alt="Sonia"
+                width={480}
+                height={480}
+                className="h-full w-full origin-[50%_28%] scale-125 object-cover [filter:sepia(.1)_saturate(.9)_contrast(1.03)]"
+                style={{ objectPosition: "50% 28%" }}
+              />
+            </div>
+            <div className="mt-2.5 font-archivo text-[10px] uppercase tracking-[0.16em] text-[var(--muted-2)]">Sonia</div>
+          </div>
+          <div className="min-w-0 flex-1 basis-[480px]">
+            <div className="mb-3.5 font-archivo text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--gold-text)]">
+              Who you deal with
+            </div>
+            <h2 className="m-0 mb-[22px] max-w-[640px] font-playfair text-[clamp(30px,4vw,46px)] font-bold leading-[1.05] tracking-[-0.03em]">
+              One advisor, from shortlist to registration
+            </h2>
+            <p className="m-0 mb-[18px] max-w-[640px] text-justify font-lora text-[clamp(15.5px,1.5vw,17px)] leading-[1.78] text-[var(--muted-4)]">
+              Sonia&#8217;s Realty Media is a three-person advisory, not a call centre. You speak to the same person through shortlisting, site visits, price negotiation, loan sanction and registration &mdash; and you get the numbers that builders normally leave out of the brochure.
+            </p>
+            <p className="m-0 mb-[30px] max-w-[640px] text-justify font-lora text-[clamp(15.5px,1.5vw,17px)] leading-[1.78] text-[var(--muted-4)]">
+              We are paid by the developer on closing, so our advice costs you nothing &mdash; and we tell you when a project is wrong for you.
+            </p>
+            <div className="grid max-w-[640px] border-t-2 border-[var(--ink)] [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))]">
+              {CREDENTIALS.map((c) => (
+                <div key={c.k} className="border-b border-[var(--hairline)] py-[18px] pr-5">
+                  <div className="mb-1.5 font-archivo text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--muted-1)]">
+                    {c.k}
+                  </div>
+                  <div className="break-words font-lora text-base [font-feature-settings:'tnum']">{c.v}</div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-[30px] flex flex-wrap gap-3">
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener"
+                className="bg-[var(--ink)] px-[26px] py-[15px] font-archivo text-xs font-bold uppercase tracking-[0.14em] text-[var(--card)] transition-colors hover:bg-[#444141]"
+              >
+                WhatsApp Sonia
+              </a>
+              <Link
+                href="/about"
+                className="border border-black/30 px-[26px] py-[15px] font-archivo text-xs font-medium uppercase tracking-[0.14em] text-[var(--ink)] transition-colors hover:bg-black/[.07]"
+              >
+                About the practice
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Lenders strip */}
+      <section className="border-b-2 border-[var(--ink)] bg-[var(--card)]">
+        <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)] py-[clamp(26px,3vw,40px)]">
+          <div className="mb-[clamp(18px,2.2vw,26px)] flex flex-wrap items-baseline justify-between gap-x-[clamp(28px,4vw,64px)] gap-y-2.5">
+            <div className="font-archivo text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--gold-text)]">
+              Home loan partners
+            </div>
+            <p className="m-0 max-w-[640px] flex-1 basis-[420px] font-lora text-[clamp(14.5px,1.3vw,16px)] leading-[1.7] text-[var(--muted-3)]">
+              Loan files go to six lenders in parallel, not one &mdash; so the rate you are offered is a comparison, not a quote.
+            </p>
+          </div>
+          <Marquee logos={LENDER_LOGOS} durationSeconds={112} />
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-[#F4F0EC]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-dm-serif text-4xl md:text-5xl text-[#292F36] font-bold mb-6">
-              What Our Clients Say
-            </h2>
-            <p className="font-jost text-xl text-[#4D5053] max-w-3xl mx-auto leading-relaxed">
-              Read testimonials from satisfied clients who found their dream homes with our help.
-            </p>
+      <section className="border-b-2 border-[var(--ink)] bg-[var(--paper)]">
+        <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)] py-[clamp(40px,5vw,64px)] pb-[clamp(48px,6vw,72px)]">
+          <div className="mb-[30px] font-archivo text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--muted-1)]">
+            Clients
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-[#CDA274] rounded-full overflow-hidden mr-4">
-                  <Image
-                    src="/images/hero.jpg"
-                    alt="Sarah Johnson"
-                    width={64}
-                    height={64}
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-dm-serif text-xl text-[#292F36] font-bold">Sarah Johnson</h4>
-                  <p className="font-jost text-lg text-[#4D5053]">Happy Homeowner</p>
-                </div>
-              </div>
-              <p className="font-jost text-lg text-[#4D5053] leading-relaxed">
-                "Sonia's team made our home buying experience seamless and stress-free. Their expertise and dedication are unmatched!"
-              </p>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-[#CDA274] rounded-full overflow-hidden mr-4">
-                  <Image
-                    src="/images/hero.jpg"
-                    alt="Mike Chen"
-                    width={64}
-                    height={64}
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-dm-serif text-xl text-[#292F36] font-bold">Mike Chen</h4>
-                  <p className="font-jost text-lg text-[#4D5053]">First-time Buyer</p>
-                </div>
-              </div>
-              <p className="font-jost text-lg text-[#4D5053] leading-relaxed">
-                "As a first-time buyer, I was nervous, but Sonia guided me through every step. I couldn't be happier with my new home!"
-              </p>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-[#CDA274] rounded-full overflow-hidden mr-4">
-                  <Image
-                    src="/images/hero.jpg"
-                    alt="Emily Rodriguez"
-                    width={64}
-                    height={64}
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-dm-serif text-xl text-[#292F36] font-bold">Emily Rodriguez</h4>
-                  <p className="font-jost text-lg text-[#4D5053]">Property Investor</p>
-                </div>
-              </div>
-              <p className="font-jost text-lg text-[#4D5053] leading-relaxed">
-                "Professional, knowledgeable, and results-driven. Sonia's team helped me build a successful investment portfolio."
-              </p>
-            </div>
+          <div className="grid border-l border-[var(--hairline)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))]">
+            {QUOTES.map((q) => (
+              <figure key={q.who} className="m-0 border-r border-[var(--hairline)] px-[clamp(20px,2.6vw,40px)]">
+                <blockquote className="m-0 mb-[22px] font-playfair text-[clamp(22px,2.4vw,27px)] italic leading-[1.38] text-[var(--ink)]">
+                  &#8220;{q.text}&#8221;
+                </blockquote>
+                <figcaption className="font-archivo text-[10.5px] font-medium uppercase tracking-[0.16em] text-[var(--muted-1)]">
+                  {q.who}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Search Modal */}
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
-
-      <BackToTopButton />
+      {/* Closing CTA */}
+      <section className="border-b-2 border-[var(--ink)] bg-[var(--panel-dark)]">
+        <div className="mx-auto flex max-w-[1560px] flex-wrap items-end justify-between gap-[clamp(28px,4vw,64px)] px-[clamp(16px,3vw,32px)] py-[clamp(56px,7vw,88px)]">
+          <div className="min-w-0 flex-1 basis-[520px]">
+            <div className="mb-[26px] h-0.5 w-16 bg-[var(--gold)]" />
+            <h2 className="m-0 mb-[18px] max-w-[820px] font-playfair text-[clamp(32px,5vw,62px)] font-bold leading-[1.04] tracking-[-0.03em] text-[var(--card)]">
+              Tell us what you are looking for. We will tell you what it really costs.
+            </h2>
+            <p className="m-0 max-w-[560px] font-lora text-[clamp(16px,1.6vw,18px)] leading-[1.7] text-white/[.66]">
+              A thirty-minute call, no obligation. Bring a budget and a locality; leave with a shortlist and a loan plan.
+            </p>
+          </div>
+          <div className="flex min-w-[240px] flex-1 basis-[280px] flex-col gap-3">
+            <Link
+              href="/contact"
+              className="bg-[var(--gold)] px-[30px] py-[17px] text-center font-archivo text-[12.5px] font-bold uppercase tracking-[0.14em] text-[var(--ink)] transition-colors hover:bg-[var(--gold-hover)]"
+            >
+              Book a consultation
+            </Link>
+            <a
+              href="tel:+919036747821"
+              className="border border-white/40 px-[30px] py-[17px] text-center font-archivo text-[12.5px] font-medium uppercase tracking-[0.14em] text-[var(--card)] [font-feature-settings:'tnum'] transition-colors hover:bg-white/10"
+            >
+              +91 90367 47821
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

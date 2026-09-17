@@ -1,98 +1,138 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
+import type { Project } from "@/lib/projects";
 
 interface ProjectCardProps {
-  id: string;
-  title: string;
-  location: string;
-  status: string;
-  description: string;
-  image: string;
-  brochureUrl?: string;
-  youtubeUrl?: string;
-  onBrochureClick?: (projectTitle: string, brochureUrl: string) => void;
+  project: Project;
+  variant: "grid" | "row";
+  rowIndex?: number;
+  compared?: boolean;
+  onToggleCompare?: (id: string) => void;
 }
 
-export default function ProjectCard({ 
-  id, 
-  title, 
-  location, 
-  status, 
-  description, 
-  image, 
-  brochureUrl, 
-  youtubeUrl,
-  onBrochureClick
-}: ProjectCardProps) {
+function statRows(p: Project) {
+  return [
+    { k: "From", v: p.price },
+    { k: "Rate", v: p.psf },
+    { k: "Configuration", v: p.config },
+    { k: "Possession", v: p.possession },
+  ];
+}
 
-  const handleBrochureClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (onBrochureClick && brochureUrl) {
-      onBrochureClick(title, brochureUrl);
-    }
-  };
+export default function ProjectCard({ project: p, variant, rowIndex = 0, compared = false, onToggleCompare }: ProjectCardProps) {
+  const walkthroughUrl = `https://www.youtube.com/@SoniasRealtyMedia/search?query=${encodeURIComponent(p.title)}`;
+
+  if (variant === "grid") {
+    return (
+      <article className="border-b border-r border-[var(--hairline)] bg-[var(--card)] pb-6">
+        <Link href={`/projects/${p.id}`} className="relative block">
+          <div className="relative h-[clamp(220px,24vw,280px)] w-full">
+            <Image src={p.image} alt={p.title} fill className="object-cover [filter:sepia(.2)_saturate(.8)_contrast(1.04)]" />
+          </div>
+          <div className="absolute left-0 top-0 bg-[var(--card)] px-3.5 py-2 font-archivo text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--ink)]">
+            {p.status}
+          </div>
+        </Link>
+        <div className="px-[clamp(18px,2vw,26px)] pt-6">
+          <Link href={`/projects/${p.id}`}>
+            <h3 className="m-0 mb-1.5 font-playfair text-[clamp(24px,2.4vw,29px)] font-semibold leading-[1.1] tracking-[-0.02em]">
+              {p.title}
+            </h3>
+          </Link>
+          <div className="mb-5 font-archivo text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--muted-1)]">
+            {p.location}
+          </div>
+          <div className="border-t border-[var(--hairline)]">
+            {statRows(p).map((r) => (
+              <div key={r.k} className="flex justify-between gap-4 border-b border-black/10 py-[9px]">
+                <span className="font-archivo text-[10.5px] font-medium uppercase tracking-[0.14em] text-[var(--muted-1)]">{r.k}</span>
+                <span className="text-right font-lora text-[15px] [font-feature-settings:'tnum']">{r.v}</span>
+              </div>
+            ))}
+          </div>
+          <div className="my-3.5 break-all font-archivo text-[9.5px] tracking-[0.1em] text-[var(--muted-2)]">
+            RERA {p.rera}
+          </div>
+          <div className="flex flex-wrap gap-2.5">
+            <Link
+              href={`/projects/${p.id}`}
+              className="flex-1 basis-[120px] border border-[var(--gold)] px-0 py-3 text-center font-archivo text-[11.5px] font-bold uppercase tracking-[0.12em] text-[var(--gold-text)] transition-colors hover:bg-[rgba(182,130,53,.12)]"
+            >
+              Project page
+            </Link>
+            <Link
+              href={`/projects?compare=${p.id}`}
+              className="border border-[var(--hairline)] px-4 py-3 text-center font-archivo text-[11.5px] font-medium uppercase tracking-[0.12em] text-[var(--ink)] transition-colors hover:bg-black/[.07]"
+            >
+              Compare
+            </Link>
+          </div>
+        </div>
+      </article>
+    );
+  }
 
   return (
-    <div className="bg-white rounded-[25px] shadow-lg overflow-hidden hover:scale-105 transform transition border border-[#E7E7E7] group flex flex-col h-full">
-      {/* Clickable area for the main card */}
-  <Link href={`/projects/${id}`} className="block flex-1 flex flex-col">
-        <div className="relative h-64 w-full">
-          <Image src={image} alt={title} fill className="object-cover" />
-          <div className="absolute top-4 right-4">
-            <span className={`px-3 py-1 rounded-full text-sm font-jost font-medium ${
-              status === 'Upcoming' 
-                ? 'bg-[#CDA274] text-white' 
-                : 'bg-green-500 text-white'
-            }`}>
-              {status}
-            </span>
-          </div>
-          {/* Overlay for better hover effect */}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
-        </div>
-        <div className="p-4 sm:p-6 flex flex-col flex-1">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2 sm:gap-3">
-            <h3 className="font-dm-serif text-lg sm:text-xl lg:text-[25px] leading-[125%] text-[#292F36] font-normal group-hover:text-[#CDA274] transition-colors">{title}</h3>
-            <span className="font-jost text-sm sm:text-[16px] text-[#4D5053] bg-[#F4F0EC] px-2 sm:px-3 py-1 rounded-full whitespace-nowrap self-start">
-              {location}
-            </span>
-          </div>
-          <p className="font-jost text-sm sm:text-base lg:text-[18px] leading-[27px] text-[#4D5053] mb-4 sm:mb-6">{description}</p>
+    <article className={`flex flex-wrap border-b border-[var(--hairline)] ${rowIndex % 2 ? "bg-[var(--card)]" : "bg-[var(--paper)]"}`}>
+      <Link href={`/projects/${p.id}`} className="relative block h-[clamp(240px,26vw,300px)] min-w-[220px] max-w-[340px] flex-1 basis-[260px]">
+        <Image src={p.image} alt={p.title} fill className="object-cover [filter:sepia(.2)_saturate(.8)_contrast(1.04)]" />
+        <div className="absolute left-0 top-0 bg-[var(--card)] px-3 py-[7px] font-archivo text-[9.5px] font-bold uppercase tracking-[0.16em] text-[var(--ink)]">
+          {p.status}
         </div>
       </Link>
-      
-      {/* Action buttons - separate from clickable area */}
-      <div className="px-4 sm:px-6 pb-4 sm:pb-6 mt-auto">
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center justify-center">
-          {brochureUrl && (
-            <button 
-              onClick={handleBrochureClick}
-              className="flex-1 bg-[#CDA274] text-white px-3 sm:px-4 py-2 sm:py-3 rounded-[18px] font-jost font-semibold text-xs sm:text-[14px] hover:bg-[#B8956A] transition text-center"
-            >
-              Download Brochure
-            </button>
-          )}
-          {youtubeUrl && (
-            <Link 
-              href={youtubeUrl} 
-              target="_blank"
-              onClick={(e) => e.stopPropagation()} // Prevent card click when clicking button
-              className="flex-1 border-2 border-[#CDA274] text-[#CDA274] px-3 sm:px-4 py-2 sm:py-3 rounded-[18px] font-jost font-semibold text-xs sm:text-[14px] hover:bg-[#CDA274] hover:text-white transition text-center"
-            >
-              Watch Video
-            </Link>
-          )}
-          <Link 
-            href={`/projects/${id}`}
-            className="flex-1 bg-[#292F36] text-white px-3 sm:px-4 py-2 sm:py-3 rounded-[18px] font-jost font-semibold text-xs sm:text-[14px] hover:bg-[#4D5053] transition text-center flex items-center justify-center"
-          >
-            View Details
-          </Link>
+      <div className="min-w-0 flex-1 basis-[340px] px-[clamp(18px,2.4vw,32px)] py-6" style={{ flexGrow: 2 }}>
+        <Link href={`/projects/${p.id}`}>
+          <h3 className="m-0 mb-[5px] font-playfair text-[clamp(24px,2.6vw,30px)] font-semibold leading-[1.08] tracking-[-0.02em]">
+            {p.title}
+          </h3>
+        </Link>
+        <div className="mb-3.5 font-archivo text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--muted-1)]">
+          {p.location} &middot; {p.builder}
+        </div>
+        <p className="m-0 mb-4 max-w-[520px] font-lora text-[15.5px] leading-[1.65] text-[var(--muted-3)]">{p.description}</p>
+        <div className="flex flex-wrap gap-x-[26px] border-t border-[var(--hairline)]">
+          {statRows(p).map((r) => (
+            <div key={r.k} className="border-r border-black/10 pr-[22px] pt-3">
+              <div className="mb-[5px] font-archivo text-[9.5px] font-medium uppercase tracking-[0.16em] text-[var(--muted-2)]">{r.k}</div>
+              <div className="font-lora text-[15px] [font-feature-settings:'tnum']">{r.v}</div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+      <div className="flex min-w-[180px] flex-1 basis-[200px] flex-col gap-2.5 border-l border-[var(--hairline)] p-6">
+        <div className="mb-auto break-all font-archivo text-[9.5px] tracking-[0.1em] text-[var(--muted-2)]">RERA {p.rera}</div>
+        <Link
+          href={`/projects/${p.id}`}
+          className="border border-[var(--gold)] py-[11px] text-center font-archivo text-[11.5px] font-bold uppercase tracking-[0.12em] text-[var(--gold-text)] transition-colors hover:bg-[rgba(182,130,53,.12)]"
+        >
+          Project page
+        </Link>
+        <a
+          href={walkthroughUrl}
+          target="_blank"
+          rel="noopener"
+          className="border border-[var(--hairline)] py-[11px] text-center font-archivo text-[11.5px] font-medium uppercase tracking-[0.12em] text-[var(--ink)] transition-colors hover:bg-black/[.07]"
+        >
+          Walkthrough
+        </a>
+        {onToggleCompare && (
+          <button
+            onClick={() => onToggleCompare(p.id)}
+            className="flex items-center gap-2.5 border-0 bg-transparent py-1.5 font-archivo text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--muted-3)]"
+          >
+            <span
+              className={`flex h-4 w-4 items-center justify-center border border-[var(--ink)] text-[11px] text-[var(--card)] ${
+                compared ? "bg-[var(--ink)]" : "bg-transparent"
+              }`}
+            >
+              {compared ? "✓" : ""}
+            </span>
+            Compare
+          </button>
+        )}
+      </div>
+    </article>
   );
 }
+
+export { statRows };

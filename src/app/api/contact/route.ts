@@ -39,6 +39,40 @@ function getClientIp(req: NextRequest): string {
   return req.headers.get("x-real-ip") || "unknown";
 }
 
+// Lightweight CSRF guard for this unauthenticated public form: browsers send
+// an Origin header on cross-origin and same-origin POSTs alike, so a
+// mismatch means the request didn't come from our own pages. Requests with
+// no Origin header (some non-browser clients) fall through to the other
+// layers below (honeypot, rate limit, field validation) rather than being
+// blocked outright.
+function isTrustedOrigin(req: NextRequest): boolean {
+  const origin = req.headers.get("origin");
+  if (!origin) return true;
+  try {
+    return new URL(origin).host === req.headers.get("host");
+  } catch {
+    return false;
+  }
+}
+
+const MAX_BODY_BYTES = 20_000; // a contact enquiry never needs to be larger than this
+
+function errorInfo(err: unknown): { message: string; name?: string; statusCode?: number } {
+  if (err && typeof err === "object") {
+    const e = err as Record<string, unknown>;
+    const nested = e.error && typeof e.error === "object" ? (e.error as Record<string, unknown>) : undefined;
+    const message = e.message ?? nested?.message ?? nested ?? String(err);
+    const name = e.name ?? nested?.name;
+    const statusCode = e.statusCode ?? nested?.statusCode;
+    return {
+      message: typeof message === "string" ? message : String(message),
+      name: typeof name === "string" ? name : undefined,
+      statusCode: typeof statusCode === "number" ? statusCode : undefined,
+    };
+  }
+  return { message: String(err) };
+}
+
 function isRateLimited(req: NextRequest) {
   const ip = getClientIp(req);
   const now = Date.now();
@@ -68,6 +102,21 @@ function isRateLimited(req: NextRequest) {
 // POST /api/contact
 export async function POST(req: NextRequest) {
   try {
+    if (!isTrustedOrigin(req)) {
+      return NextResponse.json(
+        { success: false, error: "Request origin not allowed." },
+        { status: 403 }
+      );
+    }
+
+    const contentLength = Number(req.headers.get("content-length") ?? 0);
+    if (contentLength > MAX_BODY_BYTES) {
+      return NextResponse.json(
+        { success: false, error: "Request body too large." },
+        { status: 413 }
+      );
+    }
+
     const { limited, retryAfterMs } = isRateLimited(req);
     if (limited) {
       return NextResponse.json(
@@ -143,7 +192,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    console.log("Contact form submission:", { name: nameStr, email: emailStr, phone: phoneStr, message: messageStr });
+    // Log that a submission happened without the PII itself — full name/email/
+    // phone/message land in the Resend email instead, not in server logs.
+    console.log("Contact form submission received", { nameLength: nameStr.length, messageLength: messageStr.length });
 
     let resendStatus: unknown = null;
 
@@ -164,33 +215,16 @@ ${messageStr}
           `.trim(),
           replyTo: emailStr, // Allow direct reply to the customer
         });
-        console.log("Contact API: Resend email result:", result);
+        console.log("Contact API: Resend email result:", { id: result?.data?.id ?? null });
 
         // Normalise success payload for the client
         resendStatus = {
           ok: true,
-          id: (result as any)?.data?.id ?? null,
+          id: result?.data?.id ?? null,
         };
-      } catch (emailErr: any) {
-        console.error("Contact API: failed to send email via Resend:", emailErr);
-
-        // Extract common fields from Resend error shape
-        const message =
-          emailErr?.message ||
-          emailErr?.error?.message ||
-          emailErr?.error ||
-          String(emailErr);
-
-        const name = emailErr?.name || emailErr?.error?.name || undefined;
-        const statusCode =
-          emailErr?.statusCode || emailErr?.error?.statusCode || undefined;
-
-        resendStatus = {
-          ok: false,
-          message,
-          name,
-          statusCode,
-        };
+      } catch (emailErr: unknown) {
+        console.error("Contact API: failed to send email via Resend:", errorInfo(emailErr));
+        resendStatus = { ok: false, ...errorInfo(emailErr) };
       }
     } else {
       console.log(

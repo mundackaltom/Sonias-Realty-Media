@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 
 const isDev = process.env.NODE_ENV === "development";
 
-// Per-request nonce lets script-src stay tight (no blanket 'unsafe-inline')
-// while still allowing Next's own hydration/RSC-streaming inline scripts,
-// which Next automatically nonces when it sees this exact header shape.
-function buildCsp(nonce: string): string {
+// No nonce/'strict-dynamic' here on purpose. Next only injects nonces into
+// dynamically rendered pages; this site's pages are statically prerendered, so
+// their cached HTML carries no nonce and a per-request nonce would block every
+// chunk ('strict-dynamic' also disables the 'self' allowlist). Inline RSC
+// bootstrap scripts rule out hashing, so scripts fall back to 'self' plus
+// 'unsafe-inline' — external script origins are still blocked.
+function buildCsp(): string {
   const scriptSrc = isDev
-    ? `'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval'` // Turbopack HMR needs eval in dev
-    : `'self' 'nonce-${nonce}' 'strict-dynamic'`;
+    ? `'self' 'unsafe-inline' 'unsafe-eval'` // Turbopack HMR needs eval in dev
+    : `'self' 'unsafe-inline'`;
 
   const connectSrc = isDev ? "'self' ws: http://localhost:*" : "'self'";
 
@@ -35,17 +37,10 @@ function buildCsp(nonce: string): string {
   return directives.join("; ");
 }
 
-export function proxy(request: NextRequest) {
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
-  const csp = buildCsp(nonce);
+export function proxy() {
+  const response = NextResponse.next();
 
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-nonce", nonce);
-  requestHeaders.set("Content-Security-Policy", csp);
-
-  const response = NextResponse.next({ request: { headers: requestHeaders } });
-
-  response.headers.set("Content-Security-Policy", csp);
+  response.headers.set("Content-Security-Policy", buildCsp());
   response.headers.set("X-Frame-Options", "DENY");
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");

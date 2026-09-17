@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className="font-jost antialiased"
+        className="font-lora antialiased"
       >
   {/* Site Header */}
   <SiteHeader />

@@ -67,9 +67,15 @@ export function getConsent(): ConsentState {
  * (the common case) that avoids a flash of the banner right before it
  * disappears once the real client snapshot loads. First-time visitors still
  * see it pop in after hydration, which is normal cookie-banner behavior.
+ *
+ * Must return the same object reference on every call — useSyncExternalStore
+ * compares snapshots by identity, and a fresh literal here causes React to
+ * treat every render as a change (a real bug, not just a lint nag: it can
+ * spin into "getServerSnapshot should be cached" render loops).
  */
+const SERVER_CONSENT: ConsentState = { analytics: false, marketing: false, decided: true };
 export function getServerConsent(): ConsentState {
-  return { analytics: false, marketing: false, decided: true };
+  return SERVER_CONSENT;
 }
 
 /** For useSyncExternalStore's subscribe: fires on local writes and cross-tab changes. */

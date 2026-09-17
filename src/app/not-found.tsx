@@ -2,30 +2,27 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#F4F0EC] px-4">
-      <div className="max-w-xl text-center bg-white rounded-3xl shadow-lg px-8 py-12">
-        <p className="font-jost text-sm tracking-[0.3em] uppercase text-[#CDA274] mb-4">
+    <main className="flex min-h-screen items-center justify-center bg-[var(--paper)] px-4 text-[var(--ink)]">
+      <div className="max-w-xl border-2 border-[var(--ink)] bg-[var(--card)] px-8 py-12 text-center">
+        <p className="mb-4 font-archivo text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--gold-text)]">
           Error 404
         </p>
-        <h1 className="font-dm-serif text-4xl md:text-5xl text-[#292F36] font-bold mb-4">
-          Page not found
-        </h1>
-        <p className="font-jost text-lg text-[#4D5053] mb-8">
-          The page you're looking for doesn't exist or may have been moved.
-          Let's get you back to exploring properties.
+        <h1 className="m-0 mb-4 font-playfair text-4xl font-bold tracking-[-0.03em] md:text-5xl">Page not found</h1>
+        <p className="mb-8 font-lora text-lg text-[var(--muted-3)]">
+          The page you&#8217;re looking for doesn&#8217;t exist or may have been moved. Let&#8217;s get you back to exploring projects.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             href="/"
-            className="bg-[#CDA274] hover:bg-[#B8956A] text-white font-inter font-semibold text-lg px-6 py-3 rounded-2xl transition duration-300"
+            className="bg-[var(--gold)] px-6 py-3 font-archivo text-[12.5px] font-bold uppercase tracking-[0.14em] text-[var(--ink)] transition-colors hover:bg-[var(--gold-hover)]"
           >
-            Go to Homepage
+            Go to homepage
           </Link>
           <Link
             href="/contact"
-            className="border-2 border-[#292F36] text-[#292F36] hover:bg-[#292F36] hover:text-white font-inter font-semibold text-lg px-6 py-3 rounded-2xl transition duration-300"
+            className="border border-[var(--ink)] px-6 py-3 font-archivo text-[12.5px] font-semibold uppercase tracking-[0.14em] text-[var(--ink)] transition-colors hover:bg-black/[.07]"
           >
-            Contact Support
+            Contact us
           </Link>
         </div>
       </div>

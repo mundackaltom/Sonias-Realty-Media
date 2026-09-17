@@ -2,162 +2,69 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
-import Menu, { IMenu } from "./ui/navbar";
-import SearchModal from "./SearchModal";
+import { NAV_ITEMS } from "@/lib/content";
 
-// Menu data matching the current site structure
-const menuItems: IMenu[] = [
-	{
-		id: 1,
-		title: "Home",
-		url: "/",
-	},
-	{
-		id: 2,
-		title: "About us",
-		url: "/about",
-	},
-	{
-		id: 3,
-		title: "Services",
-		url: "/services",
-		dropdown: true,
-		items: [
-			{ id: 31, title: "Property Search", url: "/services/property-search" },
-			{ id: 32, title: "Financial Planning", url: "/services/financial-planning" },
-			{ id: 33, title: "Real Estate Investment", url: "/services/real-estate-investment" },
-			{ id: 34, title: "Asset Management", url: "/services/asset-management" },
-		],
-	},
-	{
-		id: 4,
-		title: "Projects",
-		url: "/projects",
-		dropdown: true,
-		items: [
-			{ id: 41, title: "All Projects", url: "/projects" },
-			{ id: 42, title: "Upcoming Projects", url: "/projects?filter=upcoming" },
-			{ id: 43, title: "Completed Projects", url: "/projects?filter=completed" },
-		],
-	},
-	{
-		id: 5,
-		title: "Contact us",
-		url: "/contact",
-	},
-];
+export default function SiteHeader() {
+  const pathname = usePathname();
 
-interface SiteHeaderProps {
-	transparent?: boolean;
-}
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href === "/projects") return pathname.startsWith("/projects");
+    return pathname.startsWith(href);
+  };
 
-export default function SiteHeader({ transparent }: SiteHeaderProps) {
-	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	const [isSearchOpen, setIsSearchOpen] = useState(false);
-	const pathname = usePathname();
-	const isTransparent = transparent ?? pathname === "/";
+  return (
+    <header className="sticky top-0 z-50 border-b-2 border-[var(--ink)] bg-[var(--paper)]">
+      <div className="mx-auto flex max-w-[1560px] flex-wrap items-stretch justify-between gap-x-8 px-[clamp(16px,3vw,32px)]">
+        <Link
+          href="/"
+          className="flex items-center gap-3.5 py-4 -ml-[clamp(10px,1.8vw,24px)] text-left"
+        >
+          <Image
+            src="/images/logo-icon.png"
+            alt="Sonia's Realty Media"
+            width={54}
+            height={54}
+            className="h-[clamp(42px,3.6vw,54px)] w-auto object-contain"
+          />
+          <span className="ml-1.5 flex flex-col leading-[1.05]">
+            <span className="font-playfair text-[clamp(19px,2vw,24px)] font-bold tracking-[-0.015em] text-[var(--ink)]">
+              Sonia&#8217;s Realty Media
+            </span>
+            <span className="mt-1.5 font-archivo text-[9.5px] font-medium uppercase tracking-[0.26em] text-[var(--muted-1)]">
+              Residential advisory &middot; Bengaluru
+            </span>
+          </span>
+        </Link>
 
-	const headerClasses = isTransparent
-		? "fixed top-0 left-0 right-0 z-50 bg-transparent"
-		: "bg-[#F4F0EC] shadow-sm";
-
-	const textClasses = isTransparent
-		? "text-white"
-		: "text-[#292F36]";
-
-	const logoTextClasses = isTransparent
-		? "text-white font-bold"
-		: "text-[#292F36] font-bold";
-
-	return (
-		<header className={`px-4 py-4 ${headerClasses}`}>
-			<div className="max-w-5xl mx-auto">
-				{/* Single row with logo, brand name, navigation, and search */}
-				<div className="flex items-center justify-between">
-					{/* Logo and Brand Name */}
-					<Link href="/" className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity">
-						<div className="w-12 h-12 md:w-16 md:h-16 bg-[#CDA274] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
-							<Image
-								src="/images/logo.png"
-								alt="Sonia&apos;s Realty Media Logo"
-								width={360}
-								height={360}
-								className="object-contain rounded-full scale-125"
-							/>
-						</div>
-						<h1 className={`font-dm-serif text-sm sm:text-base md:text-lg lg:text-xl ${logoTextClasses} whitespace-nowrap`}>
-							SONIA&apos;S REALTY MEDIA
-						</h1>
-					</Link>
-
-					{/* Desktop Navigation */}
-					<div className="hidden lg:flex items-center">
-						<div className={`${textClasses} font-jost`}>
-							<Menu list={menuItems} />
-						</div>
-					</div>
-
-					{/* Search Icon & Mobile Menu Button */}
-					<div className="flex items-center gap-3">
-						{/* Search Icon */}
-						<button
-							onClick={() => setIsSearchOpen(true)}
-							className={`w-8 h-8 border-2 border-current rounded-full flex items-center justify-center hover:bg-white/10 transition flex-shrink-0 ${textClasses}`}
-						>
-							<span className="text-sm">🔍</span>
-						</button>
-
-						{/* Mobile Menu Button */}
-						<button
-							className="lg:hidden p-2 flex-shrink-0"
-							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-						>
-							<div className={`w-6 h-0.5 mb-1 ${transparent ? 'bg-white' : 'bg-[#292F36]'}`}></div>
-							<div className={`w-6 h-0.5 mb-1 ${transparent ? 'bg-white' : 'bg-[#292F36]'}`}></div>
-							<div className={`w-6 h-0.5 ${transparent ? 'bg-white' : 'bg-[#292F36]'}`}></div>
-						</button>
-					</div>
-				</div>
-			</div>
-
-			{/* Mobile Menu */}
-			{mobileMenuOpen && (
-				<div className="lg:hidden mt-4 pb-4">
-					<div className="flex flex-col space-y-4">
-						{menuItems.map((item) => (
-							<div key={item.id}>
-								<Link
-									href={item.url}
-									className={`font-jost text-lg hover:text-[#C76904] transition ${
-										item.id === 1 ? 'text-[#C76904] font-medium' : textClasses
-									}`}
-									onClick={() => setMobileMenuOpen(false)}
-								>
-									{item.title}
-								</Link>
-								{/* Mobile submenu */}
-								{item.dropdown && item.items && (
-									<div className="ml-4 mt-2 space-y-2">
-										{item.items.map((subItem: IMenu) => (
-											<Link
-												key={subItem.id}
-												href={subItem.url}
-												className={`block font-jost text-base ${textClasses} hover:text-[#C76904] transition`}
-												onClick={() => setMobileMenuOpen(false)}
-											>
-												{subItem.title}
-											</Link>
-										))}
-									</div>
-								)}
-							</div>
-						))}
-					</div>
-				</div>
-			)}
-				<SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
-		</header>
-	);
+        <nav className="ml-auto flex flex-wrap items-stretch justify-end font-archivo text-[12.5px] font-medium uppercase tracking-[0.1em]">
+          {NAV_ITEMS.map((item) => {
+            const active = isActive(item.href);
+            return (
+              <Link
+                key={item.key}
+                href={item.href}
+                className={`flex items-center border-l border-[var(--hairline)] px-[clamp(12px,1.6vw,22px)] py-3.5 ${
+                  active
+                    ? "bg-[var(--placeholder-plate)] text-[var(--ink)] shadow-[inset_0_-3px_0_var(--gold)]"
+                    : "bg-transparent text-[var(--muted-1)]"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+          <span className="flex items-center justify-end border-l border-[var(--hairline)] pl-[clamp(24px,3vw,40px)]">
+            <Link
+              href="/contact"
+              className="border border-[var(--gold)] px-[18px] py-2.5 font-archivo text-xs font-semibold uppercase tracking-[0.1em] text-[var(--gold-text)] transition-colors hover:bg-[rgba(182,130,53,.12)]"
+            >
+              Contact us
+            </Link>
+          </span>
+        </nav>
+      </div>
+    </header>
+  );
 }

@@ -1,34 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Archivo:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap');
 @import "tailwindcss";
 
 /* Import mobile-specific styles */
 @import '../styles/mobile.css';
 
-/* Font families for the font-jost / font-dm-serif / font-inter utilities */
+/* Font families for the font-playfair / font-lora / font-archivo / font-pinyon utilities */
 @theme {
-  --font-jost: "Jost", ui-sans-serif, system-ui, sans-serif;
-  --font-dm-serif: "DM Serif Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "DM Serif Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-playfair: "Playfair Display", ui-serif, Georgia, serif;
+  --font-lora: "Lora", ui-serif, Georgia, serif;
+  --font-archivo: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-pinyon: "Pinyon Script", cursive;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --ink: #201f1d;
+  --paper: #f3f2f2;
+  --card: #f8f4f4;
+  --gold: #b68235;
+  --gold-hover: #c28d41;
+  --gold-text: #7d5411;
+  --gold-warm: #e1ad66;
+  --muted-1: #7d7979;
+  --muted-2: #9b9797;
+  --muted-3: #605d5d;
+  --muted-4: #444141;
+  --placeholder-plate: #eae9e9;
+  --panel-dark: #2d2b2b;
+  --hairline: rgba(32, 31, 29, 0.16);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-jost);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-lora);
 }
 
 /* Prevent horizontal scrolling */
@@ -37,7 +41,16 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Hide the legacy page-local headers now that the shared header is global */
-main header {
-  display: none;
+/* Logo marquees (developer/lender strips) */
+@keyframes srm-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.srm-marquee-track {
+  animation: srm-scroll var(--srm-marquee-duration, 60s) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .srm-marquee-track {
+    animation: none !important;
+  }
 }

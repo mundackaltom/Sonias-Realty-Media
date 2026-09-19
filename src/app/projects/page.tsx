@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import ProjectsListingClient from "@/components/ProjectsListingClient";
 
 export const metadata: Metadata = {
-  title: "Projects | Sonia's Realty Media",
-  description: "Every residential project we currently advise on in Bengaluru, with gallery, floor plans, RERA file and rate history.",
+  title: "Residential Projects in Bengaluru",
+  description: "Browse every residential project we currently advise on in Bengaluru — Brigade, Prestige, Sobha, Godrej, Century and Purva — with gallery, floor plans, RERA file and rate history.",
+  alternates: { canonical: "/projects" },
+  openGraph: { title: "Residential Projects in Bengaluru | Sonia's Realty Media", url: "/projects" },
 };
 
 export default function ProjectsPage() {

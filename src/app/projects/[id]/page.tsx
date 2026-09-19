@@ -11,9 +11,24 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const project = getProjectBySlug(id);
   if (!project) return {};
+  const title = `${project.title}, ${project.location} — ${project.config}`;
+  const description = `${project.description} ${project.status} by ${project.builder} in ${project.location}, Bengaluru. Starting ${project.price}.`;
   return {
-    title: `${project.title} | Sonia's Realty Media`,
-    description: project.description,
+    title,
+    description,
+    alternates: { canonical: `/projects/${project.id}` },
+    openGraph: {
+      title: `${title} | Sonia's Realty Media`,
+      description,
+      url: `/projects/${project.id}`,
+      images: [{ url: project.image, width: 1200, height: 630, alt: project.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Sonia's Realty Media`,
+      description,
+      images: [project.image],
+    },
   };
 }
 

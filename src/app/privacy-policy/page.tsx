@@ -3,8 +3,10 @@ import Link from "next/link";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Sonia's Realty Media",
+  title: "Privacy Policy",
   description: "How Sonia's Realty Media collects, uses and protects your personal information.",
+  alternates: { canonical: "/privacy-policy" },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPolicy() {

@@ -3,8 +3,10 @@ import Link from "next/link";
 import { SERVICES, SERVICES_FAQS } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Services | Sonia's Realty Media",
-  description: "Property search, home loans, investment advisory, asset management and registration & handover — free to buyers, paid by the developer.",
+  title: "Real Estate Services in Bengaluru",
+  description: "Property search, home loan sanctioning across six banks, investment advisory, NRI asset management and registration & handover in Bengaluru — free to buyers, paid by the developer.",
+  alternates: { canonical: "/services" },
+  openGraph: { title: "Real Estate Services in Bengaluru | Sonia's Realty Media", url: "/services" },
 };
 
 export default function ServicesPage() {

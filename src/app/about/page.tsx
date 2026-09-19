@@ -3,8 +3,10 @@ import { PROJECTS } from "@/lib/projects";
 import { ABOUT_FAQS, CREDENTIALS, QUOTES, TIMELINE } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About | Sonia's Realty Media",
-  description: "A three-person residential advisory in Bengaluru, built on clean title, verified pricing and no fee to buyers.",
+  title: "About Us",
+  description: "A three-person RERA-registered residential advisory in Bengaluru since 2020 — clean title, verified pricing and no fee to buyers. 108 homes handed over across 17 micro-markets.",
+  alternates: { canonical: "/about" },
+  openGraph: { title: "About Sonia's Realty Media", url: "/about" },
 };
 
 const FIGURES = [

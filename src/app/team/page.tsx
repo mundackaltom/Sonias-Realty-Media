@@ -4,8 +4,10 @@ import { TEAM } from "@/lib/projects";
 import { LEGAL_NOTE } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Team | Sonia's Realty Media",
-  description: "Sonia, Tom and Jimmy — the three-person advisory behind Sonia's Realty Media, with a legal and CA team behind every file.",
+  title: "Our Team",
+  description: "Meet Sonia, Tom and Jimmy — the three-person residential advisory behind Sonia's Realty Media in Bengaluru, with an in-house legal and CA team behind every file.",
+  alternates: { canonical: "/team" },
+  openGraph: { title: "Our Team | Sonia's Realty Media", url: "/team" },
 };
 
 export default function TeamPage() {

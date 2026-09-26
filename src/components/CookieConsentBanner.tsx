@@ -47,7 +47,7 @@ export default function CookieConsentBanner() {
   const acceptBase = "bg-[var(--gold)] px-4 py-2.5 font-archivo text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--ink)] transition-colors hover:bg-[var(--gold-hover)]";
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[70] border-t-2 border-[var(--gold)] bg-[var(--ink)] text-white">
+    <div className="fixed inset-x-0 bottom-0 z-[70] max-h-[85dvh] overflow-y-auto border-t-2 border-[var(--gold)] bg-[var(--ink)] pb-[env(safe-area-inset-bottom)] text-white">
       <div className="mx-auto max-w-[1560px] px-4 py-4 sm:py-5">
         {!customizing ? (
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">

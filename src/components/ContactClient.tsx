@@ -115,7 +115,7 @@ export default function ContactClient() {
             </div>
           </div>
 
-          <div className="min-w-[290px] flex-1 basis-[320px] bg-[var(--ink)] text-[var(--card)]">
+          <div className="min-w-0 flex-1 basis-[320px] bg-[var(--ink)] text-[var(--card)] sm:min-w-[290px]">
             <div className="flex items-center gap-4.5 px-6 pb-5 pt-6">
               <div className="relative h-[84px] w-[84px] flex-none overflow-hidden border border-white/[.28]">
                 <Image
@@ -152,7 +152,7 @@ export default function ContactClient() {
       </section>
 
       <div className="mx-auto flex max-w-[1560px] flex-wrap items-start px-[clamp(16px,3vw,32px)]">
-        <div className="min-w-0 flex-1 basis-[520px] border-r border-[var(--hairline)] py-[clamp(40px,5vw,60px)] pb-[clamp(48px,5vw,72px)] pr-0 lg:pr-12" style={{ flexGrow: 2 }}>
+        <div className="min-w-0 flex-1 basis-[520px] py-[clamp(40px,5vw,60px)] pb-[clamp(48px,5vw,72px)] pr-0 lg:border-r lg:border-[var(--hairline)] lg:pr-12" style={{ flexGrow: 2 }}>
           <h2 className="m-0 mb-2 font-playfair text-[clamp(26px,3vw,36px)] font-bold tracking-[-0.03em]">Send an enquiry</h2>
           <p className="m-0 mb-[26px] max-w-[560px] font-lora text-[15.5px] leading-[1.7] text-[var(--muted-3)]">
             The more you tell us here, the more useful the first reply is. Nothing is shared with a developer until you ask us to.
@@ -242,14 +242,14 @@ export default function ContactClient() {
 
           <div className="mt-8 border-t border-[var(--hairline)] pt-[22px]">
             <div className="mb-3.5 font-archivo text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--muted-1)]">Follow along</div>
-            <div className="grid border-t-2 border-[var(--ink)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,118px),1fr))]">
+            <div className="grid grid-cols-2 border-t-2 border-[var(--ink)] sm:[grid-template-columns:repeat(auto-fit,minmax(min(100%,118px),1fr))]">
               {SOCIALS.map((s) => (
                 <a
                   key={s.platform}
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-r border-[var(--hairline)] px-[clamp(14px,1.6vw,20px)] py-4 pb-[18px] transition-colors hover:bg-black/[.04]"
+                  className="border-b border-r border-[var(--hairline)] px-[clamp(14px,1.6vw,20px)] py-4 pb-[18px] transition-colors hover:bg-black/[.04] sm:border-b-0"
                 >
                   <div className="mb-1.5 font-archivo text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--muted-1)]">{s.platform}</div>
                   <div className="break-words font-lora text-[14.5px]">{s.handle}</div>
@@ -259,7 +259,7 @@ export default function ContactClient() {
           </div>
         </div>
 
-        <aside className="min-w-[280px] flex-1 basis-[300px] py-[clamp(40px,5vw,60px)] pb-[clamp(48px,5vw,72px)] lg:pl-9">
+        <aside className="min-w-0 flex-1 basis-[300px] py-[clamp(40px,5vw,60px)] pb-[clamp(48px,5vw,72px)] lg:min-w-[280px] lg:pl-9">
           <div className="mb-4.5 font-archivo text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--gold-text)]">The office</div>
           <div className="overflow-hidden border border-black/20 bg-[var(--placeholder-plate)]">
             <iframe

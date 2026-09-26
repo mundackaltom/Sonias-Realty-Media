@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col items-start gap-2.5 font-lora text-[15.5px]">
               {SITE_LINKS.map((l) => (
-                <Link key={l.href} href={l.href} className="text-white/80 hover:text-[var(--gold-warm)]">
+                <Link key={l.href} href={l.href} className="py-1.5 text-white/80 hover:text-[var(--gold-warm)] md:py-0">
                   {l.label}
                 </Link>
               ))}
@@ -61,7 +61,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col items-start gap-2.5 font-lora text-[15.5px]">
               {footerProjects.map((p) => (
-                <Link key={p.id} href={`/projects/${p.id}`} className="text-left text-white/80 hover:text-[var(--gold-warm)]">
+                <Link key={p.id} href={`/projects/${p.id}`} className="py-1.5 text-left text-white/80 hover:text-[var(--gold-warm)] md:py-0">
                   {p.title}
                 </Link>
               ))}
@@ -78,10 +78,10 @@ export default function Footer() {
               Bengaluru, Karnataka 560073
             </div>
             <div className="mt-3.5 flex flex-col gap-2 font-lora text-[15.5px]">
-              <a href={`tel:${PHONE_TEL}`} className="text-[var(--gold-warm)]">
+              <a href={`tel:${PHONE_TEL}`} className="py-1.5 text-[var(--gold-warm)] md:py-0">
                 {PHONE_DISPLAY}
               </a>
-              <a href={`mailto:${EMAIL}`} className="break-all text-[var(--gold-warm)]">
+              <a href={`mailto:${EMAIL}`} className="break-all py-1.5 text-[var(--gold-warm)] md:py-0">
                 {EMAIL}
               </a>
             </div>

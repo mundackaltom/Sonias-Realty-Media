@@ -33,6 +33,8 @@ export default function ProjectsListingClient() {
     return c ? [c] : [];
   });
   const [showCompare, setShowCompare] = useState(false);
+  // Below lg the filter rail sits above the listing, so it starts collapsed.
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const localities = useMemo(() => uniqueSorted(PROJECTS.map((p) => p.location)), []);
   const builders = useMemo(() => uniqueSorted(PROJECTS.map((p) => p.builder)), []);
@@ -50,6 +52,7 @@ export default function ProjectsListingClient() {
   };
 
   const listing = useMemo(() => matchProjects(PROJECTS, filters), [filters]);
+  const activeFilterCount = Object.values(filters).filter(Boolean).length;
   const compareProjects = useMemo(() => PROJECTS.filter((p) => compare.includes(p.id)), [compare]);
 
   const countBy = (fn: (p: (typeof PROJECTS)[number]) => string, v: string) => PROJECTS.filter((p) => fn(p) === v).length;
@@ -76,7 +79,7 @@ export default function ProjectsListingClient() {
               Every project below has its own page: gallery, floor plans, RERA file, locality read and rate history. Prices are the last quoted rate, not the launch rate.
             </p>
           </div>
-          <div className="text-right">
+          <div className="text-left sm:text-right">
             <div className="font-playfair text-[clamp(40px,5vw,56px)] font-bold leading-none [font-feature-settings:'tnum']">
               {listing.length}
             </div>
@@ -88,14 +91,31 @@ export default function ProjectsListingClient() {
       </section>
 
       <div className="mx-auto flex max-w-[1560px] flex-wrap items-start px-[clamp(16px,3vw,32px)]">
-        <aside className="min-w-[220px] max-w-[300px] flex-1 basis-[240px] border-r border-[var(--hairline)] py-8 pr-7">
-          <div className="sticky top-[120px]">
+        <aside className="w-full min-w-0 basis-full border-b border-[var(--hairline)] py-6 lg:w-auto lg:min-w-[220px] lg:max-w-[300px] lg:flex-1 lg:basis-[240px] lg:border-b-0 lg:border-r lg:py-8 lg:pr-7">
+          <div className="lg:sticky lg:top-[120px]">
             <div className="mb-6 flex items-baseline justify-between border-b-2 border-[var(--ink)] pb-3">
-              <span className="font-archivo text-[11px] font-semibold uppercase tracking-[0.2em]">Filters</span>
+              <button
+                type="button"
+                onClick={() => setFiltersOpen((open) => !open)}
+                aria-expanded={filtersOpen}
+                aria-controls="project-filters"
+                className="flex items-center gap-2 border-0 bg-transparent p-0 font-archivo text-[11px] font-semibold uppercase tracking-[0.2em] lg:pointer-events-none"
+              >
+                Filters
+                {activeFilterCount > 0 && (
+                  <span className="bg-[var(--ink)] px-1.5 py-0.5 font-archivo text-[10px] text-[var(--card)] [font-feature-settings:'tnum'] lg:hidden">
+                    {activeFilterCount}
+                  </span>
+                )}
+                <span className={`text-[var(--muted-1)] transition-transform lg:hidden ${filtersOpen ? "rotate-180" : ""}`} aria-hidden="true">
+                  &#9662;
+                </span>
+              </button>
               <button onClick={() => setFilters({})} className="border-0 bg-transparent font-archivo text-[10.5px] font-medium uppercase tracking-[0.14em] text-[var(--gold-text)]">
                 Clear
               </button>
             </div>
+            <div id="project-filters" className={filtersOpen ? "block" : "hidden lg:block"}>
             {filterGroups.map((g) => (
               <div key={g.label} className="mb-7">
                 <div className="mb-3 font-archivo text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--muted-1)]">{g.label}</div>
@@ -124,10 +144,11 @@ export default function ProjectsListingClient() {
                 Ask an advisor
               </Link>
             </div>
+            </div>
           </div>
         </aside>
 
-        <div className="min-w-0 flex-1 basis-[620px] py-8 pb-[72px] md:pl-9">
+        <div className="min-w-0 flex-1 basis-[620px] py-8 pb-[72px] lg:pl-9">
           <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-b-2 border-[var(--ink)] pb-3">
             <div className="flex items-center gap-2 font-archivo text-[10.5px] font-medium uppercase tracking-[0.14em] text-[var(--muted-1)]">
               <span>Sort</span>

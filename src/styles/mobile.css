@@ -103,8 +103,18 @@
   }
   
   /* Improve touch targets */
-  button, a, input[type="button"], input[type="submit"] {
+  button, input[type="button"], input[type="submit"] {
     min-height: 44px;
+  }
+
+  /* 16px keeps iOS Safari from zooming the page when a field takes focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+
+  /* Justified text turns into rivers of whitespace in a phone-width column */
+  .text-justify {
+    text-align: left;
   }
   
   /* Better mobile text selection */

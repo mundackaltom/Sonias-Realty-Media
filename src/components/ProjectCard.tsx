@@ -74,7 +74,7 @@ export default function ProjectCard({ project: p, variant, rowIndex = 0, compare
 
   return (
     <article className={`flex flex-wrap border-b border-[var(--hairline)] ${rowIndex % 2 ? "bg-[var(--card)]" : "bg-[var(--paper)]"}`}>
-      <Link href={`/projects/${p.id}`} className="relative block h-[clamp(240px,26vw,300px)] min-w-[220px] max-w-[340px] flex-1 basis-[260px]">
+      <Link href={`/projects/${p.id}`} className="relative block h-[clamp(200px,52vw,300px)] w-full flex-1 basis-[260px] sm:h-[clamp(240px,26vw,300px)] sm:min-w-[220px] sm:max-w-[340px]">
         <Image src={p.image} alt={p.title} fill className="object-cover [filter:sepia(.2)_saturate(.8)_contrast(1.04)]" />
         <div className="absolute left-0 top-0 bg-[var(--card)] px-3 py-[7px] font-archivo text-[9.5px] font-bold uppercase tracking-[0.16em] text-[var(--ink)]">
           {p.status}
@@ -90,7 +90,7 @@ export default function ProjectCard({ project: p, variant, rowIndex = 0, compare
           {p.location} &middot; {p.builder}
         </div>
         <p className="m-0 mb-4 max-w-[520px] font-lora text-[15.5px] leading-[1.65] text-[var(--muted-3)]">{p.description}</p>
-        <div className="flex flex-wrap gap-x-[26px] border-t border-[var(--hairline)]">
+        <div className="flex flex-wrap gap-x-[26px] gap-y-1 border-t border-[var(--hairline)] sm:gap-y-0">
           {statRows(p).map((r) => (
             <div key={r.k} className="border-r border-black/10 pr-[22px] pt-3">
               <div className="mb-[5px] font-archivo text-[9.5px] font-medium uppercase tracking-[0.16em] text-[var(--muted-2)]">{r.k}</div>
@@ -99,7 +99,7 @@ export default function ProjectCard({ project: p, variant, rowIndex = 0, compare
           ))}
         </div>
       </div>
-      <div className="flex min-w-[180px] flex-1 basis-[200px] flex-col gap-2.5 border-l border-[var(--hairline)] p-6">
+      <div className="flex min-w-0 flex-1 basis-[200px] flex-col gap-2.5 border-t border-[var(--hairline)] px-[clamp(18px,2.4vw,32px)] py-5 sm:min-w-[180px] sm:border-l sm:border-t-0 sm:px-6 sm:py-6">
         <div className="mb-auto break-all font-archivo text-[9.5px] tracking-[0.1em] text-[var(--muted-2)]">RERA {p.rera}</div>
         <Link
           href={`/projects/${p.id}`}

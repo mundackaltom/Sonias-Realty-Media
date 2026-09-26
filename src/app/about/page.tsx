@@ -41,7 +41,7 @@ export default function AboutPage() {
 
       <section className="border-b-2 border-[var(--ink)] bg-[var(--paper)]">
         <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)]">
-          <div className="grid [grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
+          <div className="grid grid-cols-2 sm:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
             {FIGURES.map((f) => (
               <div key={f.label} className="border-l border-[var(--hairline)] py-[30px] pr-5">
                 <div className="pl-[22px]">
@@ -99,7 +99,7 @@ export default function AboutPage() {
           <div className="mb-[30px] font-archivo text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--muted-1)]">Clients</div>
           <div className="grid border-l border-[var(--hairline)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))]">
             {QUOTES.map((q) => (
-              <figure key={q.who} className="m-0 border-r border-[var(--hairline)] px-[clamp(20px,2.6vw,40px)]">
+              <figure key={q.who} className="m-0 border-b border-[var(--hairline)] px-[clamp(20px,2.6vw,40px)] pb-8 pt-8 first:pt-0 last:border-b-0 last:pb-0 sm:border-b-0 sm:border-r sm:pb-0 sm:pt-0">
                 <blockquote className="m-0 mb-[22px] font-playfair text-[clamp(22px,2.4vw,27px)] italic leading-[1.38]">
                   &#8220;{q.text}&#8221;
                 </blockquote>

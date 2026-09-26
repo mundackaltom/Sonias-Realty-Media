@@ -34,7 +34,7 @@ export default function Home() {
       </div>
 
       {/* Hero */}
-      <section className="relative grid min-h-[clamp(560px,86vh,820px)] bg-[var(--ink)] md:grid-cols-[minmax(320px,46%)_1fr]">
+      <section className="relative grid bg-[var(--ink)] md:min-h-[clamp(560px,86vh,820px)] md:grid-cols-[minmax(320px,46%)_1fr]">
         <div className="relative z-[2] flex flex-col justify-center gap-7 px-[clamp(24px,4vw,56px)] py-[clamp(40px,6vw,88px)]">
           <div className="font-archivo text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--gold-warm)]">
             Bengaluru residential advisory
@@ -61,7 +61,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="relative order-first overflow-hidden md:order-none">
+        <div className="relative order-first h-[clamp(200px,34vh,300px)] overflow-hidden md:order-none md:h-auto">
           <Image
             src="/images/hero.jpg"
             alt="Bengaluru residential skyline"
@@ -78,7 +78,7 @@ export default function Home() {
       {/* Figures */}
       <section className="border-b-2 border-[var(--ink)] bg-[var(--paper)]">
         <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)]">
-          <div className="grid [grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
+          <div className="grid grid-cols-2 sm:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
             {FIGURES.map((f) => (
               <div key={f.label} className="border-l border-[var(--hairline)] py-[30px] pr-5">
                 <div className="pl-[22px]">
@@ -220,7 +220,7 @@ export default function Home() {
           </div>
           <div className="grid border-l border-[var(--hairline)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))]">
             {QUOTES.map((q) => (
-              <figure key={q.who} className="m-0 border-r border-[var(--hairline)] px-[clamp(20px,2.6vw,40px)]">
+              <figure key={q.who} className="m-0 border-b border-[var(--hairline)] px-[clamp(20px,2.6vw,40px)] pb-8 pt-8 first:pt-0 last:border-b-0 last:pb-0 sm:border-b-0 sm:border-r sm:pb-0 sm:pt-0">
                 <blockquote className="m-0 mb-[22px] font-playfair text-[clamp(22px,2.4vw,27px)] italic leading-[1.38] text-[var(--ink)]">
                   &#8220;{q.text}&#8221;
                 </blockquote>

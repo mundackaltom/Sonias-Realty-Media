@@ -110,7 +110,7 @@ export default function ProjectDetailClient({ project: p }: { project: Project }
       </section>
 
       <div className="mx-auto grid max-w-[1560px] items-start px-[clamp(16px,3vw,32px)] lg:grid-cols-[minmax(0,1fr)_392px]">
-        <div className="flex min-w-0 flex-col border-r border-[var(--hairline)] pr-0 lg:pr-[clamp(28px,3.4vw,60px)]">
+        <div className="flex min-w-0 flex-col pr-0 lg:border-r lg:border-[var(--hairline)] lg:pr-[clamp(28px,3.4vw,60px)]">
           <div className="min-w-0 border-b-2 border-[var(--ink)] py-8">
             <div className="mb-3.5">
               <div className="relative h-[clamp(260px,26vw,380px)] w-full">
@@ -213,7 +213,7 @@ export default function ProjectDetailClient({ project: p }: { project: Project }
                 </div>
                 <div className="min-w-0">
                   {planRows.map((r) => (
-                    <div key={r.k} className="grid grid-cols-[auto_1fr] items-baseline gap-x-5 gap-y-2 border-b border-black/[.12] py-[13px]">
+                    <div key={r.k} className="grid [grid-template-columns:minmax(0,auto)_minmax(0,1fr)] items-baseline gap-x-5 gap-y-2 border-b border-black/[.12] py-[13px]">
                       <span className="font-archivo text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--muted-1)]">{r.k}</span>
                       <span className="min-w-0 text-right font-lora text-base [font-feature-settings:'tnum']">{r.v}</span>
                     </div>
@@ -307,7 +307,7 @@ export default function ProjectDetailClient({ project: p }: { project: Project }
         </div>
 
         <aside className="min-w-0 py-8 pb-14 lg:pl-[clamp(28px,3.4vw,60px)]">
-          <div className="sticky top-[120px] flex flex-col gap-5">
+          <div className="flex flex-col gap-5 lg:sticky lg:top-[120px]">
             <div className="border-2 border-[var(--ink)] bg-[var(--card)] p-[22px]">
               <div className="mb-4 font-archivo text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--muted-1)]">Book a site visit</div>
               <div className="mb-3 flex gap-2">

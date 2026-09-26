@@ -19,9 +19,9 @@ const footerProjects = PROJECTS.filter((p) => p.id !== "ecopolitan")
 export default function Footer() {
   return (
     <footer className="bg-[var(--ink)] text-[var(--card)]">
-      <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)] pb-[26px] pt-[clamp(40px,5vw,64px)]">
-        <div className="grid gap-[clamp(20px,2.4vw,40px)] border-b border-white/[.18] pb-[clamp(32px,4vw,48px)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,192px),1fr))]">
-          <div>
+      <div className="mx-auto max-w-[1560px] px-[clamp(16px,3vw,32px)] pb-[26px] pt-[clamp(40px,5vw,64px)] max-md:pb-4 max-md:pt-8">
+        <div className="grid gap-[clamp(20px,2.4vw,40px)] border-b border-white/[.18] pb-[clamp(32px,4vw,48px)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,192px),1fr))] max-md:grid-cols-2 max-md:gap-x-6 max-md:gap-y-7 max-md:pb-6">
+          <div className="max-md:col-span-2">
             <div className="mb-[18px] flex items-center gap-3.5">
               <Image
                 src="/images/logo-icon.png"
@@ -46,9 +46,9 @@ export default function Footer() {
             <div className="mb-4 font-archivo text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[var(--gold-warm)]">
               Site
             </div>
-            <div className="flex flex-col items-start gap-2.5 font-lora text-[15.5px]">
+            <div className="flex flex-col items-start gap-2.5 font-lora text-[15.5px] max-md:gap-1.5">
               {SITE_LINKS.map((l) => (
-                <Link key={l.href} href={l.href} className="py-1.5 text-white/80 hover:text-[var(--gold-warm)] md:py-0">
+                <Link key={l.href} href={l.href} className="py-1.5 text-white/80 hover:text-[var(--gold-warm)] md:py-0 max-md:py-0.5">
                   {l.label}
                 </Link>
               ))}
@@ -59,16 +59,16 @@ export default function Footer() {
             <div className="mb-4 font-archivo text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[var(--gold-warm)]">
               Projects
             </div>
-            <div className="flex flex-col items-start gap-2.5 font-lora text-[15.5px]">
+            <div className="flex flex-col items-start gap-2.5 font-lora text-[15.5px] max-md:gap-1.5">
               {footerProjects.map((p) => (
-                <Link key={p.id} href={`/projects/${p.id}`} className="py-1.5 text-left text-white/80 hover:text-[var(--gold-warm)] md:py-0">
+                <Link key={p.id} href={`/projects/${p.id}`} className="py-1.5 text-left text-white/80 hover:text-[var(--gold-warm)] md:py-0 max-md:py-0.5">
                   {p.title}
                 </Link>
               ))}
             </div>
           </div>
 
-          <div>
+          <div className="max-md:col-span-2">
             <div className="mb-4 font-archivo text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[var(--gold-warm)]">
               Office
             </div>
@@ -77,11 +77,11 @@ export default function Footer() {
               <br />
               Bengaluru, Karnataka 560073
             </div>
-            <div className="mt-3.5 flex flex-col gap-2 font-lora text-[15.5px]">
-              <a href={`tel:${PHONE_TEL}`} className="py-1.5 text-[var(--gold-warm)] md:py-0">
+            <div className="mt-3.5 flex flex-col gap-2 font-lora text-[15.5px] max-md:mt-2">
+              <a href={`tel:${PHONE_TEL}`} className="py-1.5 text-[var(--gold-warm)] md:py-0 max-md:py-0.5">
                 {PHONE_DISPLAY}
               </a>
-              <a href={`mailto:${EMAIL}`} className="break-all py-1.5 text-[var(--gold-warm)] md:py-0">
+              <a href={`mailto:${EMAIL}`} className="break-all py-1.5 text-[var(--gold-warm)] md:py-0 max-md:py-0.5">
                 {EMAIL}
               </a>
             </div>

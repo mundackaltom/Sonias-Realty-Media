@@ -545,7 +545,6 @@ export const PLANS: Record<string, { k: string; v: string }[]> = {
 
 export const TEAM: TeamMember[] = [
   { name: "Sonia", role: "Founder & Principal Advisor", photo: "/images/sonia.jpeg", hasPhoto: true, pos: "50% 27%", zoom: 2.1, filter: "sepia(.04) saturate(.96) contrast(1.01)", bio: "Started the practice in 2020 with one listing in Yeshwantpur. Runs shortlisting, site visits and negotiation on every file personally." },
-  { name: "Tom", role: "Advisor", photo: "/images/tom.jpeg", hasPhoto: true, pos: "50% 37%", zoom: 1.75, filter: "saturate(1.02) contrast(1.01)", bio: "Bio to be supplied." },
   { name: "Jimmy", role: "Advisor", photo: "/images/jimmy.jpg", hasPhoto: true, pos: "50% 22%", zoom: 1, filter: "none", bio: "Bio to be supplied." },
 ];
 

@@ -94,7 +94,7 @@ export const CONTACT_ROWS = [
 ];
 
 export const CONTACT_STEPS = [
-  { n: "01", title: "We read your enquiry", text: "Sonia, Tom or Jimmy goes through it the same day and checks it against live inventory." },
+  { n: "01", title: "We read your enquiry", text: "Sonia or Jimmy goes through it the same day and checks it against live inventory." },
   { n: "02", title: "You get a reply", text: "A shortlist and a WhatsApp or call, within one working day — sooner if you message directly." },
   { n: "03", title: "Site visit, on your time", text: "We arrange the visit around your schedule and walk the site with you." },
 ];

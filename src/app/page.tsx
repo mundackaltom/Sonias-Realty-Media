@@ -162,7 +162,7 @@ export default function Home() {
               One advisor, from shortlist to registration
             </h2>
             <p className="m-0 mb-[18px] max-w-[640px] text-justify font-lora text-[clamp(15.5px,1.5vw,17px)] leading-[1.78] text-[var(--muted-4)]">
-              Sonia&#8217;s Realty Media is a three-person advisory, not a call centre. You speak to the same person through shortlisting, site visits, price negotiation, loan sanction and registration &mdash; and you get the numbers that builders normally leave out of the brochure.
+              Sonia&#8217;s Realty Media is a two-person advisory, not a call centre. You speak to the same person through shortlisting, site visits, price negotiation, loan sanction and registration &mdash; and you get the numbers that builders normally leave out of the brochure.
             </p>
             <p className="m-0 mb-[30px] max-w-[640px] text-justify font-lora text-[clamp(15.5px,1.5vw,17px)] leading-[1.78] text-[var(--muted-4)]">
               We are paid by the developer on closing, so our advice costs you nothing &mdash; and we tell you when a project is wrong for you.

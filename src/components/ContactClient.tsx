@@ -97,7 +97,7 @@ export default function ContactClient() {
               Tell us the budget and the locality. We will do the rest.
             </h1>
             <p className="m-0 mb-[26px] max-w-[600px] text-justify font-lora text-[clamp(15.5px,1.6vw,17px)] leading-[1.78] text-[var(--muted-3)]">
-              Replies within one working day. You will speak to one of three people for the whole purchase &mdash; shortlist, site visits, price negotiation, loan sanction and registration &mdash; not a call centre and not a rotating desk.
+              Replies within one working day. You will speak to one of two people for the whole purchase &mdash; shortlist, site visits, price negotiation, loan sanction and registration &mdash; not a call centre and not a rotating desk.
             </p>
             <div className="grid max-w-[680px] border-t-2 border-[var(--ink)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))]">
               <div className="border-b border-[var(--hairline)] py-4.5 pr-5">

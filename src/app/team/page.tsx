@@ -5,7 +5,7 @@ import { LEGAL_NOTE } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Our Team",
-  description: "Meet Sonia, Tom and Jimmy — the three-person residential advisory behind Sonia's Realty Media in Bengaluru, with an in-house legal and CA team behind every file.",
+  description: "Meet Sonia and Jimmy — the two-person residential advisory behind Sonia's Realty Media in Bengaluru, with an in-house legal and CA team behind every file.",
   alternates: { canonical: "/team" },
   openGraph: { title: "Our Team | Sonia's Realty Media", url: "/team" },
 };
@@ -19,10 +19,10 @@ export default function TeamPage() {
             The team
           </div>
           <h1 className="m-0 mb-[18px] max-w-[900px] font-playfair text-[clamp(34px,5.6vw,64px)] font-bold leading-[1.02] tracking-[-0.035em]">
-            Three people, and a legal &amp; CA team behind every file
+            Two people, and a legal &amp; CA team behind every file
           </h1>
           <p className="m-0 max-w-[680px] text-justify font-lora text-[clamp(15.5px,1.6vw,17px)] leading-[1.78] text-[var(--muted-3)]">
-            Sonia&#8217;s Realty Media is a small advisory by design. Sonia, Tom and Jimmy handle every client directly, from shortlist to registration, and every file they hand you has already been checked by our own legal and chartered-accountant team.
+            Sonia&#8217;s Realty Media is a small advisory by design. Sonia and Jimmy handle every client directly, from shortlist to registration, and every file they hand you has already been checked by our own legal and chartered-accountant team.
           </p>
         </div>
       </section>

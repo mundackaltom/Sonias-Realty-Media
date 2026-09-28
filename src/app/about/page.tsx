@@ -4,7 +4,7 @@ import { ABOUT_FAQS, CREDENTIALS, QUOTES, TIMELINE } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "A three-person RERA-registered residential advisory in Bengaluru since 2020 — clean title, verified pricing and no fee to buyers. 108 homes handed over across 17 micro-markets.",
+  description: "A two-person RERA-registered residential advisory in Bengaluru since 2020 — clean title, verified pricing and no fee to buyers. 108 homes handed over across 17 micro-markets.",
   alternates: { canonical: "/about" },
   openGraph: { title: "About Sonia's Realty Media", url: "/about" },
 };
@@ -26,7 +26,7 @@ export default function AboutPage() {
           </div>
           <div className="mb-2.5 font-pinyon text-[clamp(34px,4.4vw,52px)] leading-none text-[var(--gold-text)]">Sonia&#8217;s</div>
           <h1 className="m-0 mb-[30px] max-w-[1000px] font-playfair text-[clamp(36px,6vw,74px)] font-bold leading-none tracking-[-0.035em]">
-            A three-person advisory built for this city&#8217;s next phase
+            A two-person advisory built for this city&#8217;s next phase
           </h1>
           <div className="grid gap-[clamp(24px,3.5vw,56px)] border-t-2 border-[var(--ink)] pt-7 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
             <p className="m-0 text-justify font-lora text-[clamp(15.5px,1.5vw,16.5px)] leading-[1.8] text-[var(--muted-4)]">
